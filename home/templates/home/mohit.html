@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="jquery-2.0.3.min.js"></script>
+	<style>
+	#mask {
+  height: 300px;
+  width: 508px;
+  background: rgb(160, 255, 97);
+  opacity: .3;
+  position: absolute;
+  top: 0;
+  -webkit-mask-image: url("sanchit.jpg");
+}
+	</style>
+	<div class="character">
+		<img id="photo" src="sanchit.jpg">
+		<div id="mask"></div>
+	</div>
+	<script>
+$(document).ready(function () {
+	var i=300;
+	var delay = 1;
+	$("#photo").hover(function() {
+	var mask = document.getElementById("mask");
+function myloop(){
+	setTimeout(function(){  if(i> 0){
+		mask.style.height =  i + "px"}
+		i--;
+		myloop();
+		}, delay);
+}
+myloop();
+});
+});
+	</script>
+	</style> 
+</head>
+<body>
+</body>
+</html>

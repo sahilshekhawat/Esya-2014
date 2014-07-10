@@ -1,0 +1,65 @@
+@charset "utf-8";
+/*
+Thumbnail scroller jQuery plugin
+scrollers styling
+*/
+.jThumbnailScroller{position:relative; width:840px; height:402px;background:transparent; padding:0; overflow:hidden;}
+.jThumbnailScroller .jTscrollerContainer{position:absolute;width:}
+.jThumbnailScroller .jTscroller{position:relative;height:402px; margin:0; top:0; display:inline-block; *display:inline;}
+.jThumbnailScroller .jTscrollerNextButton,.jThumbnailScroller .jTscrollerPrevButton{position:absolute; display:block; width:40px; height:40px; -moz-border-radius:20px; -webkit-border-radius:20px; border-radius:20px; opacity:0.7;}
+.jThumbnailScroller .jTscrollerNextButton{background:#888B82 url(nextArrow.png) center center;}
+.jThumbnailScroller .jTscrollerPrevButton{background:#888B82 url(prevArrow.png) center center;}
+.jThumbnailScroller .jTscrollerNextButton:hover,.jThumbnailScroller .jTscrollerPrevButton:hover{background-color:rgba(5,188,145,1); opacity:1;}
+.eblk{display:block; float:left;height:372px;margin-left:10px;margin-right:0px; background:#fff;}
+.eblk:first-child{margin-left:0px;}
+/*.eblk:nth-child(4){margin-left:60px;}
+.eblk:nth-child(7){margin-left:60px;}
+.eblk:nth-child(10){margin-left:10px;}*/
+.eblk:nth-child(32){margin-right:20px;}
+.eblk1{margin-right:10px;}
+
+.eblk img{border:none;}
+/* different styled scrollers */
+/* liquid width scroller */
+.jThumbnailScroller#tS2{margin-top:30px;}
+.jThumbnailScroller#tS2 .jTscroller .eblk{opacity:0.9;}
+.jThumbnailScroller#tS2 .jTscroller .eblk:hover{opacity:1;}
+.jThumbnailScroller#tS2 .jTscrollerNextButton{right:10px;top:40%;}
+.jThumbnailScroller#tS2 .jTscrollerPrevButton{left:0px; top:40%;}
+/* a vertical scroller */
+.jThumbnailScroller#tS4{margin-top:30px;}
+.jThumbnailScroller#tS4 .jTscroller .eblk{opacity:0.9;}
+.jThumbnailScroller#tS4 .jTscroller .eblk:hover{opacity:1;}
+.jThumbnailScroller#tS4 .jTscrollerNextButton{right:10px;top:40%;}
+.jThumbnailScroller#tS4 .jTscrollerPrevButton{left:0px; top:40%;}
+
+.jThumbnailScroller#tS6{margin-top:30px;}
+.jThumbnailScroller#tS6 .jTscroller .eblk{opacity:0.9;}
+.jThumbnailScroller#tS6 .jTscroller .eblk:hover{opacity:1;}
+.jThumbnailScroller#tS6 .jTscrollerNextButton{right:10px;top:40%;}
+.jThumbnailScroller#tS6 .jTscrollerPrevButton{left:0px; top:40%;}
+
+.jThumbnailScroller#tS8{margin-top:30px;}
+.jThumbnailScroller#tS8 .jTscroller .eblk{opacity:0.9;}
+.jThumbnailScroller#tS8 .jTscroller .eblk:hover{opacity:1;}
+.jThumbnailScroller#tS8 .jTscrollerNextButton{right:10px;top:40%;}
+.jThumbnailScroller#tS8 .jTscrollerPrevButton{left:0px; top:40%;}
+
+.jThumbnailScroller#tS10{margin-top:30px;}
+.jThumbnailScroller#tS10 .jTscroller .eblk{opacity:0.9;}
+.jThumbnailScroller#tS10 .jTscroller .eblk:hover{opacity:1;}
+.jThumbnailScroller#tS10 .jTscrollerNextButton{right:10px;top:40%;}
+.jThumbnailScroller#tS10 .jTscrollerPrevButton{left:0px; top:40%;}
+
+.jThumbnailScroller#tS12{margin-top:30px;}
+.jThumbnailScroller#tS12 .jTscroller .eblk{opacity:0.9;}
+.jThumbnailScroller#tS12 .jTscroller .eblk:hover{opacity:1;}
+.jThumbnailScroller#tS12 .jTscrollerNextButton{right:10px;top:40%;}
+.jThumbnailScroller#tS12 .jTscrollerPrevButton{left:0px; top:40%;}
+
+.jThumbnailScroller#tS14{margin-top:30px;}
+.jThumbnailScroller#tS14 .jTscroller .eblk{opacity:0.9;}
+.jThumbnailScroller#tS14 .jTscroller .eblk:hover{opacity:1;}
+.jThumbnailScroller#tS14 .jTscrollerNextButton{display:none;}
+.jThumbnailScroller#tS14 .jTscrollerPrevButton{display:none;}
+

@@ -1,0 +1,56 @@
+/* Default tags and Bootstrap classes */
+
+.lead { padding: 40px 0; }
+
+/* Posts */
+
+
+#posts { margin: 30px auto 0; }
+.post {
+	margin: 0 0 50px;
+	text-align: center;
+	width: 280px;
+	background-color:#dddddd;
+    box-shadow: 0px 0px 3px #aaaaaa;
+	/*padding:5px;*/
+}
+.post.cs2 { width: 610px; }
+.post img { width: 100%; }
+
+
+/* Large desktop */
+
+@media (min-width: 1200px) and (max-width:1299px){
+	.container > #posts .post { width: 255px; }
+	.container > #posts .post.cs2 { width: 560px; }
+}
+
+@media (min-width: 1300px) and (max-width:1370px) {
+    #posts {width: 1280px; margin: 20px auto;}
+	.post { margin: 0 0 20px; width: 240px; }/*{ width: 255px; }*/
+	.post.cs2 { width: 500px; }/*{ width: 530px; }*/
+    #dashboard{width:100%; margin:0px;}
+}
+ 
+@media (min-width: 1371px) {
+	.container > #posts .post { width: 255px; }
+	.container > #posts .post.cs2 { width: 560px; }
+}
+
+/* Portrait tablet to landscape and desktop */
+
+@media (min-width: 768px) and (max-width: 979px) {
+	.container-fluid > #posts .post { width: 280px; }
+	.container-fluid > #posts .post.cs2 { width: 610px; }
+	.container > #posts .post { width: 337px; }
+	.container > #posts .post.cs2 { width: 100%; }
+}
+ 
+
+
+/* Landscape phone to portrait tablet */
+
+@media (max-width: 767px) {
+	body { padding: 50px 20px; }
+	.post, .post.cs2 { width: 100%; }
+}

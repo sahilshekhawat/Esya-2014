@@ -1,0 +1,85 @@
+<html>
+<head>
+    <title>Login</title>
+ <style type="text/css">
+    {% load staticfiles %}
+  
+  body
+  {
+  background-image: url('{% static "home/coolefieds_background.jpg" %}') ;
+  background-size: 100%;
+  }
+  
+  #login_form
+  {
+  	margin-top: 25%;
+	margin-left: 39%;
+	width: 350px;
+	height: 160px;
+	border-radius: 10px;
+	background-color: rgba(155,205,155,0.6);
+	}
+input#username
+{   
+    width: 200px;
+	color : #747862;
+	height:30px;
+	border:2px solid lightgray;
+	padding:4px 8px;
+	
+	font-size:14px;
+    border-radius: 10px;
+}
+
+input#password
+{
+	width: 200px;
+	color : #747862;
+	height:30px;
+	border:2px solid lightgray;
+	padding:4px 8px;
+	
+	font-size:14px;
+    border-radius: 10px;
+    
+    }
+    
+  input#submit
+  {
+  width:90px;
+  height:30px;
+  }
+    
+  div#last
+  {
+  padding-top: 190px;
+  }
+  </style>
+</head>
+<body>
+<div id="login_form">
+   
+    
+    <form enctype='multipart/form-data' action="" method="post">
+     <fieldset>
+     <legend> <h1 style="align:center;"> Login </h1></legend>
+
+    {% if form.errors %}
+        <p style="color: red;">
+            Please correct the error{{ form.errors|pluralize }} below.
+        </p>
+    {% endif %}
+    <table>
+    <tr>
+    <td>
+        <label for="username" > Username: &nbsp; </label> </td> <td> <input type="text" name="username" id="username"> </td> </tr>
+       <tr><td> <label for="password"> Password: &nbsp; </label></td><td> <input type="password" name="password" id="password"> </td></tr>
+        <tr> <td> {% csrf_token %} </td> <td> </td></tr>
+        <tr><td></td><td><input type="submit" value="Submit" id="submit"></td></tr>
+        </table>
+        </fieldset>
+    </form>
+    </div>
+    <div id="last" style="margin-top:190px;">.</div>
+</body>
+</html>

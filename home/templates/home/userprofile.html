@@ -1,0 +1,79 @@
+{% extends "home/base.html" %}
+
+{% block title %}Welcome {{user.1}}{% endblock title %}
+
+{% block content %}
+<style>
+    
+    img#profile
+    {
+        width:200px;
+        height:200px;
+        float: left;
+    }
+    
+    label
+    {
+        font-size: 18px;
+        text-align: center;
+    }
+    
+    </style>
+
+{% load staticfiles %}  <br />
+
+ <img id="profile" src="static/{{b.profile_pic}}" style="margin:10px;margin-right:50px;"/> 
+
+
+<table style="width:40%;margin-left:50px;margin-top:12px;">
+    <tr>
+        <td>
+            <label> Full Name: </label>
+            </td>
+        <td>
+            <label> {{c.first_name}} {{c.last_name}}</label>
+            </td>
+        </tr>
+        <tr>  
+        <td>
+            <label> Email: </label>
+        </td>
+        <td>
+            <label> {{c.email}}  </label>
+            </td>
+        <td>
+            </tr>
+        <tr>  
+        <td>
+            <label> College: </label>
+        </td>
+        <td>
+            <label> IIIT-D </label>
+        </td>
+        <td>
+            </tr>
+    <tr>  
+        <td>
+            <label> Last Login: </label>
+        </td>
+        <td>
+            <label> {{c.last_login}} </label>
+        </td>
+        <td>
+            </tr>
+    
+    <tr>  
+        <td>
+            <label> Joined On: </label>
+        </td>
+        <td>
+            <label> {{c.date_joined}} </label>
+        </td>
+        <td>
+            </tr>
+    
+    </table>
+
+<br />
+<br />
+{% endblock %}

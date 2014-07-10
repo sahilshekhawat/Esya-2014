@@ -1,0 +1,37 @@
+{% extends "home/base.html" %}
+
+{% block title %}Welcome {{user.first_name}}{% endblock title %}
+
+{% block emailcheck %}
+
+{% if Message %}
+<div class="message">{{Message}}</div>
+{% endif %}
+
+{% endblock emailcheck %}
+
+{% block content %}
+	
+	<!-- Posts -->
+<div class="container" id="dashboard">
+		<div id="posts">
+		<a href="/add-ad">
+			<div class="post">
+				<img src="/static/home/images/youradhere11.gif">
+			</div>
+		</a>
+<!--		{% for i in Adverts %}
+		<a href="/post/{{i.id}}">
+			<div class="post">
+					<img src="{{STATIC_URL}}{{i.photo}}">
+					<br>
+				<br>
+				<strong>{{i.title}}</strong><br>
+				<small>{{i.price}}</small>
+			</div>
+		</a>
+		{% endfor %} -->	
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,934 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		{% load staticfiles %}
+		<meta charset="utf-8">
+		<title>FaceMother</title>
+
+	<!--	<script type="text/javascript">
+			if(!/chrom(e|ium)/.test(navigator.userAgent.toLowerCase()))
+				alert("Some of features are not supported by your browser. Use chrome");
+		</script>  -->
+
+		<link rel="Shortcut Icon" type="image/x-icon" href="{% static 'home/images/favicon.png' %}" />
+		<link href="http://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet" type="text/css">
+
+		<!-- <link type="text/css" media="screen" rel="stylesheet" href="{% static 'home/awwwards.css" /> !-->
+
+		<link rel="stylesheet" href="{% static 'home/stylesheets/pace.css' %}">
+		<link rel="stylesheet" href="{% static 'home/stylesheets/app.css' %}">
+		<link rel="stylesheet" href="{% static 'home/stylesheets/bigvideo.css' %}">		
+		<script src="{% static 'home/javascripts/libs/jquery-2.0.3.min.js' %}"></script>
+		<script src="{% static 'home/javascripts/libs/jquery.uploadify.min.js' %}"></script>
+		<script data-pace-options='{ "ajax": false }' src="{% static 'home/javascripts/libs/pace.min.js'%}"></script>
+		<script src="{% static 'home/javascripts/libs/buscape-api.js' %}"></script>
+		<script src="{% static 'home/javascripts/libs/motio.min.js' %}"></script>
+		<script src="{% static 'home/javascripts/yt.js' %}"></script>
+		<script src="{% static 'home/javascripts/libs/video.js' %}"></script>
+		<script src="{% static 'home/javascripts/libs/bigvideo.js' %}"></script>
+		<script src="{% static 'home/javascripts/libs/ion.sound.min.js' %}"></script>
+		<script src="{% static 'home/javascripts/libs/facepp-sdk.min.js' %}"></script>
+		<script src="{% static 'home/javascripts/libs/jquery.spriteOnHover-0.2.5.min.js' %}"></script>
+		<script src="{% static 'home/javascripts/app.js' %}"></script>
+		<script src="{% static 'home/javascripts/appevents.js' %}"></script>
+
+
+		<!--<script src="{% static 'home/javascripts/app.js' %}"></script>-->
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-50485440-1', 'facemother.co');
+			ga('send', 'pageview');
+
+		</script>
+	</head>
+	<body>
+		<video id="awesome_video" src="{{	STATIC_URL }}home/video_background.webm" type="video/webm" autoplay></video>
+		<script type="text/javascript">
+		  var index = 1,
+		      playlist = ['{{	STATIC_URL }}home/video_background.webm', '{{	STATIC_URL }}home/video_background.webm', '{{	STATIC_URL }}home/video_background.webm'],
+		      video = document.getElementById('awesome_video');
+
+		  video.addEventListener('ended', rotate_video, false);
+
+		  function rotate_video() {
+		    video.setAttribute('src', playlist[index]);
+		    video.load();
+		    index++;
+		    if (index >= playlist.length) { index = 0; }
+		  }
+		</script>
+		<style>
+		#awesome_video { 
+			position: absolute;
+			min-width: 100%;
+			min-height: 100%;
+			vertical-align: top;
+			z-index: 2;
+			margin: 0 0 0 0;
+			bottom: 50px;
+			top: -20%;
+    		left: 0;
+    		border: 0;
+    		bottom: 50px;
+		}
+		</style>
+		<div id="background-sound"></div>
+		<div id="video">
+			<button class="close"></button>
+			<div class="frame"></div>
+			<div id="yt"></div>
+		</div>
+		<div id="techathlon">
+			<div class="techathlon-content">
+				<p class="english">FaceMother is an initiative to make easier for people to put a smile on someone’s face. And Sicredi is an institution that believes in making life easier, in using technology to create ways for people to cooperate and get together. That’s why we take all available tools to build solutions that simplify the everyday routine, always looking for and investing in new systems and new technologies, constantly working to develop an easier and better way. It’s how you give people more time and energy to be spent with the really important things, and it’s how we cooperate with the future. FaceMother is a way of helping with the best ideas to find the perfect present to all moms, making the whole process faster, more accurate and simpler.</p>
+				<p class="portuguese">FaceMother é uma iniciativa que ajuda as pessoas a colocar um sorriso em alguém. E o Sicredi é uma instituição que acredita em tornar a vida mais fácil, em usar a tecnologia para criar formas de reunir e cooperar com as pessoas. É por isso que usamos todas as ferramentas disponíveis para construir soluções que simplificam o dia a dia, sempre buscando e investindo em novos sistemas e tecnologias, sempre trabalhando para desenvolver um caminho melhor e mais fácil. É dessa forma que você dá às pessoas mais tempo e energia para aproveitar com o que é realmente importante, e é assim que cooperamos com o futuro. O FaceMother é uma maneira de ajudar com as melhores ideias para encontrar o presente perfeito a todas as mães, fazendo com que o processo fique muito mais rápido, preciso e simples.</p>
+				<p class="spanish">Facemother es una iniciativa que ayuda a las personas a colocar sonrisos en alguien. Sicredi es una institución que hace la vida mas facil, utilizando tecnologia para unir personas y cooperar con ellas. Es por eso que utilizamos todas las herramientas para construir soluciones que ayudan el dia a dia, simpre buscando y invirtiendo en nuevos sistemas e tecnologias, sempre trabajando para hacer un camino mejor y más fácil. Desta forma usted le da a las personas más tiempo y energia para aprovechar con quien realmente es importante, y es así que cooperamos con el futuro. Facemother es una manera de ayudar con las mejores ideas para encontrar el regalo perfecto a todas las mamás, haciendo el proceso mas rapido, preciso y simple.</p>
+			</div>
+			<ul>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+			</ul>
+			<button class="close"></button>
+		</div>
+
+		<!--<div id="eceevents">
+			<div class="eceevents-content">
+				<p class="english">FaceMother is an initiative to make easier for people to put a smile on someone’s face. And Sicredi is an institution that believes in making life easier, in using technology to create ways for people to cooperate and get together. That’s why we take all available tools to build solutions that simplify the everyday routine, always looking for and investing in new systems and new technologies, constantly working to develop an easier and better way. It’s how you give people more time and energy to be spent with the really important things, and it’s how we cooperate with the future. FaceMother is a way of helping with the best ideas to find the perfect present to all moms, making the whole process faster, more accurate and simpler.</p>
+				<p class="portuguese">FaceMother é uma iniciativa que ajuda as pessoas a colocar um sorriso em alguém. E o Sicredi é uma instituição que acredita em tornar a vida mais fácil, em usar a tecnologia para criar formas de reunir e cooperar com as pessoas. É por isso que usamos todas as ferramentas disponíveis para construir soluções que simplificam o dia a dia, sempre buscando e investindo em novos sistemas e tecnologias, sempre trabalhando para desenvolver um caminho melhor e mais fácil. É dessa forma que você dá às pessoas mais tempo e energia para aproveitar com o que é realmente importante, e é assim que cooperamos com o futuro. O FaceMother é uma maneira de ajudar com as melhores ideias para encontrar o presente perfeito a todas as mães, fazendo com que o processo fique muito mais rápido, preciso e simples.</p>
+				<p class="spanish">Facemother es una iniciativa que ayuda a las personas a colocar sonrisos en alguien. Sicredi es una institución que hace la vida mas facil, utilizando tecnologia para unir personas y cooperar con ellas. Es por eso que utilizamos todas las herramientas para construir soluciones que ayudan el dia a dia, simpre buscando y invirtiendo en nuevos sistemas e tecnologias, sempre trabajando para hacer un camino mejor y más fácil. Desta forma usted le da a las personas más tiempo y energia para aprovechar con quien realmente es importante, y es así que cooperamos con el futuro. Facemother es una manera de ayudar con las mejores ideas para encontrar el regalo perfecto a todas las mamás, haciendo el proceso mas rapido, preciso y simple.</p>
+			</div>
+			<ul>
+				<li><a href="{% static 'home/"></a></li>
+				<li><a href="{% static 'home/"></a></li>
+				<li><a href="{% static 'home/"></a></li>
+			</ul>
+			<button class="close"></button>
+		</div>
+		!-->
+		<div id="funevents">
+			<div class="funevents-content">
+				<p class="english">FaceMother is an initiative to make easier for people to put a smile on someone’s face. And Sicredi is an institution that believes in making life easier, in using technology to create ways for people to cooperate and get together. That’s why we take all available tools to build solutions that simplify the everyday routine, always looking for and investing in new systems and new technologies, constantly working to develop an easier and better way. It’s how you give people more time and energy to be spent with the really important things, and it’s how we cooperate with the future. FaceMother is a way of helping with the best ideas to find the perfect present to all moms, making the whole process faster, more accurate and simpler.</p>
+				<p class="portuguese">FaceMother é uma iniciativa que ajuda as pessoas a colocar um sorriso em alguém. E o Sicredi é uma instituição que acredita em tornar a vida mais fácil, em usar a tecnologia para criar formas de reunir e cooperar com as pessoas. É por isso que usamos todas as ferramentas disponíveis para construir soluções que simplificam o dia a dia, sempre buscando e investindo em novos sistemas e tecnologias, sempre trabalhando para desenvolver um caminho melhor e mais fácil. É dessa forma que você dá às pessoas mais tempo e energia para aproveitar com o que é realmente importante, e é assim que cooperamos com o futuro. O FaceMother é uma maneira de ajudar com as melhores ideias para encontrar o presente perfeito a todas as mães, fazendo com que o processo fique muito mais rápido, preciso e simples.</p>
+				<p class="spanish">Facemother es una iniciativa que ayuda a las personas a colocar sonrisos en alguien. Sicredi es una institución que hace la vida mas facil, utilizando tecnologia para unir personas y cooperar con ellas. Es por eso que utilizamos todas las herramientas para construir soluciones que ayudan el dia a dia, simpre buscando y invirtiendo en nuevos sistemas e tecnologias, sempre trabajando para hacer un camino mejor y más fácil. Desta forma usted le da a las personas más tiempo y energia para aprovechar con quien realmente es importante, y es así que cooperamos con el futuro. Facemother es una manera de ayudar con las mejores ideas para encontrar el regalo perfecto a todas las mamás, haciendo el proceso mas rapido, preciso y simple.</p>
+			</div>
+			<ul>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+			</ul>
+			<button class="close"></button>
+		</div>
+		
+		<div id="entertainment">
+			<div class="entertainment-content">
+				<p class="english">FaceMother is an initiative to make easier for people to put a smile on someone’s face. And Sicredi is an institution that believes in making life easier, in using technology to create ways for people to cooperate and get together. That’s why we take all available tools to build solutions that simplify the everyday routine, always looking for and investing in new systems and new technologies, constantly working to develop an easier and better way. It’s how you give people more time and energy to be spent with the really important things, and it’s how we cooperate with the future. FaceMother is a way of helping with the best ideas to find the perfect present to all moms, making the whole process faster, more accurate and simpler.</p>
+				<p class="portuguese">FaceMother é uma iniciativa que ajuda as pessoas a colocar um sorriso em alguém. E o Sicredi é uma instituição que acredita em tornar a vida mais fácil, em usar a tecnologia para criar formas de reunir e cooperar com as pessoas. É por isso que usamos todas as ferramentas disponíveis para construir soluções que simplificam o dia a dia, sempre buscando e investindo em novos sistemas e tecnologias, sempre trabalhando para desenvolver um caminho melhor e mais fácil. É dessa forma que você dá às pessoas mais tempo e energia para aproveitar com o que é realmente importante, e é assim que cooperamos com o futuro. O FaceMother é uma maneira de ajudar com as melhores ideias para encontrar o presente perfeito a todas as mães, fazendo com que o processo fique muito mais rápido, preciso e simples.</p>
+				<p class="spanish">Facemother es una iniciativa que ayuda a las personas a colocar sonrisos en alguien. Sicredi es una institución que hace la vida mas facil, utilizando tecnologia para unir personas y cooperar con ellas. Es por eso que utilizamos todas las herramientas para construir soluciones que ayudan el dia a dia, simpre buscando y invirtiendo en nuevos sistemas e tecnologias, sempre trabajando para hacer un camino mejor y más fácil. Desta forma usted le da a las personas más tiempo y energia para aprovechar con quien realmente es importante, y es así que cooperamos con el futuro. Facemother es una manera de ayudar con las mejores ideas para encontrar el regalo perfecto a todas las mamás, haciendo el proceso mas rapido, preciso y simple.</p>
+			</div>
+			<ul>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+			</ul>
+			<button class="close"></button>
+		</div>
+		
+		<div id="flagship">
+			<div class="flagship-content">
+				<p class="english">FaceMother is an initiative to make easier for people to put a smile on someone’s face. And Sicredi is an institution that believes in making life easier, in using technology to create ways for people to cooperate and get together. That’s why we take all available tools to build solutions that simplify the everyday routine, always looking for and investing in new systems and new technologies, constantly working to develop an easier and better way. It’s how you give people more time and energy to be spent with the really important things, and it’s how we cooperate with the future. FaceMother is a way of helping with the best ideas to find the perfect present to all moms, making the whole process faster, more accurate and simpler.</p>
+				<p class="portuguese">FaceMother é uma iniciativa que ajuda as pessoas a colocar um sorriso em alguém. E o Sicredi é uma instituição que acredita em tornar a vida mais fácil, em usar a tecnologia para criar formas de reunir e cooperar com as pessoas. É por isso que usamos todas as ferramentas disponíveis para construir soluções que simplificam o dia a dia, sempre buscando e investindo em novos sistemas e tecnologias, sempre trabalhando para desenvolver um caminho melhor e mais fácil. É dessa forma que você dá às pessoas mais tempo e energia para aproveitar com o que é realmente importante, e é assim que cooperamos com o futuro. O FaceMother é uma maneira de ajudar com as melhores ideias para encontrar o presente perfeito a todas as mães, fazendo com que o processo fique muito mais rápido, preciso e simples.</p>
+				<p class="spanish">Facemother es una iniciativa que ayuda a las personas a colocar sonrisos en alguien. Sicredi es una institución que hace la vida mas facil, utilizando tecnologia para unir personas y cooperar con ellas. Es por eso que utilizamos todas las herramientas para construir soluciones que ayudan el dia a dia, simpre buscando y invirtiendo en nuevos sistemas e tecnologias, sempre trabajando para hacer un camino mejor y más fácil. Desta forma usted le da a las personas más tiempo y energia para aprovechar con quien realmente es importante, y es así que cooperamos con el futuro. Facemother es una manera de ayudar con las mejores ideas para encontrar el regalo perfecto a todas las mamás, haciendo el proceso mas rapido, preciso y simple.</p>
+			</div>
+			<ul>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+			</ul>
+			<button class="close"></button>
+		</div>
+		
+		<div id="unleash">
+			<div class="unleash-content">
+				<p class="english">FaceMother is an initiative to make easier for people to put a smile on someone’s face. And Sicredi is an institution that believes in making life easier, in using technology to create ways for people to cooperate and get together. That’s why we take all available tools to build solutions that simplify the everyday routine, always looking for and investing in new systems and new technologies, constantly working to develop an easier and better way. It’s how you give people more time and energy to be spent with the really important things, and it’s how we cooperate with the future. FaceMother is a way of helping with the best ideas to find the perfect present to all moms, making the whole process faster, more accurate and simpler.</p>
+				<p class="portuguese">FaceMother é uma iniciativa que ajuda as pessoas a colocar um sorriso em alguém. E o Sicredi é uma instituição que acredita em tornar a vida mais fácil, em usar a tecnologia para criar formas de reunir e cooperar com as pessoas. É por isso que usamos todas as ferramentas disponíveis para construir soluções que simplificam o dia a dia, sempre buscando e investindo em novos sistemas e tecnologias, sempre trabalhando para desenvolver um caminho melhor e mais fácil. É dessa forma que você dá às pessoas mais tempo e energia para aproveitar com o que é realmente importante, e é assim que cooperamos com o futuro. O FaceMother é uma maneira de ajudar com as melhores ideias para encontrar o presente perfeito a todas as mães, fazendo com que o processo fique muito mais rápido, preciso e simples.</p>
+				<p class="spanish">Facemother es una iniciativa que ayuda a las personas a colocar sonrisos en alguien. Sicredi es una institución que hace la vida mas facil, utilizando tecnologia para unir personas y cooperar con ellas. Es por eso que utilizamos todas las herramientas para construir soluciones que ayudan el dia a dia, simpre buscando y invirtiendo en nuevos sistemas e tecnologias, sempre trabajando para hacer un camino mejor y más fácil. Desta forma usted le da a las personas más tiempo y energia para aprovechar con quien realmente es importante, y es así que cooperamos con el futuro. Facemother es una manera de ayudar con las mejores ideas para encontrar el regalo perfecto a todas las mamás, haciendo el proceso mas rapido, preciso y simple.</p>
+			</div>
+			<ul>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+			</ul>
+			<button class="close"></button>
+		</div>
+		
+		<div id="login">
+			<div style="margin-top:35px;text-align: center;font-weigth:600;font-size:24px;color:#0D9986;text-shadow: 0.6px 0.6px #078877;">LOGIN</div>
+			<div class="login-content">
+				<div id="form_wrapper" class="form_wrapper">
+					<form class="login">
+							<div>
+								<label>Username:</label>
+								<input type="text" />
+								<span class="error">This is an error</span>
+							</div>
+							<div>
+								<label>Password: <a href="" rel="forgot_password" class="forgot linkform">Forgot your password?</a></label>
+								<input type="password" />
+								<span class="error">This is an error</span>
+							</div>
+							<div class="bottom">
+								<div class="remember"><input type="checkbox" /><span>Keep me logged in</span></div>
+								<input type="submit" value="Login"></input>
+								<div class="clear"></div>
+							</div>
+							<div class="reg1" style="float:left;font-size:12px;margin-top:5px;margin-left:2px;">You don't have an account yet?<div class="reg2" style="color:#42A98D;float:right;padding-left:2px"> Register here</div></div>
+					</form>
+				</div>
+			</div>
+			<button class="close"></button>
+		</div>
+		
+		<div id="register">
+			<div style="margin-top:55px;text-align: center;font-weigth:600;font-size:24px;color:#0D9986;text-shadow: 0.6px 0.6px #078877;">REGISTER</div>
+			<div class="register-content">
+				<div id="form_wrapper" class="form_wrapper">
+					<form class="register">
+						<div class="column">
+							<div>
+								<label>First Name:</label>
+								<input type="text" />
+								<span class="error">This is an error</span>
+							</div>
+							<div>
+								<label>Last Name:</label>
+								<input type="text" />
+								<span class="error">This is an error</span>
+							</div>
+							<div>
+								<label>College</label>
+								<input type="text"/>
+								<span class="error">This is an error</span>
+							</div>
+						</div>
+						<div class="column">
+							<div>
+								<label>Username:</label>
+								<input type="text"/>
+								<span class="error">This is an error</span>
+							</div>
+							<div>
+								<label>Email:</label>
+								<input type="text" />
+								<span class="error">This is an error</span>
+							</div>
+							<div>
+								<label>Password:</label>
+								<input type="password" />
+								<span class="error">This is an error</span>
+							</div>
+						</div>
+						<div class="bottom">
+							<!--
+							<div class="remember">
+								<input type="checkbox" />
+								<span>Send me updates</span>
+							</div> !-->
+							<div class="shift"></div>
+							<input type="submit" value="Register" />
+							<!--<a href="{% static 'home/index.html" rel="login" class="linkform">You have an account already? Log in here</a>!-->
+							<div class="clear"></div>
+						</div>
+						<div class="log1" style="float:right;font-size:12px;margin-top:10.5px;margin-left:100px">You have an account already?<div class="log2" style="color:#42A98D;float:right;padding-left:2px">Log in here</div></div>
+					</form>
+				</div>
+			</div>
+			<button class="close"></button>
+		</div>
+		
+		<div id="aboutesya">
+			<div style="margin-top:55px;text-align: center;font-weigth:600;font-size:24px;color:#0D9986;text-shadow: 0.6px 0.6px #078877;">ABOUT ESYA</div>
+			<div class="aboutesya-content">
+				<p>
+
+REGULAMENTO “FACEMOTHER”
+
+”Facemother” é uma aplicação interativa e recreativa disponibilizada pelo Banco Cooperativo
+Sicredi, localizado na Av. Assis Brasil, 3940 – CEP 91060-900 – Porto Alegre - RS, inscrito no
+CNPJ/MF sob o nº 01.181.521/0001-55, mediante as condições estabelecidas neste
+Regulamento, que é aberto a pessoas com idade acima de 18 (dezoito) anos já completos e
+que queiram participar.
+
+</p>
+			</div>
+			<button class="close"></button>
+		</div>
+
+		
+		<div id="aboutiiitd">
+			<div style="margin-top:55px;text-align: center;font-weigth:600;font-size:24px;color:#0D9986;text-shadow: 0.6px 0.6px #078877;">ABOUT IIIT-DELHI</div>
+			<div class="aboutiiitd-content">
+				<p>
+
+REGULAMENTO “FACEMOTHER”
+
+”Facemother” é uma aplicação interativa e recreativa disponibilizada pelo Banco Cooperativo
+Sicredi, localizado na Av. Assis Brasil, 3940 – CEP 91060-900 – Porto Alegre - RS, inscrito no
+CNPJ/MF sob o nº 01.181.521/0001-55, mediante as condições estabelecidas neste
+Regulamento, que é aberto a pessoas com idade acima de 18 (dezoito) anos já completos e
+que queiram participar.
+
+</p>
+			</div>
+			<button class="close"></button>
+		</div>
+
+		<div id="schedule">
+			<div style="margin-top:55px;text-align: center;font-weigth:600;font-size:24px;color:#0D9986;text-shadow: 0.6px 0.6px #078877;">SCHEDULE</div>
+			<div class="schedule-content">
+				<p>
+
+REGULAMENTO “FACEMOTHER”
+
+”Facemother” é uma aplicação interativa e recreativa disponibilizada pelo Banco Cooperativo
+Sicredi, localizado na Av. Assis Brasil, 3940 – CEP 91060-900 – Porto Alegre - RS, inscrito no
+CNPJ/MF sob o nº 01.181.521/0001-55, mediante as condições estabelecidas neste
+Regulamento, que é aberto a pessoas com idade acima de 18 (dezoito) anos já completos e
+que queiram participar.
+
+</p>
+			</div>
+			<button class="close"></button>
+		</div>
+
+		<div id="reachus">
+			<div style="margin-top:55px;text-align: center;font-weigth:600;font-size:24px;color:#0D9986;text-shadow: 0.6px 0.6px #078877;">REACH US</div>
+			<div class="reachus-content">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28038.338940506892!2d77.272666!3d28.54596!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8ff4eba60cd65cee!2sIndraprastha+Institute+of+Information+Technology!5e0!3m2!1sen!2sus!4v1401179587780" width="430" height="480" frameborder="0" style="border-radius:5px;border:3px solid #07A078;"></iframe>
+			
+			<div class="formreach">
+						<p style="text-align: center">Indraprastha Institute of Information Technology, Delhi
+						<br>Okhla Phase III,
+						<br>Near Govindpuri Metro Station,
+						<br>New Delhi, 110020
+						<br><br></p>
+						<table style="margin-left:10px">		
+							<tr>
+								<td class="td-left">
+									Name:
+								</td>
+								<td class="td-right">
+									<input type="text" name="Name"><br>
+								</td>
+							</tr>
+							<tr>
+								<td class="td-left">
+									Email:
+								</td>
+								<td class="td-right">
+									<input type="text" name="E-mail"><br>
+								</td>
+							</tr>
+							<tr>
+								<td class="td-left">
+									Message:
+								</td>
+								<td class="td-right">
+									<textarea rows="12" cols="30">
+										Write Here
+									</textarea>
+								</td>
+							</tr>
+							<tr>
+								<td class="td-left">
+								</td>
+								<td class="td-right">
+									<input type="submit" value="Submit">
+								</td>
+							</tr>
+						</table>
+			</div>
+		</div>
+		<button class="close"></button>
+</div>
+
+
+<div id="contactus">
+	<div style="margin-top:55px;text-align: center;font-weigth:600;font-size:24px;color:#0D9986;text-shadow: 0.6px 0.6px #078877;">CONTACT US</div>
+			<div class="contactus-content">
+				<p>
+
+REGULAMENTO “FACEMOTHER”
+
+”Facemother” é uma aplicação interativa e recreativa disponibilizada pelo Banco Cooperativo
+Sicredi, localizado na Av. Assis Brasil, 3940 – CEP 91060-900 – Porto Alegre - RS, inscrito no
+CNPJ/MF sob o nº 01.181.521/0001-55, mediante as condições estabelecidas neste
+Regulamento, que é aberto a pessoas com idade acima de 18 (dezoito) anos já completos e
+que queiram participar.
+
+</p>
+			</div>
+			<button class="close"></button>
+		</div>
+
+		<div id="spons">
+			<div style="margin-top:55px;text-align: center;font-weigth:600;font-size:24px;color:#0D9986;text-shadow: 0.6px 0.6px #078877;">PAST SPONSORS</div>
+			<div class="spons-content">
+				<div class="sponsba">
+					<div class="sponsblock">
+					<div class="sponstexture">
+						<div class="sponsimage">
+				
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="sponsba1">
+					<div class="sponsblock">
+					<div class="sponstexture">
+						<div class="sponsblock21">
+						<div class="sponsimage1">
+				
+						</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="sponsba2">
+					<div class="sponsblock">
+					<div class="sponstexture">
+						<div class="sponsblock22">
+						<div class="sponsimage2">
+				
+						</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="sponsba3">
+					<div class="sponsblock">
+					<div class="sponstexture">
+						<div class="sponsblock23">
+						<div class="sponsimage3">
+				
+						</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="sponsba4">
+					<div class="sponsblock">
+					<div class="sponstexture">
+						<div class="sponsblock24">
+						<div class="sponsimage4">
+				
+						</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="sponsba5">
+					<div class="sponsblock">
+					<div class="sponstexture">
+						<div class="sponsblock25">
+						<div class="sponsimage5">
+				
+						</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="sponsba6">
+					<div class="sponsblock">
+					<div class="sponstexture">
+						<div class="sponsblock26">
+						<div class="sponsimage6">
+				
+						</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="sponsba7">
+					<div class="sponsblock">
+					<div class="sponstexture">
+						<div class="sponsblock27">
+						<div class="sponsimage7">
+				
+						</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="sponsba8">
+					<div class="sponsblock">
+					<div class="sponstexture">
+						<div class="sponsblock28">
+						<div class="sponsimage8">
+				
+						</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="sponsba9">
+					<div class="sponsblock">
+					<div class="sponstexture">
+						<div class="sponsblock29">
+						<div class="sponsimage9">
+				
+						</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="sponsba10">
+					<div class="sponsblock">
+					<div class="sponstexture">
+						<div class="sponsblock210">
+						<div class="sponsimage10">
+				
+						</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="sponsba11">
+					<div class="sponsblock">
+					<div class="sponstexture">
+						<div class="sponsblock211">
+						<div class="sponsimage11">
+				
+						</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="sponsba12">
+					<div class="sponsblock">
+					<div class="sponstexture">
+						<div class="sponsblock212">
+						<div class="sponsimage12">
+				
+						</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="sponsba13">
+					<div class="sponsblock">
+					<div class="sponstexture">
+						<div class="sponsblock213">
+						<div class="sponsimage13">
+				
+						</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="sponsba14">
+					<div class="sponsblock">
+					<div class="sponstexture">
+						<div class="sponsblock214">
+						<div class="sponsimage14">
+				
+						</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="sponsba15">
+					<div class="sponsblock">
+					<div class="sponstexture">
+						<div class="sponsblock215">
+						<div class="sponsimage15">
+				
+						</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="sponsba16">
+					<div class="sponsblock">
+					<div class="sponstexture">
+						<div class="sponsblock216">
+						<div class="sponsimage16">
+				
+						</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="sponsba17">
+					<div class="sponsblock">
+					<div class="sponstexture">
+						<div class="sponsblock217">
+						<div class="sponsimage17">
+				
+						</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="sponsba18">
+					<div class="sponsblock">
+					<div class="sponstexture">
+						<div class="sponsblock218">
+						<div class="sponsimage18">
+				
+						</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="sponsba19">
+					<div class="sponsblock">
+					<div class="sponstexture">
+						<div class="sponsblock219">
+						<div class="sponsimage19">
+				
+						</div>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			<button class="close"></button>
+		</div>
+			
+		<div id="rules">
+			<div style="margin-top:55px;text-align: center;font-weigth:600;font-size:24px;color:#0D9986;text-shadow: 0.6px 0.6px #078877;">ORGANISING COMMITTEE</div>
+			<div class="rules-content">
+				<div id="fbtn1" class="fbtn fbtnsou" onmouseover="document.getElementById('fbtn2').style.display = 'none';" onmouseout="document.getElementById('fbtn2').style.display = 'block';"><div style="margin-top:144px;">Events Coordinator</div><span></span></div>
+				<div id="fbtn2" class="fbtnmaneet fbtnsou" onmouseover="document.getElementById('fbtn1').style.display = 'none';" onmouseout="document.getElementById('fbtn1').style.display = 'block';"><div style="margin-top:144px;">Treasurer</div><span></span></div>
+				<div id="fbtn3" class="fbtnmanya fbtnsou" onmouseover="document.getElementById('fbtn4').style.display = 'none';" onmouseout="document.getElementById('fbtn4').style.display = 'block';"><div style="margin-top:144px;">Marketing Head</div><span></span></div>
+				<div id="fbtn4" class="fbtnprafful fbtnsou" onmouseover="document.getElementById('fbtn3').style.display = 'none';" onmouseout="document.getElementById('fbtn3').style.display = 'block';"><div style="margin-top:144px;">ECE events head</div><span></span></div>
+				<div id="fbtn5" class="fbtnraghav fbtnsou" onmouseover="document.getElementById('fbtn6').style.display = 'none';" onmouseout="document.getElementById('fbtn6').style.display = 'block';"><div style="margin-top:142px;">Non Technical <div style="margin-top:-8px">Events Head</div></div><span></span></div>
+				<div id="fbtn6" class="fbtnramon fbtnsou" onmouseover="document.getElementById('fbtn5').style.display = 'none';" onmouseout="document.getElementById('fbtn5').style.display = 'block';"><div style="margin-top:144px;">Convener</div><span></span></div>
+				<div id="fbtn7" class="fbtnsarthakb fbtnsou" onmouseover="document.getElementById('fbtn8').style.display = 'none';" onmouseout="document.getElementById('fbtn8').style.display = 'block';"><div style="margin-top:142px;">Infrastructural <div style="margin-top:-8px">Head</div></div><span></span></div>
+				<div id="fbtn8" class="fbtnsarthaka fbtnsou" onmouseover="document.getElementById('fbtn7').style.display = 'none';" onmouseout="document.getElementById('fbtn7').style.display = 'block';"><div style="margin-top:144px;">Design Head</div><span></span></div>
+				<div id="fbtn9" class="fbtnsid fbtnsou" onmouseover="document.getElementById('fbtn10').style.display = 'none';" onmouseout="document.getElementById('fbtn10').style.display = 'block';"><div style="margin-top:144px;">Mentor</div><span></span></div>
+				<div id="fbtn10" class="fbtnsimran fbtnsou" onmouseover="document.getElementById('fbtn9').style.display = 'none';" onmouseout="document.getElementById('fbtn9').style.display = 'block';"><div style="margin-top:144px;">Marketing Head</div><span></span></div>
+				<div id="fbtn11" class="fbtnumang fbtnsou" onmouseover="document.getElementById('fbtn12').style.display = 'none';" onmouseout="document.getElementById('fbtn12').style.display = 'block';"><div style="margin-top:144px;">Publicity Manager</div><span></span></div>
+				<div id="fbtn12" class="fbtnutkarsh fbtnsou" onmouseover="document.getElementById('fbtn11').style.display = 'none';" onmouseout="document.getElementById('fbtn11').style.display = 'block';"><div style="margin-top:144px;">Technical Head</div><span></span></div>
+				
+			</div>
+			<button class="close"></button>
+		</div>
+		
+		<div id="designed">
+			<div style="margin-top:65px;margin-left:253px;font-weigth:600;font-size:24px;color:#0D9986;text-shadow: 0.6px 0.6px #078877;">DESIGN TEAM</div>
+			<div class="designed-content">
+				<div style="margin-left:-35px;font-weight:600;font-size:14px;">HEAD</div>
+				<div class="fbtnsarthakah fbtnsou"><span></span></div>
+				<div style="margin-top:170px;margin-left:-35px;font-weight:600;font-size:14px;">WEBSITE</div>
+				<div class="fbtnmohit fbtnsou" onmouseover="document.getElementById('fbtnsan').style.display = 'none';" onmouseout="document.getElementById('fbtnsan').style.display = 'block';"><span></span></div>
+				<div id="fbtnsan" class="fbtnsanchit fbtnsou"><span></span></div>
+				<div class="fbtnsoumya fbtnsou" onmouseover="document.getElementById('fbtnsan').style.display = 'none';" onmouseout="document.getElementById('fbtnsan').style.display = 'block';"><span></span></div>
+				<div style="margin-top:170px;margin-left:-35px;font-weight:600;font-size:14px;">GRAPHICS</div>
+				<div class="fbtnmallika fbtnsou" onmouseover="document.getElementById('fbtnsri').style.display = 'none';" onmouseout="document.getElementById('fbtnsri').style.display = 'block';"><span></span></div>
+				<div id="fbtnsri" class="fbtnsrishti fbtnsou"><span></span></div>
+				<div class="fbtnvedant fbtnsou" onmouseover="document.getElementById('fbtnsri').style.display = 'none';" onmouseout="document.getElementById('fbtnsri').style.display = 'block';"><span></span></div>
+				<div style="margin-top:170px;margin-left:-35px;font-weight:600;font-size:14px;">SPECIAL MENTION</div>
+				<div class="fbtngitanshu fbtnsou" onmouseover="document.getElementById('fbtnmag').style.display = 'none';" onmouseout="document.getElementById('fbtnmag').style.display = 'block';"><span></span></div>
+				<div id="fbtnmag" class="fbtnmagus fbtnsou"><span></span></div>
+				<div class="fbtnmayank fbtnsou" onmouseover="document.getElementById('fbtnmag').style.display = 'none';" onmouseout="document.getElementById('fbtnmag').style.display = 'block';"><span></span></div>
+				</div>
+			<button class="close"></button>
+		</div>
+
+		<div id="teaser">
+			<button class="button">Pular</button>
+		</div>
+
+		<div id="canvas">
+			<span class="small-logo"></span>
+			<input type="button" class="button one watch-the-video" style="top:10px;" value="Watch the video"></input>
+			<input type="button" class="button one wtf" value="All Events"></input>
+			<input type="button" class="button one events" onclick="window.location.href='/individualevents'" value="Events"></input>
+			<input type="button" class="button one techathlon" value="Techathlon"></button>
+			<input type="button" class="button one eceevents" value="ECE Events" onclick="window.location.href='https://www.google.co.in/'"></input>
+			<input class="button one funevents" type="button" value="Fun Events"></button>
+			<input class="button one entertainment" type="button" value="Entertainment"></button>
+			<input class="button one flagship" type="button" value="Flagship"></button>
+			<input class="button one unleash" type="button" value="Unleash"></button>
+			
+			<input type="button" class="button two login1" value="Login" onclick="window.location.href='/login'" ></button>
+			<input type="button" class="button two register1" value="REGISTER" onclick="window.location.href='/register'"></button>
+			<!--<div class="button entry entry1"></div>!-->
+			<section id="home" class="current">
+				<div class="animate">
+					<!--<a href="{% static 'home/" id="logo"></a>!-->
+					<!--
+					<p><span class="font">Descubra o presente que é a cara da sua mãe.</span><br/><br/>Para cooperar com a escolha do presente da sua mãe o Sicredi traz uma tecnologia vinda do futuro. Um aplicativo que descobre o presente ideal a partir da análise dos traços faciais da sua mãe. Escolha uma foto de rosto dela, faça upload ou, se tiver ela marcada no seu Facebook, conecte com sua conta. Em alguns segundos, cada milímetro da foto será analisado pela mais alta tecnologia e você vai descobrir qual o presente perfeito.</p>
+					<label class="checkbox">
+						<span></span>
+						<input type="checkbox" value="true" name="rules">
+						Li e aceito o <a href="{% static 'home/" class="rules">regulamento</a>
+						<div class="error">Você precisa aceitar o regulamento</div>
+					</label>
+					!-->
+					<!--<a href="{% static 'home/" class="button navigate participate">Participar</a>!-->
+				</div>
+			</section>
+			
+			<section id="upload" data-timestamp="1400861845" data-token="36719160bcba61d33f9a59ab22b299de">
+				<div class="facebook-error">Oops. Esta foto da não está dentro dos requisitos. Escolha outra foto para descobrir o presente que é a cara da sua mãe.</div>
+				<div class="animate">
+					<div class="frame">
+						<div class="response">
+							<div class="photo">
+								<div class="layer two"></div>
+								<div class="layer one"></div>
+							</div>
+
+							<div class="shine"></div>
+							<div class="glow"></div>
+						</div>
+						<div class="face" id="face"></div>
+					</div>
+					<input id="photo-upload" name="photo-upload" type="file" multiple="false">
+					<button class="facebook-button"><span></span></button>
+
+					<p class="text one">Escolha uma foto de sua mãe para iniciar o aplicativo ou conecte-se com o Facebook.</p>
+
+					<div class="text two">
+						<a href="#upload" class="button scan">Escanear</a>
+						<span class="carregando"></span>
+						<a href="#result" class="button navigate scan-fake-button"></a>
+					</div>
+				</div>
+
+				<div id="loading-1" class="loaders">
+					<span class="text">Primeiro texto</span>
+				</div>
+				<div id="loading-2" class="loaders">
+					<span class="text">Segundo texto</span>
+				</div>
+				<div id="loading-3" class="loaders">
+					<span class="text">Terceiro texto</span>
+				</div>
+			</section>
+			<div class="pop-up-container">
+				<a href="" class="fakelink" target="blank"></a>
+				<div class="pop-up-bg">
+					<button class="close"></button>
+					<div class="pop-up">
+						<div class="box-one">
+							<img src="{% static 'home/images/card.png' %}">
+							<p>Encontramos o presente que é a cara da sua mãe. Utilize os cartões Sicredi Visa e tenha até 40 dias para pagar.
+							</p>
+							<a href="" class="button buscape-bt">Vizualizar Produto no Buscapé</a>
+						</div>
+						<div class="box-two">
+							<p>Você está sendo direcionado para o site do <a href="http://www.buscape.com.br/" target="blank">Buscapé.</a></p>
+							<p>O Sicredi não se responsabiliza pela comercialização e entrega dos produtos.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<section id="result">
+				<div class="animate">
+					<h3 class="title">Encontramos os produtos que são a cara da sua mãe!</h3>
+					<div class="blur-background-left">
+						<div class="product-container left">
+							<div class="navigation">
+								<a class="up"></a>
+								<a class="down"></a>
+							</div>
+							<div class="product-info active">
+								<h3>Óculos Pink Explosion</h3>
+								<div class="img">
+									<a href="" class="link"><img src="http://placehold.it/127x127"></a>
+								</div>
+								<p>Teste de texto do óculos, ou da imagem que vai ter no lugar desse próprio texto.</p>
+							</div>
+							<div class="product-info">
+								<h3>Óculos Pink Explosion</h3>
+								<div class="img">
+									<a href="" class="link"><img src="http://placehold.it/127x127"></a>
+								</div>
+								<p>Teste de texto do óculos, ou da imagem que vai ter no lugar desse próprio texto.</p>
+							</div>
+							<div class="product-info">
+								<h3>Óculos Pink Explosion</h3>
+								<div class="img">
+									<a href="" class="link"><img src="http://placehold.it/127x127"></a>
+								</div>
+								<p>Teste de texto do óculos, ou da imagem que vai ter no lugar desse próprio texto.</p>
+							</div>
+						</div>
+					</div>
+					<div class="blur-background-right">
+						<div class="product-container right">
+							<div class="navigation">
+								<a class="up"></a>
+								<a class="down"></a>
+							</div>
+							<div class="product-info active">
+								<h3>Óculos Pink Explosion</h3>
+								<div class="img">
+									<a href="" class="link"><img src="http://placehold.it/127x127"></a>
+								</div>
+								<p>Teste de texto do óculos, ou da imagem que vai ter no lugar desse próprio texto.</p>
+							</div>
+							<div class="product-info">
+								<h3>Óculos Pink Explosion</h3>
+								<div class="img">
+									<a href="" class="link"><img src="http://placehold.it/127x127"></a>
+								</div>
+								<p>Teste de texto do óculos, ou da imagem que vai ter no lugar desse próprio texto.</p>
+							</div>
+							<div class="product-info">
+								<h3>Óculos Pink Explosion</h3>
+								<div class="img">
+									<a href="" class="link"><img src="http://placehold.it/127x127"></a>
+								</div>
+								<p>Teste de texto do óculos, ou da imagem que vai ter no lugar desse próprio texto.</p>
+							</div>
+						</div>
+					</div>
+					<div class="data">
+						<div class="gender">
+							<span>Gênero :</span>
+							<span class="data">Feminino</span>
+						</div>
+						<div class="eye-distance">
+							<span>Distância dos olhos</span>
+							<span class="data">14.23%</span>
+						</div>
+						<div class="left-top one">
+						</div>
+						<div class="age">
+							<span>Idade Aprox.</span>
+							<span class="data">14</span>
+						</div>
+						<div class="left-top two">
+						</div>
+						<div class="nose-position">
+							<span>Posição do nariz</span>
+							<span class="data">14.23%</span>
+						</div>
+						<div class="right-top one">
+						</div>
+						<div class="mouth-position">
+							<span>Posição da boca</span>
+							<span class="data">14.23%</span>
+						</div>
+						<div class="right-top two">
+						</div>
+						<div class="smile">
+							<span>Está sorrindo</span>
+						</div>
+						<div class="left-bottom">
+						</div>
+						<div class="glass">
+							<span>Usa óculos</span>
+						</div>
+						<div class="right-bottom">
+						</div>
+						<div class="race">
+							<span>Raça :</span>
+							<span class="data">Caucasiano</span>
+						</div>
+						<div class="middle-left"></div>
+						<div class="middle-right"></div>
+						<div class="top-line"></div>
+					</div>
+					<div class="frame">
+						<div class="response">
+							<div class="photo">
+								<div class="layer one"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a class="button share facebook" data-image="thumb_face.png" data-title="Os cientistas do FaceMother acabaram de descobrir presentes que combinam com a minha mãe. Descubra em: http://FaceMother.co">Compartilhar</a>
+				<a href="" class="button again">Try Again</a>
+			</section>
+
+			<footer id="footer">
+				<!--<span class="copyright">© 2014 facemother todos os direitos reservados.</span> !-->
+				<ul>
+					<li>
+						<a href="#canvas" class="toggle-sound">
+							<span></span>
+							<span></span>
+							<span></span>
+						</a>
+					</li>
+					
+					<li><li><a href="" class="facebook"><span></span></a></li></li>
+					<li><li><a href="" class="twitter"><span></span></a></li></li>
+					<li><li><a href="https://plus.google.com/share?url=http://www.facemother.co/" target="blank" class="plus"><span></span></a></li></li>
+					
+					<li><a href="" class="rules" style="margin-right:150px;border-right: 1px solid #303435;">OC Team</a></li>
+					<li><a href="" class="spons">Sponsors</a></li>
+					<!--<li><a href="{% static 'home/" class="contactus">Contact us</a></li>!-->
+					<li><a href="" class="reachus">Reach us</a></li>
+					<li><a href="" class="schedule">Schedule</a></li>
+					<li><a href="" class="aboutiiitd">About IIITD</a></li>
+					<li><a href="" class="aboutesya">About Esya</a></li>
+				</ul>
+				<div class="designed">Website designed by : <a href="" class="designer">#excode</a></div>
+				<!--<a href="{% static 'home/" class="sicredi"></a> !-->
+			</footer>
+		</div>
+
+		<div class="background"></div>
+		
+		<!--<div id="loading-video" class="bv" data-video="videos/loading.mp4"></div>!--> 
+		<div id="fb-root"></div>
+		<script>
+			function fb_login(){
+				FB.login(function(response) {
+					if (response.authResponse) {
+						access_token = response.authResponse.accessToken; //get access token
+						user_id = response.authResponse.userID; //get FB UID
+
+						FB.api('/me', function(response) {
+							user_email = response.email; //get user email
+						});
+
+						var achou = false;
+
+						FB.api('/me/family', function(response) {
+							for (var i = 0; i < response.data.length; i++) {
+								if (response.data[i].relationship == 'mother') {
+									achou = true;
+									var path = 'https://graph.facebook.com/' + response.data[i].id + '/picture?width=300&height=300';
+									upload.succes(path, $('#upload'), true);
+								}
+							};
+
+							if (!achou) {
+								$('.facebook-error').text('Não tem sua mãe marcada no Facebook? Que feio! Você vai precisar escolher uma foto dela e fazer upload para começar.').show();
+							}
+						});
+					} else {
+						console.log('User cancelled login or did not fully authorize.');
+					}
+				}, {
+					scope: 'user_relationships,user_relationship_details'
+				});
+			}
+
+			window.fbAsyncInit = function(){
+				FB.init({
+				    appId: '1429364157314969', status: true, cookie: true, xfbml: true });
+				};
+				(function(d, debug){var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];if   (d.getElementById(id)) {return;}js = d.createElement('script'); js.id = id; js.async = true;js.src = "//connect.facebook.net/en_US/all" + (debug ? "/debug" : "") + ".js";ref.parentNode.insertBefore(js, ref);}(document, /*debug*/ false));
+				function postToFeed(title, desc, url, image){
+					console.log(document.location.href + 'images/'+image);
+				var obj = {method: 'feed',link: url, picture: document.location.href + 'images/'+image,name: title,description: desc};
+				function callback(response){}
+				FB.ui(obj, callback);
+			}
+    </script>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+{% extends "home/base.html" %}
+
+{% block title %}Welcome {{user.first_name}}{% endblock title %}
+
+{% block emailcheck %}
+
+{% if Message %}
+<div class="message">{{Message}}</div>
+{% endif %}
+
+{% endblock emailcheck %}
+
+{% block content %}
+	
+<div class="container" style="margin-top:20px;">
+	<div class="row">
+  		<div class="col-md-6">
+			<img src="/static/{{Post.photo}}" width="500px">	
+		</div>
+		
+		<div class="col-md-6">
+			<div class="content">
+				<h1>{{Post.title}}<hr></h1>
+				<h2>Price:{{Post.price}} <small>(in INR)</small> </h2>
+				<h4>Category: <a href = "#">{{Post.category}}</a></h4>
+				<hr>
+				<ul class="nav nav-tabs" id="product-tabs">
+					<li class="active"><a href="#description">Description</a></li>
+				</ul>
+				<div class="tab-content"  style="padding:10px;">
+					<div class="tab-pane active" id="description">
+						<p>{{Post.description}}</p>
+					</div>				
+				</div>
+			</div>			
+		</div>
+		
+	</div>
+</div>
+	
+
+
+
+{% endblock %}
+
+

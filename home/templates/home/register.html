@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+{% load staticfiles %}
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %}User Registration{% endblock title %}</title>
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{% static 'home/bootstrap/css/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'home/bootstrap/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'home/bootstrap/css/dashboard.css' %}">
+	<script src="{% static 'home/bootstrap/js/jquery.js' %}"></script>
+	<script src="{% static 'home/bootstrap/js/bootstrap.js' %}"></script>
+	<script src="{% static 'home/bootstrap/js/masonry.pkgd.js' %}"></script>
+	<script src="{% static 'home/bootstrap/js/script.js' %}"></script>
+	<style type="text/css">
+		#message{
+			font-family: 'PT Sans', sans-serif;
+		}
+		#loginbuttons{
+			width:100%;
+			text-align: center;
+		}
+		#loginbuttons .btn{
+			padding:10px 20px;
+			font-family: 'PT Sans', sans-serif;
+			text-align: left;
+			margin-top: 2px;
+			margin-bottom: 2px;
+		}
+		#facebook{
+			background-color:#3b5998;
+			background-image:url('../../static/home/bootstrap/img/facebook.png');
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: left;
+		}
+		#facebook:hover{
+			background-color:#3b5988;
+		}
+		#google{
+			background-color: #D50F25;
+			background-image: url('../../static/home/bootstrap/img/google.png');
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: left;
+		}
+		#google:hover{
+			background-color: #C50F25
+		}
+		#twitter{
+			background-image: url('../../static/home/bootstrap/img/twitter.png');
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: left;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="container-box">
+				<legend>
+					{% if UError %}
+						<h3 id="message">Seems like someone is already using this email to use coolefieds, if you have forgotten your password please go <a href="/forgotpassword">here</a> or register with a different email ID</h3>
+					{% else %}
+						<h3 id="message">Sign Up Using</h3>
+					{% endif %}
+				</legend>
+				{% if not UError %}
+				<div id="loginbuttons">
+					<a href="{% url 'socialauth_begin' 'facebook' %}" class="btn btn-primary btn-lg" id="facebook"><span style="padding-left:40px;">Facebook</span></a>
+					<a href="{% url 'socialauth_begin' 'google-oauth2' %}" class="btn btn-danger btn-lg" id="google"><span style="padding-left:40px">Google</span></a>
+					<a href="{% url 'socialauth_begin' 'twitter' %}" class="btn btn-info btn-lg" id="twitter"><span style="padding-left:40px;">Twitter</span></a></div>
+					<h3 id="message">or Email</h3>
+					<hr>
+				{% endif %}
+					<form class="form-horizontal" enctype='multipart/form-data' action="" method="post" >
+						{% if form.errors %}
+						<p style="color: red;">Please correct the error{{ form.errors|pluralize }} below.</p>
+						{% endif %}
+						  <div class="form-group">
+							<label class="col-lg-2 control-label"  for="emails">Username</label>
+								<div class="col-lg-10">
+									{{ form.username}}
+									{{ form.username.errors }}
+								</div>
+						  </div>
+
+						  <div class="form-group">
+							<label class="col-lg-2 control-label" for="message">First Name</label>
+								<div class="col-lg-10">	
+									{{ form.first_name}}
+									{{ form.first_name.errors }}
+								</div>
+						  </div>
+
+							<div class="form-group">
+							<label class="col-lg-2 control-label" for="message">Last Name</label>
+								<div class="col-lg-10">
+									{{ form.last_name}}
+									{{ form.last_name.errors }}
+								</div>
+						  	</div>
+
+						  <div  class="form-group">
+							<label  class="col-lg-2 control-label" for="message">Email ID</label>
+								<div class="col-lg-10">
+									{{ form.email}}
+									{{ form.email.errors }}
+								</div>
+						  </div>
+
+						  <div class="form-group">
+							<label class="col-lg-2 control-label" for="message">College</label>
+								<div class="col-lg-10">
+									{{ form.college}}
+									{{ form.college.errors }}
+								</div>
+						  </div>
+
+						  <div class="form-group">
+							<label class="col-lg-2 control-label" for="message">Password</label>
+								<div class="col-lg-10">
+									{{ form.password}}
+									{{ form.password.errors }}
+								</div>
+						  </div>
+
+						  <div class="form-group">
+							<label class="col-lg-2 control-label" for="message">Phone Number</label>
+								<div class="col-lg-10">
+									{{ form.mobile}}
+									{{ form.mobile.errors }}
+								</div>
+						  </div>
+
+						  <div class="form-group">
+							<label class="col-lg-2 control-label" for="message">Profile Pic</label>
+								<div class="col-lg-10">
+									{{ form.profile_pic}}
+									{{ form.profile_pic.errors }}
+								</div>
+						  </div>
+					  
+						{% csrf_token %}
+						<div class="form-group">
+								<div class="col-lg-offset-2 col-lg-10">
+								  <button type="submit" class="btn btn-default">Submit</button>
+								</div>
+						</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<html>

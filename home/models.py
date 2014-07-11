@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 class profile(models.Model):
     user = models.CharField(max_length=100)
-    college = models.IntegerField()
+    college = models.CharField(max_length=50)
     mobile= models.CharField(max_length=10)
     #profile_pic = models.ImageField(default='home/profile_pics/default.png', blank=True, null= True, upload_to = 'home/profile_pics/', max_length=255)    
     #def __unicode__(self):
@@ -57,3 +57,5 @@ class Registration(models.Model):
     registered_user = models.CharField(max_length=300)
     event_registered = models.CharField(max_length=300)
     team_members = models.TextField()  #A hack so that any number of team members can be registered.
+    def __unicode__(self):
+        return self.event_registered

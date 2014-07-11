@@ -16,8 +16,10 @@ from home.functions import *
 import datetime,random,string
 
 from home.models import *
+from home.models import profile
 from home.forms import *
 from django.core.mail import send_mail
+
 
 ####################Views###################
     
@@ -44,18 +46,20 @@ def registerpage(request):
                 newuser = User.objects.create_user(uname,emailid,password)
                 newuser.first_name=request.POST['first_name']
                 newuser.last_name=request.POST['last_name']
-                newuser.college= request.POST['college']
-                newuser.phone = request.POST['phone']
+                #newuser.college= request.POST['college']
+                #newuser.phone = request.POST['phone']
                 newuser.save()
                 m=form.save(commit=False)
                 m.user=newuser
                 m.save()
 
-                #college = request.POST['college']
-                #phone = request.POST['phone']
+                college = request.POST['college']
+                phone = request.POST['phone']
+                print "college==" + str(college)
+                print "phoone==" + str(phone)
 
-                #abc = profile(user=emailid,college=college,mobile=phone)
-                #abc.save()
+                abc = profile(user=str(emailid),college=str(college),mobile=str(phone))
+                abc.save()
 
                 sendverifymail(newuser.id,newuser.email)
                 user = authenticate(username=uname, password=password)

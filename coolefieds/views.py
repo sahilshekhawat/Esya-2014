@@ -16,6 +16,7 @@ from django.core.context_processors import csrf
 from home.models import Registration
 import datetime
 import simplejson
+from home.models import *
 
 
 def index(request):
@@ -36,7 +37,12 @@ def index1(request):
     #            Message+="Psst. Don't forget to confirm your email! Just look for the message we sent you."
     #    except:
     #        Message=""
-    return render(request,'home/index.html')
+    events=""
+    if request.user.is_authenticated():
+        events = Registration.objects.all().filter(registered_user=request.user.email)
+
+
+    return render(request,'home/index.html',{'events':events})
 
 def allevents(request):
     return render(request, 'home/allevents.html')
@@ -83,7 +89,6 @@ def ajaxregister(request):
         #college = request.POST['college']
         a = request.POST.get('firstname', False)
         b = request.POST.get('lastname', False)
-        c = request.POST.get('college', False)
         #print username, password, email, a,b,c
         emailcount=User.objects.filter(email=email).count()
         usernamecount=User.objects.filter(username=username).count()
@@ -104,11 +109,13 @@ def ajaxregister(request):
         else:
             data['error_name'] = "please provide your name details"
 
+        college = request.POST['college']
+        phone = request.POST['phone']
+        print "college==" + str(college)
+        print "phone==" + str(phone)
 
-        if c:
-            newprofile = User.objects.create_user(username,email,password)
-            p = profile(user=newprofile,college=c,mobile=None)
-            p.save()
+        abc = profile(user=str(email),college=str(college),mobile=str(phone))
+        abc.save()
         #newuser.college = request.POST['college']
         #user = authenticate(username=username, password=password)
         #if user is not None:
@@ -145,7 +152,7 @@ def eventregister(request):
             r.save()
             data['success']="You have successfully registered"
         except:
-            data['error'] = "Please Register and Login before registering"
+            data['error'] = "Please Register and Login with Website before registering for event"
 
     return HttpResponse(simplejson.dumps(data), content_type='application/json')
 

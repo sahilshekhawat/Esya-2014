@@ -5,12 +5,12 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class profile(models.Model):
-    user = models.OneToOneField(User)
+    user = models.CharField(max_length=100)
     college = models.IntegerField()
     mobile= models.CharField(max_length=10)
-    profile_pic = models.ImageField(default='home/profile_pics/default.png', blank=True, null= True, upload_to = 'home/profile_pics/', max_length=255)    
-    def __unicode__(self):
-        return self.mobile
+    #profile_pic = models.ImageField(default='home/profile_pics/default.png', blank=True, null= True, upload_to = 'home/profile_pics/', max_length=255)    
+    #def __unicode__(self):
+    #    return self.mobile
 
 class emailverify(models.Model):
     userid=models.IntegerField()

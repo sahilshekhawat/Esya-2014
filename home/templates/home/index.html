@@ -1344,19 +1344,51 @@ type="application/x-shockwave-flash" >
 							
 							</ul>
 				</div></div>
+								<script type="text/javascript">
+					$(document).ready(function() {
+
+						$('.ievent11register').submit(function(e) {
+							e.preventDefault();
+							console.log("register function called");
+
+						var dataString = '&event=Equipotential' +
+										 '&register_data=' + $('input[name=equiname]').val()+ '\n' + $('input[name=equischoolname]').val()  +'\n' + $('input[name=equischoolclass]').val() +'\n' +  $('input[name=equiparname]').val() +'\n' + $('input[name=equiparphone]').val() +'\n' + $('input[name=equiparemail]').val() +'\n' + $('input[name=equiparcollege]').val(); 
+
+						console.log(dataString);
+						$.ajax({
+								type: 'POST',
+								url: '/eventregister/',
+								data: dataString,
+								success: function(data){
+									var json = JSON.parse(data.content);
+									if(json.error == ""){
+										alert("Successfully registered");
+									}				
+									else {
+										alert(json.error);
+									}
+								},
+								error: function(data){
+										alert("Event Registration Errored");
+								}
+						});
+					return false;
+				});
+			});
+				</script>
 				<div id="ieventblock611" class="ieventblock6"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>
-							<form method="POST" name="ievent11register">
-							<input type="text" placeholder="Team Name:" /><p>
-							<input type="text" placeholder="School Name:" /><p>
-							<input type="text" placeholder="Your class:" /><p>
+							<form method="POST" name="ievent11register" class="ievent11register">{% csrf_token %}
+							<input name="equiname" type="text" placeholder="Team Name:" /><p>
+							<input name="equischoolname" type="text" placeholder="School Name:" /><p>
+							<input name="equischoolclass" type="text" placeholder="Your class:" /><p>
 							We have other details about you. Please enter following details about your team partner (if any).<br>
 					        <label>Member 2: (if valid)</label>
-							<ul><li>     <input type="text" placeholder="Name:" /><br></li>
-							<li>     <input type="text" placeholder="Phone No:" /><br></li>
-							<li>     <input type="text" placeholder="Email:" /><br></li>
-							<li>     <input type="text" placeholder="Institute:" /><br></li></ul>
+							<ul><li>     <input name="equiparname" type="text" placeholder="Name:" /><br></li>
+							<li>     <input name="equiparphone" type="text" placeholder="Phone No:" /><br></li>
+							<li>     <input name="equiparemail" type="text" placeholder="Email:" /><br></li>
+							<li>     <input name="equiparcollege" type="text" placeholder="Institute:" /><br></li></ul>
 							<input type="submit" value="Register" />
 							</form></p>
 				</div></div>
@@ -1449,35 +1481,67 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li><font color='#4ef4b4'>></font> Organizers have the right to disqualify any team if they break any rule.</li>
 							</ul>
 				</div></div>
+								<script type="text/javascript">
+					$(document).ready(function() {
+
+						$('.ievent12register').submit(function(e) {
+							e.preventDefault();
+							console.log("register function called");
+
+						var dataString = '&event=RoboCon' +
+										 '&register_data=' + $('input[name=robname]').val()+ '\n' + $('input[name=robmacname]').val()  +'\n' + $('input[name=robcapname]').val() +'\n' +  $('input[name=robparname]').val() +'\n' + $('input[name=robparcollege]').val() +'\n' + $('input[name=robparemail]').val() +'\n' + $('input[name=robparphone]').val()+'\n' +  $('input[name=robparname1]').val() +'\n' + $('input[name=robparcollege1]').val() +'\n' + $('input[name=robparemail1]').val() +'\n' + $('input[name=robparphone1]').val()+'\n' + $('input[name=robparname2]').val() +'\n' + $('input[name=robparcollege2]').val() +'\n' + $('input[name=robparemail2]').val() +'\n' + $('input[name=robparphone2]').val(); 
+
+						console.log(dataString);
+						$.ajax({
+								type: 'POST',
+								url: '/eventregister/',
+								data: dataString,
+								success: function(data){
+									var json = JSON.parse(data.content);
+									if(json.error == ""){
+										alert("Successfully registered");
+									}				
+									else {
+										alert(json.error);
+									}
+								},
+								error: function(data){
+										alert("Event Registration Errored");
+								}
+						});
+					return false;
+				});
+			});
+				</script>
 				<div id="ieventblock612" class="ieventblock6"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>(We already have your details. Please enter details of other members of your team.)<p>
-							<form method="POST" name="ievent12register">
+							<form method="POST" name="ievent12register" class="ievent12register">{% csrf_token %}
 							We already have your details. Please enter details of your team partners, in case you’re not participating in the event as a lonewolf.<br>
-							<input type="text" placeholder="Team Name:" /><p>
-							<input type="text" placeholder="Machine Name:" /><p>
-							<input type="text" placeholder="Team Captain:" /><p>
+							<input name="robname" type="text" placeholder="Team Name:" /><p>
+							<input name="robmacname" type="text" placeholder="Machine Name:" /><p>
+							<input name="robcapname" type="text" placeholder="Team Captain:" /><p>
 							<label>Member 2:(mandatory)</label><br>
-							<ul><li><input type="text" placeholder="Name:" /></li>
-							<li><input type="text" placeholder="College/Institute:" /></li>
-							<li><input type="text" placeholder="Email:" /></li>
-							<li><input type="text" placeholder="Phone:" /></li>
-							<li><input type="text" placeholder="Course:" /></li>
-							<li><input type="text" placeholder="Year/Batch:" /></li></ul>
+							<ul><li><input name="robparname" type="text" placeholder="Name:" /></li>
+							<li><input name="robparcollege" type="text" placeholder="College/Institute:" /></li>
+							<li><input name="robparemail" type="text" placeholder="Email:" /></li>
+							<li><input name="robparphone" type="text" placeholder="Phone:" /></li>
+							<li><input name="robparcourse" type="text" placeholder="Course:" /></li>
+							<li><input name="robparyear" type="text" placeholder="Year/Batch:" /></li></ul>
 							<label>Member 3:(optional)</label><br>
 							<ul><li><input type="text" placeholder="Name:" /></li>
-							<li><input type="text" placeholder="College/Institute:" /></li>
-							<li><input type="text" placeholder="Email:" /></li>
-							<li><input type="text" placeholder="Phone:" /></li>
-							<li><input type="text" placeholder="Course:" /></li>
-							<li><input type="text" placeholder="Year/Batch:" /></li></ul>
+							<li><input name="robparname1" type="text" placeholder="College/Institute:" /></li>
+							<li><input name="robparcollege1" type="text" placeholder="Email:" /></li>
+							<li><input name="robparemail1" type="text" placeholder="Phone:" /></li>
+							<li><input name="robparcourse1"  type="text" placeholder="Course:" /></li>
+							<li><input name="robparyear1" type="text" placeholder="Year/Batch:" /></li></ul>
 							<label>Member 4:(optional)</label><br>
 							<ul><li><input type="text" placeholder="Name:" /></li>
-							<li><input type="text" placeholder="College/Institute:" /></li>
-							<li><input type="text" placeholder="Email:" /></li>
-							<li><input type="text" placeholder="Phone:" /></li>
-							<li><input type="text" placeholder="Course:" /></li>
-							<li><input type="text" placeholder="Year/Batch:" /></li></ul>
+							<li><input name="robparname2" type="text" placeholder="College/Institute:" /></li>
+							<li><input name="robparcollege2" type="text" placeholder="Email:" /></li>
+							<li><input name="robparemail2" type="text" placeholder="Phone:" /></li>
+							<li><input  name="robparcourse2" type="text" placeholder="Course:" /></li>
+							<li><input name="robparyear2" type="text" placeholder="Year/Batch:" /></li></ul>
 							<input type="submit" value="Register" />
 							</form>
 							</p>
@@ -1552,6 +1616,38 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							
 							</ul>
 				</div></div>
+												<script type="text/javascript">
+					$(document).ready(function() {
+
+						$('.ievent13register').submit(function(e) {
+							e.preventDefault();
+							console.log("register function called");
+
+						var dataString = '&event=Prayatna' +
+										 '&register_data=' + $('input[name=parproname]').val()+ '\n' + $('input[name=parteamsize]').val()  +'\n' + $('input[name=parteammem]').val() +'\n' +  $('input[name=parteamsize]').val() +'\n' + $('input[name=parcollege]').val() +'\n' + $('input[name=priconname]').val() +'\n' + $('input[name=priconphone]').val()+'\n' +  $('input[name=secconname]').val() +'\n' + $('input[name=secconphone]').val() +'\n' + $('input[name=secconemail]').val();
+
+						console.log(dataString);
+						$.ajax({
+								type: 'POST',
+								url: '/eventregister/',
+								data: dataString,
+								success: function(data){
+									var json = JSON.parse(data.content);
+									if(json.error == ""){
+										alert("Successfully registered");
+									}				
+									else {
+										alert(json.error);
+									}
+								},
+								error: function(data){
+										alert("Event Registration Errored");
+								}
+						});
+					return false;
+				});
+			});
+				</script>
 				<div id="ieventblock613" class="ieventblock6"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>
@@ -1562,18 +1658,18 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li><font color='#4ef4b4'>10 August 2014:</font> Result announcement Round-1
 							<li><font color='#4ef4b4'>22 August 2014:</font> Main Event Day (Round-2)
 							</ul></p>
-							<p><form method="POST" name="ievent13register">
-							<input type="text" placeholder="Project Name:" /><p>
-							<input type="text" placeholder="Team Size:" /><p>
-							<input type="text" placeholder="Team Members:" /><p>
-							<input type="text" placeholder="College/Institute:" /><p>
+							<p><form method="POST" name="ievent13register" class="ievent13register">{% csrf_token %}
+							<input name="parproname" type="text" placeholder="Project Name:" /><p>
+							<input name="parteamsize" type="text" placeholder="Team Size:" /><p>
+							<input name="parteammem" type="text" placeholder="Team Members:" /><p>
+							<input name="parcollege" type="text" placeholder="College/Institute:" /><p>
 							<label>Primary Contact</label>
-							<ul><li>     <input type="text" placeholder="Name:" /><br></li>
-							<li>     <input type="text" placeholder="Phone No:" /><br></li></ul>
+							<ul><li>     <input name="priconname" type="text" placeholder="Name:" /><br></li>
+							<li>     <input name="priconphone" type="text" placeholder="Phone No:" /><br></li></ul>
 							<label>Secondary Contact</label>
-							<ul><li>     <input type="text" placeholder="Name:" /><br></li>
-							<li>     <input type="text" placeholder="Phone No:" /><br></li></ul>
-							<input type="text" placeholder="Email ID:" />
+							<ul><li>     <input name="secconname" type="text" placeholder="Name:" /><br></li>
+							<li>     <input name="secconphone" type="text" placeholder="Phone No:" /><br></li></ul>
+							<input name="secconemail" type="text" placeholder="Email ID:" />
 							<input type="submit" value="Register" />
 							</form>
 				</div></div>
@@ -1633,12 +1729,44 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							
 							</ul>
 				</div></div>
+																<script type="text/javascript">
+					$(document).ready(function() {
+
+						$('.ievent14register').submit(function(e) {
+							e.preventDefault();
+							console.log("register function called");
+
+						var dataString = '&event=ProCon' +
+										 '&register_data=' + $('input[name=procodechef]').val()+ '\n' + $('input[name=proyear]').val()
+
+						console.log(dataString);
+						$.ajax({
+								type: 'POST',
+								url: '/eventregister/',
+								data: dataString,
+								success: function(data){
+									var json = JSON.parse(data.content);
+									if(json.error == ""){
+										alert("Successfully registered");
+									}				
+									else {
+										alert(json.error);
+									}
+								},
+								error: function(data){
+										alert("Event Registration Errored");
+								}
+						});
+					return false;
+				});
+			});
+				</script>
 				<div id="ieventblock614" class="ieventblock6"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>
-							<form method="POST" name="ievent5register">
-							<input type="text" placeholder="CodeChef Handle:" /><br>
-							<input type="text" placeholder="Year/Batch:" /><br>
+							<form method="POST" name="ievent5register" class="ievent14register">{% csrf_token %}
+							<input name="procodechef" type="text" placeholder="CodeChef Handle:" /><br>
+							<input name="proyear" type="text" placeholder="Year/Batch:" /><br>
 							<input type="submit" value="Register" />
 							</form>
 							</p>
@@ -1830,20 +1958,52 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							
 							</ul>
 				</div></div>
+																							<script type="text/javascript">
+					$(document).ready(function() {
+
+						$('.ievent16register').submit(function(e) {
+							e.preventDefault();
+							console.log("register function called");
+
+						var dataString = '&event=OBFUSCODE' +
+										 '&register_data=' + $('input[name=obname]').val()+ '\n' + $('input[name=obparname]').val()  +'\n' + $('input[name=obparphone]').val() +'\n' +  $('input[name=obparemail]').val() +'\n' + $('input[name=obparcollege]').val();
+										 
+						console.log(dataString);
+						$.ajax({
+								type: 'POST',
+								url: '/eventregister/',
+								data: dataString,
+								success: function(data){
+									var json = JSON.parse(data.content);
+									if(json.error == ""){
+										alert("Successfully registered");
+									}				
+									else {
+										alert(json.error);
+									}
+								},
+								error: function(data){
+										alert("Event Registration Errored");
+								}
+						});
+					return false;
+				});
+			});
+				</script>
 				<div id="ieventblock616" class="ieventblock6"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>Register here only if not registering as a Techathlon team, and you wish to participate in the event separately.<br>
 							We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
-							<form method="POST" name="ievent16register">
-							<input type="text" placeholder="Team Name:" /><p>
+							<form method="POST" name="ievent16register" class="ievent16register">{% csrf_token %}
+							<input name="obname" type="text" placeholder="Team Name:" /><p>
 							Participating as a team of 1 or 2:<br><ul><li>
 					        <input type="radio" name="participant" value="one">1
 							<input type="radio" name="participant" value="two">2<br></li></ul>
 							<label>Member 2: (if valid)</label>
-							<ul><li>     <input type="text" placeholder="Name:" /><br></li>
-							<li>     <input type="text" placeholder="Phone No:" /><br></li>
-							<li>     <input type="text" placeholder="Email:" /><br></li>
-							<li>     <input type="text" placeholder="Institute:" /><br></li></ul>
+							<ul><li>     <input name="obparname" type="text" placeholder="Name:" /><br></li>
+							<li>     <input name="obparphone" type="text" placeholder="Phone No:" /><br></li>
+							<li>     <input name="obparemail" type="text" placeholder="Email:" /><br></li>
+							<li>     <input name="obparcollege" type="text" placeholder="Institute:" /><br></li></ul>
 							<input type="submit" value="Register" />
 							</form>
 							</p>
@@ -1990,21 +2150,54 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 
 							</ul>
 				</div></div>
+																											<script type="text/javascript">
+					$(document).ready(function() {
+
+						$('.ievent18register').submit(function(e) {
+							e.preventDefault();
+							console.log("register function called");
+
+						var dataString = '&event=Hackathon' +
+										 '&register_data=' + $('input[name=thteamname]').val()+ '\n' + $('input[name=thcollege]').val()  +'\n' + $('input[name=thname1]').val() +'\n' +  $('input[name=thname2]').val() +'\n' + $('input[name=thtech]').val() +'\n' + $('input[name=theditor]').val();
+										 
+						console.log(dataString);
+						$.ajax({
+								type: 'POST',
+								url: '/eventregister/',
+								data: dataString,
+								success: function(data){
+									var json = JSON.parse(data.content);
+									if(json.error == ""){
+										alert("Successfully registered");
+									}				
+									else {
+										alert(json.error);
+									}
+								},
+								error: function(data){
+										alert("Event Registration Errored");
+								}
+						});
+					return false;
+				});
+			});
+				</script>
 				<div id="ieventblock618" class="ieventblock6"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>
-							<form method="POST" name="ievent10register">
-							<input type="text" placeholder="Team Name:" /><br>
-							<input type="text" placeholder="Institute:" /><br>
+							<form method="POST" name="ievent10register" class="ievent18register">{% csrf_token %}
+							<input name="thteamname" type="text" placeholder="Team Name:" /><br>
+							<input name="thcollege" type="text" placeholder="Institute:" /><br>
 							<p>We already have your details. Enter details of your team partners (if any).<br>
 							<label>Member 2:</label><br>
-							<ul><li><input type="text" placeholder="Name:" /><br></li>
-							<li><input type="text" placeholder="Institute:" /><br></li></ul>
+							<ul><li><input name="thname1" type="text" placeholder="Name:" /><br></li>
+							</ul>
 							<label>Member 3:</label><br>
-							<ul><li><input type="text" placeholder="Name:" /><br></li>
-							<li><input type="text" placeholder="Institute:" /><br></li></ul>
-							<br><input type="text" placeholder="Technology/Frame Work:" />
-							<input type="text" placeholder="Code Editor:" />
+							<ul><li><input name="thname2" type="text" placeholder="Name:" /><br></li>
+							</ul>
+							<br><input name="thtech" type="text" placeholder="Technology/Frame Work:" /><br>
+							<input name="theditor" type="text" placeholder="Code Editor:" /><br>
+
 							<input type="submit" value="Register" />
 							</form>
 							</p>
@@ -2525,16 +2718,48 @@ Name of Speaker (Against the motion):
 Phone Number of Speaker:
 Email of Speaker:
 Institution/School of Speaker:
+																											<script type="text/javascript">
+					$(document).ready(function() {
+
+						$('.ievent25register').submit(function(e) {
+							e.preventDefault();
+							console.log("register function called");
+
+						var dataString = '&event=Rebuttal' +
+										 '&register_data=' + $('input[name=rename]').val()+ '\n' + $('input[name=rephone]').val()  +'\n' + $('input[name=remail]').val() +'\n' +  $('input[name=recollege]').val() +'\n' + $('input[name=reagname]').val() +'\n' + $('input[name=reagphone]').val()+'\n' + $('input[name=reagemail]').val()+'\n' + $('input[name=reagcollege]').val();
+										 
+						console.log(dataString);
+						$.ajax({
+								type: 'POST',
+								url: '/eventregister/',
+								data: dataString,
+								success: function(data){
+									var json = JSON.parse(data.content);
+									if(json.error == ""){
+										alert("Successfully registered");
+									}				
+									else {
+										alert(json.error);
+									}
+								},
+								error: function(data){
+										alert("Event Registration Errored");
+								}
+						});
+					return false;
+				});
+			});
+				</script>
 							<p>Teams must have EXACTLY 2 members to participate. The 2 members must choose OPPOSING stances for the Final Round of the debate beforehand. Cross-institutional teams are permitted.<br>
-							<form method="POST" name="ievent25register">
-							<input type="text" placeholder="Name of the speaker(For the motion):" /><p>
-							<input type="text" placeholder="Phone No of the speaker:" /><p>
-							<input type="text" placeholder="Email of the speaker:" /><p>
-							<input type="text" placeholder="Institution/School of the speaker:" /><p>
-							<input type="text" placeholder="Name of the speaker(Against the motion):" /><p>
-							<input type="text" placeholder="Phone No of the speaker:" /><p>
-							<input type="text" placeholder="Email of the speaker:" /><p>
-							<input type="text" placeholder="Institution/School of the speaker:" /><p>
+							<form method="POST" name="ievent25register" class="ievent25register">{% csrf_token %}
+							<input name="rename" type="text" placeholder="Name of the speaker(For the motion):" /><p>
+							<input name="rephone" type="text" placeholder="Phone No of the speaker:" /><p>
+							<input name="remail" type="text" placeholder="Email of the speaker:" /><p>
+							<input name="recollege" type="text" placeholder="Institution/School of the speaker:" /><p>
+							<input name="reagname" type="text" placeholder="Name of the speaker(Against the motion):" /><p>
+							<input name="reagphone" type="text" placeholder="Phone No of the speaker:" /><p>
+							<input name="reagemail" type="text" placeholder="Email of the speaker:" /><p>
+							<input name="reagcollege" type="text" placeholder="Institution/School of the speaker:" /><p>
 							<input type="submit" value="Register" />
 							</form>
 							</p>
@@ -2619,21 +2844,53 @@ Institution/School of Speaker:
 							
 							</ul>
 				</div></div>
+																															<script type="text/javascript">
+					$(document).ready(function() {
+
+						$('.ievent26register').submit(function(e) {
+							e.preventDefault();
+							console.log("register function called");
+
+						var dataString = '&event=HuntIT' +
+										 '&register_data=' + $('input[name=hunmor]').val()+ '\n' + $('input[name=hunname]').val()  +'\n' + $('input[name=hunphone]').val() +'\n' +  $('input[name=hunname1]').val() +'\n' + $('input[name=hunphone1]').val() +'\n' + $('input[name=hunname2]').val()+'\n' + $('input[name=hunphone2]').val();
+										 
+						console.log(dataString);
+						$.ajax({
+								type: 'POST',
+								url: '/eventregister/',
+								data: dataString,
+								success: function(data){
+									var json = JSON.parse(data.content);
+									if(json.error == ""){
+										alert("Successfully registered");
+									}				
+									else {
+										alert(json.error);
+									}
+								},
+								error: function(data){
+										alert("Event Registration Errored");
+								}
+						});
+					return false;
+				});
+			});
+				</script>
 				<div id="ieventblock626" class="ieventblock6"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>
-							<form method="POST" name="ievent26register">
-							<input type="text" placeholder="Answer To Morse Code:" /><p>
+							<form method="POST" name="ievent26register" class="ievent26register">{% csrf_token %}
+							<input name="hunmor" type="text" placeholder="Answer To Morse Code:" /><p>
 							We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
 							<label>Member 2:</label>
-							<ul><li>     <input type="text" placeholder="Name:" /><br></li>
-							<li>     <input type="text" placeholder="Phone No:" /><br></li></ul>
+							<ul><li>     <input name="hunname" type="text" placeholder="Name:" /><br></li>
+							<li>     <input name="hunphone" type="text" placeholder="Phone No:" /><br></li></ul>
 							<label>Member 3:</label>
-							<ul><li>     <input type="text" placeholder="Name:" /><br></li>
-							<li>     <input type="text" placeholder="Phone No:" /><br></li></ul>
+							<ul><li>     <input name="hunname1" type="text" placeholder="Name:" /><br></li>
+							<li>     <input name="hunphone1" type="text" placeholder="Phone No:" /><br></li></ul>
 							<label>Member 4:</label>
-							<ul><li>     <input type="text" placeholder="Name:" /><br></li>
-							<li>     <input type="text" placeholder="Phone No:" /><br></li></ul>
+							<ul><li>     <input name="hunname2" type="text" placeholder="Name:" /><br></li>
+							<li>     <input name="hunphone2" type="text" placeholder="Phone No:" /><br></li></ul>
 							<input type="submit" value="Register" />
 							</form>
 							</p>
@@ -2714,22 +2971,54 @@ Institution/School of Speaker:
 							
 							</ul>
 				</div></div>
+																																			<script type="text/javascript">
+					$(document).ready(function() {
+
+						$('.ievent27register').submit(function(e) {
+							e.preventDefault();
+							console.log("register function called");
+
+						var dataString = '&event=Hoax Pocus' +
+										 '&register_data=' + $('input[name=hoaxname]').val()+ '\n' + $('input[name=hoaxtopic]').val()  +'\n' + $('input[name=hoaxname1]').val() +'\n' +  $('input[name=hoaxphone1]').val() +'\n' + $('input[name=hoaxemail1]').val() +'\n' + $('input[name=hoaxcollege1]').val()+'\n' + $('input[name=hoaxname2]').val()+'\n' + $('input[name=hoaxphone2]').val()+'\n' + $('input[name=hoaxemail2]').val()+'\n' + $('input[name=hoaxcollege2]').val();
+										 
+						console.log(dataString);
+						$.ajax({
+								type: 'POST',
+								url: '/eventregister/',
+								data: dataString,
+								success: function(data){
+									var json = JSON.parse(data.content);
+									if(json.error == ""){
+										alert("Successfully registered");
+									}				
+									else {
+										alert(json.error);
+									}
+								},
+								error: function(data){
+										alert("Event Registration Errored");
+								}
+						});
+					return false;
+				});
+			});
+				</script>
 				<div id="ieventblock627" class="ieventblock6"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
-							<form method="POST" name="ievent27register">
-							<input type="text" placeholder="Team Name:" />Required, even for a team with 1 member <p>
-							<input type="text" placeholder="Fake Research Topic:" />Required - a rough topic will do, the final topic will be the one you write on the paper while mailing<p>
+							<form method="POST" name="ievent27register" class="ievent27register">{% csrf_token %}
+							<input name="hoaxname" type="text" placeholder="Team Name:" />Required, even for a team with 1 member <p>
+							<input name="hoaxtopic" type="text" placeholder="Fake Research Topic:" />Required - a rough topic will do, the final topic will be the one you write on the paper while mailing<p>
 							<label>Member 2: (optional)</label>
-							<ul><li>     <input type="text" placeholder="Name:" /><br></li>
-							<li>     <input type="text" placeholder="Phone No:" /><br></li>
-							<li>     <input type="text" placeholder="Email:" /><br></li>
-							<li>     <input type="text" placeholder="Institute:" /><br></li></ul>
+							<ul><li>     <input name="hoaxname1" type="text" placeholder="Name:" /><br></li>
+							<li>     <input name="hoaxphone1" type="text" placeholder="Phone No:" /><br></li>
+							<li>     <input name="hoaxemail1" type="text" placeholder="Email:" /><br></li>
+							<li>     <input name="hoaxcollege1" type="text" placeholder="Institute:" /><br></li></ul>
 							<label>Member 3: (optional)</label>
-							<ul><li>     <input type="text" placeholder="Name:" /><br></li>
-							<li>     <input type="text" placeholder="Phone No:" /><br></li>
-							<li>     <input type="text" placeholder="Email:" /><br></li>
-							<li>     <input type="text" placeholder="Institute:" /><br></li></ul>
+							<ul><li>     <input name="hoaxname2" type="text" placeholder="Name:" /><br></li>
+							<li>     <input name="hoaxphone2" type="text" placeholder="Phone No:" /><br></li>
+							<li>     <input name="hoaxemail2" type="text" placeholder="Email:" /><br></li>
+							<li>     <input name="hoaxcollege2" type="text" placeholder="Institute:" /><br></li></ul>
 							<input type="submit" value="Register" />
 							</form>
 							</p>
@@ -2797,15 +3086,49 @@ Institution/School of Speaker:
 							
 							</ul>
 				</div></div>
+																											<script type="text/javascript">
+					$(document).ready(function() {
+
+						$('.ievent28register').submit(function(e) {
+							e.preventDefault();
+							console.log("register function called");
+
+						var dataString = '&event=XQuixIT' +
+										 '&register_data=' + $('input[name=xname]').val()+ '\n' + $('input[name=xphone]').val()  +'\n' + $('input[name=xemail]').val() +'\n' +  $('input[name=xcollege]').val();
+										 
+						console.log(dataString);
+						$.ajax({
+								type: 'POST',
+								url: '/eventregister/',
+								data: dataString,
+								success: function(data){
+									var json = JSON.parse(data.content);
+									if(json.error == ""){
+										alert("Successfully registered");
+									}				
+									else {
+										alert(json.error);
+									}
+								},
+								error: function(data){
+										alert("Event Registration Errored");
+								}
+						});
+					return false;
+				});
+			});
+				</script>
 				<div id="ieventblock628" class="ieventblock6"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
-							<form method="POST" name="ievent28register">
+							<form method="POST" name="ievent28register" class="ievent28register">{% csrf_token %}
 							<label>Member 2:</label>
-							<ul><li>     <input type="text" placeholder="Name:" /><br></li>
-							<li>     <input type="text" placeholder="Phone No:" /><br></li>
-							<li>     <input type="text" placeholder="Email:" /><br></li>
-							<li>     <input type="text" placeholder="Institute:" /><br></li></ul>
+							<ul>
+							<li><input name="xname" type="text" placeholder="Name:" /><br></li>
+							<li>     <input name="xphone" type="text" placeholder="Phone No:" /><br></li>
+
+							<li>     <input name="xemail" type="text" placeholder="Email:" /><br></li>
+							<li>     <input name="xcollege" type="text" placeholder="Institute:" /><br></li></ul>
 							<input type="submit" value="Register" />
 							</form>
 							</p>
@@ -2876,17 +3199,49 @@ Institution/School of Speaker:
 							
 							</ul>
 				</div></div>
+																															<script type="text/javascript">
+					$(document).ready(function() {
+
+						$('.ievent29register').submit(function(e) {
+							e.preventDefault();
+							console.log("register function called");
+
+						var dataString = '&event=Build Your Brand' +
+										 '&register_data=' + $('input[name=bname]').val()+ '\n' + $('input[name=bnameteam]').val()  +'\n' + $('input[name=bsim]').val();
+										 
+						console.log(dataString);
+						$.ajax({
+								type: 'POST',
+								url: '/eventregister/',
+								data: dataString,
+								success: function(data){
+									var json = JSON.parse(data.content);
+									if(json.error == ""){
+										alert("Successfully registered");
+									}				
+									else {
+										alert(json.error);
+									}
+								},
+								error: function(data){
+										alert("Event Registration Errored");
+								}
+						});
+					return false;
+				});
+			});
+				</script>
 				<div id="ieventblock629" class="ieventblock6"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>(To enter details of other member of  team.)<br>
-							<form method="POST" name="ievent29register">
-							<input type="text" placeholder="Team Name:" /><p>
-							<input type="text" placeholder="Name of team members:" /><p><label>(Max 2 members, Leave this section blank if you are registering as an individual)</label><p>
+							<form method="POST" name="ievent29register" class="ievent29register">{% csrf_token %}
+							<input name="bname" type="text" placeholder="Team Name:" /><p>
+							<input name="bnameteam" type="text" placeholder="Name of team members:" /><p><label>(Max 2 members, Leave this section blank if you are registering as an individual)</label><p>
 							Will you be able to bring your own laptop:<p>
 					        <input type="radio" name="laptop" value="yes">Yes
 							<input type="radio" name="laptop" value="no">No<br>
 							<label>(Highly recommended to have own laptops for circuit simulation)</label><p>
-							<input type="text" placeholder="Preferred Circuit Simulator:" /><p>
+							<input name="bsim" type="text" placeholder="Preferred Circuit Simulator:" /><p>
 							<label>(eg. LT spice or Multisim ,Proteus etc.)<label><p>				
 							<input type="submit" value="Register" />
 							</form>
@@ -3181,6 +3536,7 @@ Institution/School of Speaker:
 		<div id="updatess">
 			<div style="margin-top:55px;text-align: center;font-weigth:600;font-size:24px;color:#0D9986;text-shadow: 0.6px 0.6px #078877;">UPDATES</div>
 			<div class="updatess-content">
+
 			</div>
 			<button class="close"></button>
 		</div>
@@ -3298,7 +3654,7 @@ Institution/School of Speaker:
 				$('.register').submit(function(e) {
 				e.preventDefault();
 
-				var dataString = '&username=' + $('input[name=username_register]').val() + '&password=' + $('input[name=password_register]').val() + '&email=' + $('input[name=email]').val() +  '&firstname=' + $('input[name=firstname]').val() + '&lastname=' + $('input[name=lastname]').val() + '&college=' + $('input[name=college]').val(); 
+				var dataString = '&username=' + $('input[name=username_register]').val() + '&password=' + $('input[name=password_register]').val() + '&email=' + $('input[name=email]').val() +  '&firstname=' + $('input[name=firstname]').val() + '&lastname=' + $('input[name=lastname]').val() + '&college=' + $('input[name=college]').val()+ '&phone=' + $('input[name=phone]').val(); 
 				console.log(dataString);
 				$.ajax({
 						type: 'POST',
@@ -3370,6 +3726,11 @@ Institution/School of Speaker:
 							<div>
 								<label>College</label>
 								<input type="text" name="college"/>
+								<span class="error">This is an error</span>
+							</div>
+							<div>
+								<lable>phone</lable>
+								<input type="text" name="phone"/>
 								<span class="error">This is an error</span>
 							</div>
 						</div>

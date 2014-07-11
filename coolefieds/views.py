@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django_ajax.decorators import ajax
@@ -14,6 +13,7 @@ from django.utils.timezone import utc
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 from django.core.context_processors import csrf
+from home.models import Registration
 import datetime
 import simplejson
 
@@ -80,6 +80,7 @@ def ajaxregister(request):
         username = request.POST['username']
         password = request.POST['password']
         email = request.POST['email']
+        #college = request.POST['college']
         a = request.POST.get('firstname', False)
         b = request.POST.get('lastname', False)
         c = request.POST.get('college', False)
@@ -97,8 +98,17 @@ def ajaxregister(request):
             newuser.first_name = a
             newuser.last_name = b
             newuser.save()
+
+
+            print "profile saved"
         else:
             data['error_name'] = "please provide your name details"
+
+
+        if c:
+            newprofile = User.objects.create_user(username,email,password)
+            p = profile(user=newprofile,college=c,mobile=None)
+            p.save()
         #newuser.college = request.POST['college']
         #user = authenticate(username=username, password=password)
         #if user is not None:
@@ -122,6 +132,25 @@ def ajaxlogout(request):
 @ajax
 @csrf_exempt
 def eventregister(request):
-    data = {}
-    data['error'] = ""
-    eventregister()
+    if request.method== "POST" and request.is_ajax():
+        data = {}
+        data['error'] = ""
+
+        usermail = request.user.email
+        print usermail
+        event = request.POST['event']
+        register_data = request.POST['register_data']
+        try:
+            r = Registration(registered_user=usermail, event_registered=event,team_members=register_data)
+            r.save()
+            data['success']="You have successfully registered"
+        except:
+            data['error'] = "Please Register and Login before registering"
+
+    return HttpResponse(simplejson.dumps(data), content_type='application/json')
+
+
+
+
+
+    #eventregister()

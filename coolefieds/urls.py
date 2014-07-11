@@ -1,4 +1,4 @@
-#from django.conf.urls import patterns, include, url
+#from django.conf.urls import patterns, include, url 
 
 # Uncomment the next two lines to enable the admin:
 #from django.contrib import admin
@@ -58,5 +58,5 @@ urlpatterns = patterns('',
     #url(r'^index$', views.index1),
     url(r'^allevents$', views.allevents),
     url(r'^individualevents', views.individualevents),
-    url(r'^eventregister)', views.eventregister),
+    url(r'^eventregister/$', views.eventregister),
 )

@@ -54,6 +54,6 @@ class Event(models.Model):
     event_category_name = models.ManyToManyField('EventCategory')
 
 class Registration(models.Model):
-    registered_user = models.OneToOneField('profile')
-    event_registered = models.OneToOneField('Event')
+    registered_user = models.CharField(max_length=300)
+    event_registered = models.CharField(max_length=300)
     team_members = models.TextField()  #A hack so that any number of team members can be registered.

@@ -114,7 +114,7 @@ def ajaxregister(request):
         print "college==" + str(college)
         print "phone==" + str(phone)
 
-        abc = profile(user=str(email),college=str(college),mobile=str(phone))
+        abc = profile(user_firstname=str(a), user_lastname=str(b), user=str(email),college=str(college),mobile=str(phone))
         abc.save()
         #newuser.college = request.POST['college']
         user = authenticate(username=username, password=password)
@@ -142,21 +142,33 @@ def eventregister(request):
     if request.method== "POST" and request.is_ajax():
         data = {}
         data['error'] = ""
+        if request.user.is_authenticated():
+            user = request.user
+            if request.user.email:
+                usermail = request.user.email
+                print user.first_name
+                print user.last_name
+                print usermail
+                event = request.POST['event']
+                register_data = request.POST['register_data']
+                try:
+                    r = Registration(user_fname=user.first_name, user_lname=user.last_name, registered_user=usermail, event_registered=event,team_members=register_data)
+                    r.save()
+                    data['success']="You have successfully registered"
+                except:
+                    data['error'] = "Please Register and Login with Website before registering for event"
 
-        usermail = request.user.email
-        print usermail
-        event = request.POST['event']
-        register_data = request.POST['register_data']
-        try:
-            r = Registration(registered_user=usermail, event_registered=event,team_members=register_data)
-            r.save()
-            data['success']="You have successfully registered"
-        except:
-            data['error'] = "Please Register and Login with Website before registering for event"
+                events = Registration.objects.all().filter(registered_user=usermail)
+                data['events']=str(events)
+            else:
+                data['error'] = "Please register or login (with a Email address"
+        else:
+            data['error']="Please register or Login"
+    else:
+        data = {}
+        data['error'] = "please register or login"
 
-        events = Registration.objects.all().filter(registered_user=usermail)
-        data['events']=str(events)
-
+    print data
     return HttpResponse(simplejson.dumps(data), content_type='application/json')
 
 

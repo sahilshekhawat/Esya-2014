@@ -848,7 +848,7 @@ type="application/x-shockwave-flash" >
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>Register here only if not registering as a Techathlon team, and you wish to participate in the event separately.<br>
 							We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
-							<form method="POST" name="ievent3register" class="ievent3register">{% csrf_token %}
+							<form method="POST" name="ievent3register" class="ievent7register">{% csrf_token %}
 							<input name="braname" type="text" placeholder="Team Name:" /><p>
 							Participating as a team of 1 or 2:<br><ul><li>
 					        <input type="radio" name="participant" value="one">1
@@ -1037,7 +1037,7 @@ type="application/x-shockwave-flash" >
 							<li>TBA</li>
 							</ul>
 				</div></div>
-																											<script type="text/javascript">
+				<script type="text/javascript">
 					$(document).ready(function() {
 
 						$('.ievent9register').submit(function(e) {
@@ -1072,7 +1072,7 @@ type="application/x-shockwave-flash" >
 				<div id="ieventblock69" class="ieventblock6"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>(To enter details of other member of  team.)<br>
-							<form method="POST" name="ievent9register" name="ievent9register">{% csrf_token %}
+							<form action="" method="POST" name="ievent9register" class="ievent9register"> {% csrf_token %}
 							<input name="roboname" type="text" placeholder="Team Name:" /><p>
 							<input name="roboparname" type="text" placeholder="Name of team members:" /><p><label>(Max 2 members, Leave this section blank if you are registering as an individual)</label><p>
 							Will you be able to bring your own laptop:<p>
@@ -1177,6 +1177,7 @@ type="application/x-shockwave-flash" >
 								url: '/eventregister/',
 								data: dataString,
 								success: function(data){
+									console.log(data.content);
 									var json = JSON.parse(data.content);
 									if(json.error == ""){
 										alert("Successfully registered");
@@ -1269,12 +1270,12 @@ type="application/x-shockwave-flash" >
 							<li><input name="air_phone1" type="text" placeholder="Phone:" /></li></ul>
 							<label>Member 3:</label><br>
 							<ul><li><input name="air_name2" type="text" placeholder="Name:" /></li>
-							<li><input "air_college2" type="text" placeholder="College/Institute:" /></li>
+							<li><input name="air_college2" type="text" placeholder="College/Institute:" /></li>
 							<li><input name="air_email2" type="text" placeholder="Email:" /></li>
 							<li><input name="air_phone2" type="text" placeholder="Phone:" /></li></ul>
 							<label>Member 4:</label><br>
 							<ul><li><input name="air_name3" type="text" placeholder="Name:" /></li>
-							<li><input "air_college3" type="text" placeholder="College/Institute:" /></li>
+							<li><input name="air_college3" type="text" placeholder="College/Institute:" /></li>
 							<li><input name="air_email3" type="text" placeholder="Email:" /></li>
 							<li><input name="air_phone3" type="text" placeholder="Phone:" /></li></ul>
 							<input type="submit" value="Register" />
@@ -1488,7 +1489,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							console.log("register function called");
 
 						var dataString = '&event=RoboCon' +
-										 '&register_data=' + $('input[name=robname]').val()+ '\n' + $('input[name=robmacname]').val()  +'\n' + $('input[name=robcapname]').val() +'\n' +  $('input[name=robparname]').val() +'\n' + $('input[name=robparcollege]').val() +'\n' + $('input[name=robparemail]').val() +'\n' + $('input[name=robparphone]').val()+'\n' +  $('input[name=robparname1]').val() +'\n' + $('input[name=robparcollege1]').val() +'\n' + $('input[name=robparemail1]').val() +'\n' + $('input[name=robparphone1]').val()+'\n' + $('input[name=robparname2]').val() +'\n' + $('input[name=robparcollege2]').val() +'\n' + $('input[name=robparemail2]').val() +'\n' + $('input[name=robparphone2]').val(); 
+										 '&register_data=' + $('input[name=robname]').val()+ '\n' + $('input[name=robmacname]').val()  +'\n' + $('input[name=robcapname]').val() +'\n' +  $('input[name=robparname]').val() +'\n' + $('input[name=robparcollege]').val() +'\n' + $('input[name=robparemail]').val() +'\n' + $('input[name=robparphone]').val()+'\n' +$('input[name=robparcourse]').val() +'\n' + $('input[name=robparyear]').val()+'\n' +  $('input[name=robparname1]').val() +'\n' + $('input[name=robparcollege1]').val() +'\n' + $('input[name=robparemail1]').val() +'\n'+ $('input[name=robparphone1]').val()+'\n' + $('input[name=robparcourse1]').val()+'\n'+ $('input[name=robparyear1]').val()+'\n' + $('input[name=robparname2]').val() +'\n' + $('input[name=robparcollege2]').val() +'\n' + $('input[name=robparemail2]').val() +'\n' + $('input[name=robparphone2]').val()+'\n' + $('input[name=robparcourse2]').val() +'\n' + $('input[name=robparyear2]').val(); 
 
 						console.log(dataString);
 						$.ajax({
@@ -1528,17 +1529,17 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li><input name="robparcourse" type="text" placeholder="Course:" /></li>
 							<li><input name="robparyear" type="text" placeholder="Year/Batch:" /></li></ul>
 							<label>Member 3:(optional)</label><br>
-							<ul><li><input type="text" placeholder="Name:" /></li>
-							<li><input name="robparname1" type="text" placeholder="College/Institute:" /></li>
-							<li><input name="robparcollege1" type="text" placeholder="Email:" /></li>
-							<li><input name="robparemail1" type="text" placeholder="Phone:" /></li>
+							<ul><li><input name="robparname1" type="text" placeholder="Name:" /></li>
+							<li><input name="robparcollege1" type="text" placeholder="College/Institute:" /></li>
+							<li><input name="robparemail1" type="text" placeholder="Email:" /></li>
+							<li><input name="robparphone1" type="text" placeholder="Phone:" /></li>
 							<li><input name="robparcourse1"  type="text" placeholder="Course:" /></li>
 							<li><input name="robparyear1" type="text" placeholder="Year/Batch:" /></li></ul>
 							<label>Member 4:(optional)</label><br>
-							<ul><li><input type="text" placeholder="Name:" /></li>
-							<li><input name="robparname2" type="text" placeholder="College/Institute:" /></li>
-							<li><input name="robparcollege2" type="text" placeholder="Email:" /></li>
-							<li><input name="robparemail2" type="text" placeholder="Phone:" /></li>
+							<ul><li><input name="robparname2" type="text" placeholder="Name:" /></li>
+							<li><input name="robparcollege2" type="text" placeholder="College/Institute:" /></li>
+							<li><input name="robparemail2" type="text" placeholder="Email:" /></li>
+							<li><input name="robparphone2" type="text" placeholder="Phone:" /></li>
 							<li><input  name="robparcourse2" type="text" placeholder="Course:" /></li>
 							<li><input name="robparyear2" type="text" placeholder="Year/Batch:" /></li></ul>
 							<input type="submit" value="Register" />

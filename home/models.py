@@ -5,9 +5,13 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class profile(models.Model):
+    user_firstname = models.CharField(max_length=50)
+    user_lastname = models.CharField(max_length=50)
     user = models.CharField(max_length=100)
     college = models.CharField(max_length=50)
     mobile= models.CharField(max_length=10)
+    def __unicode__(self):
+        return self.user
     #profile_pic = models.ImageField(default='home/profile_pics/default.png', blank=True, null= True, upload_to = 'home/profile_pics/', max_length=255)    
     #def __unicode__(self):
     #    return self.mobile
@@ -54,7 +58,10 @@ class Event(models.Model):
     event_category_name = models.ManyToManyField('EventCategory')
 
 class Registration(models.Model):
+    user_fname = models.CharField(max_length=50)
+    user_lname = models.CharField(max_length=50)
     registered_user = models.CharField(max_length=300)
+    #ser_phone = models.CharField(max_length=100)
     event_registered = models.CharField(max_length=300)
     team_members = models.TextField()  #A hack so that any number of team members can be registered.
     def __unicode__(self):

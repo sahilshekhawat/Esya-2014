@@ -38,8 +38,8 @@ def index1(request):
     #    except:
     #        Message=""
     events=""
-    if request.user.is_authenticated():
-        events = Registration.objects.all().filter(registered_user=request.user.email)
+    #if request.user.is_authenticated():
+    #    events = Registration.objects.all().filter(registered_user=request.user.email)
 
 
     return render(request,'home/index.html',{'events':events})
@@ -153,6 +153,9 @@ def eventregister(request):
             data['success']="You have successfully registered"
         except:
             data['error'] = "Please Register and Login with Website before registering for event"
+
+        events = Registration.objects.all().filter(registered_user=usermail)
+        data['events']=str(events)
 
     return HttpResponse(simplejson.dumps(data), content_type='application/json')
 

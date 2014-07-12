@@ -117,9 +117,9 @@ def ajaxregister(request):
         abc = profile(user=str(email),college=str(college),mobile=str(phone))
         abc.save()
         #newuser.college = request.POST['college']
-        #user = authenticate(username=username, password=password)
-        #if user is not None:
-        #    login(request,user)
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(request,user)
         data['success'] = "You have successfully registered and logged in"
         data['username'] = username
         #else:

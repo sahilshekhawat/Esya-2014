@@ -1689,12 +1689,6 @@ var register = {
 		unleash.close();
 		updates.close();
 		location.hash='';
-		$('.imdate').hide();
-		$('.slideshow-block').hide();
-		$('#blkk1').hide();
-		$('#blkk2').hide();
-		$('#blkk3').hide();
-		$('#blkk4').hide();
 		return false;
 	},
 	close : function () {

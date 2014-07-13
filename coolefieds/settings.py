@@ -23,11 +23,11 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'coolefieds',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'C:/Users/win 8/Pictures/esy/prac.db',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': 'root',
-        'PASSWORD': '123',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': '', # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '', # Set to empty string for default.
     }
@@ -86,7 +86,7 @@ STATIC_ROOT = ''
 STATIC_URL = '/s/'
 
 # Additional locations of static files
-STATICFILES_DIRS = ( '/home/sahil/Desktop/Esya-2014/home/static/home',
+STATICFILES_DIRS = ( 'C:/Users/win 8/Pictures/Esya-2014/home/static/home',
 
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.

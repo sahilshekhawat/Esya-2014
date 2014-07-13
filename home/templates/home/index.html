@@ -17,6 +17,7 @@
 
 		<link rel="stylesheet" href="/s/stylesheets/pace.css">
 		<link rel="stylesheet" href="/s/stylesheets/app.css">
+		<link href="/s/toast.css" rel="stylesheet" media="screen">
 		<!--<link rel="stylesheet" href="/s/stylesheets/bigvideo.css">!-->
 		<link href="/s/jquery.thumbnailScroller.css" rel="stylesheet" />
 		<meta name="description" content="">
@@ -1499,6 +1500,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 								success: function(data){
 									var json = JSON.parse(data.content);
 									if(json.error == ""){
+                                        $(".updatess-content").text(json.events);
 										alert("Successfully registered");
 									}				
 									else {
@@ -1634,6 +1636,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 								success: function(data){
 									var json = JSON.parse(data.content);
 									if(json.error == ""){
+                                        $(".updatess-content").text(json.events);
 										alert("Successfully registered");
 									}				
 									else {
@@ -1747,6 +1750,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 								success: function(data){
 									var json = JSON.parse(data.content);
 									if(json.error == ""){
+                                        $(".updatess-content").text(json.events);
 										alert("Successfully registered");
 									}				
 									else {
@@ -3536,8 +3540,16 @@ Institution/School of Speaker:
 		<div id="updatess">
 			<div style="margin-top:55px;text-align: center;font-weigth:600;font-size:24px;color:#0D9986;text-shadow: 0.6px 0.6px #078877;">UPDATES</div>
 			<div class="updatess-content">
-			<p>{{events}}</p>
-
+			<!--{% if event_list %}
+			<ul>
+			{% for poll in event_list %}
+				<li>{{ poll.event_registered }}</li>
+			{% endfor %}
+			</ul>
+			{% else %}
+			<p>No events .</p>
+			{% endif %}
+			<p>{{events}}</p>!-->
 			</div>
 			<button class="close"></button>
 		</div>
@@ -3578,15 +3590,22 @@ Institution/School of Speaker:
 						var jsondata = JSON.parse(data.content);
 						console.log(data);
 						login.close();
+						
 						if(jsondata.error == ""){
+							$(".updatess-content").text(jsondata.events);
+							//changes made
+							Toast.success('Successfully Logged In');
 							$(".button.two.login1").text("HI! " + jsondata.username);
 							$(".button.two.login1").attr("onClick", "login.close()");
 							$(".button.two.register1").text("LOGOUT");
 							$(".button.two.register1").attr("onClick", "logout_ajax()");
+							
 						}
-						else{
-							$(".button.two.login1").attr("onClick", "login.close()");
-							alert(jsondata.error);
+						else
+						{
+							$(".button.two.login1").attr("onClick", "login.open()");
+							alert('Wrong username or password');
+							
 						}
 						//$('#logged_in').html(data);
 					},
@@ -3610,13 +3629,17 @@ Institution/School of Speaker:
 				success: function(data) {
 				var json_data = JSON.parse(data.content);
 				if(json_data.error == ""){
+                    $(".updatess-content").text(json_data.events);
 					$('.button.two.login1').text('LOGIN');
 					$('.button.two.login1').attr("onClick", "login.open()");
 					$('.button.two.register1').text('REGISTER');
 					$('.button.two.register1').attr('onClick', "register.open()");
+					//changes made
+					$('#register').removeClass('open');
+					Toast.info("Logged Out");
 					}
 					else{
-						alert("An error occured")
+						alert("An error occured");
 					}
 				}
 			});
@@ -3634,13 +3657,13 @@ Institution/School of Speaker:
 								<span class="error">This is an error</span>
 							</div>
 							<div>
-								<!--<label>Password: <a rel="forgot_password" class="forgot linkform">Forgot your password?</a></label>-->
+								<label>Password: </label>
 								<input type="password" name="password_login" />
 								<span class="error">This is an error</span>
 							</div>
 							<div class="bottom">
 								<!--<div class="remember"><input type="checkbox" name="rem" /><span>Keep me logged in</span></div>-->
-								<input type="submit" value="Login" ></input>
+								<div style="margin-top:20px"><input type="submit" value="Login" ></input></div>
 								<div class="clear"></div>
 							</div>
 							<div class="reg1" style="float:left;font-size:12px;margin-top:5px;margin-left:2px;">You don't have an account yet?<div class="reg2" style="color:#42A98D;float:right;padding-left:2px"> Register here</div></div>
@@ -3675,8 +3698,10 @@ Institution/School of Speaker:
 								$(".button.two.register1").attr("onClick", "logout_ajax()");
 							}
 							else{
-								$(".button.two.login1").attr("onClick", "login.close()");
+								//changes made
 								alert(jdata.error);
+								$(".button.two.login1").attr("onClick", "login.open()");
+								
 							}
 
 
@@ -3698,8 +3723,32 @@ Institution/School of Speaker:
 					<form class="register" method="POST" name="form">{% csrf_token %}
 						<div class="column">
 							<div>
+								<label>First Name:</label>
+								<input type="text" name="firstname" />
+								<span class="error">This is an error</span>
+							</div>
+							<div>
 								<label>Username:</label>
 								<input type="text" name="username_register"/>
+								<span class="error">This is an error</span>
+							</div>
+							<div>
+								<label>Email:</label>
+								<input type="text" name="email"/>
+								<span class="error">This is an error</span>
+							</div>
+							<div>
+								<label>Phone No.</label>
+								<input type="text" name="phone"/>
+								<span class="error">This is an error</span>
+							</div>
+							
+						</div>
+						<div class="column">
+							
+							<div>
+								<label>Last Name:</label>
+								<input type="text" name="lastname" />
 								<span class="error">This is an error</span>
 							</div>
 							<div>
@@ -3708,32 +3757,11 @@ Institution/School of Speaker:
 								<span class="error">This is an error</span>
 							</div>
 							<div>
-								<label>Email:</label>
-								<input type="text" name="email"/>
-								<span class="error">This is an error</span>
-							</div>
-						</div>
-						<div class="column">
-							<div>
-								<label>First Name:</label>
-								<input type="text" name="firstname" />
-								<span class="error">This is an error</span>
-							</div>
-							<div>
-								<label>Last Name:</label>
-								<input type="text" name="lastname" />
-								<span class="error">This is an error</span>
-							</div>
-							<div>
-								<label>College</label>
+								<label>College/School Name</label>
 								<input type="text" name="college"/>
 								<span class="error">This is an error</span>
 							</div>
-							<div>
-								<lable>phone</lable>
-								<input type="text" name="phone"/>
-								<span class="error">This is an error</span>
-							</div>
+							
 						</div>
 						<div class="bottom">
 							<!--
@@ -4644,13 +4672,13 @@ que queiram participar.
 					<li><a href="" class="iot" style="position:absolute;left:36.8%;">Internet of Things</a></li>
 
 				</ul>
-				<div class="designed" style="position:absolute;left:83.3%;">Designed by : <a href="" class="designer">#excode</a></div>
+				<div class="designed" style="position:absolute;left:88%;">Designed by : <a href="" class="designer">#excode</a></div>
 				<!--<a href="" class="sicredi"></a> !-->
 			</footer>
 		</div>
 
 		<div class="background"></div>
-		
+		<script type="text/javascript" src="/s/toast.js"></script>
 		<!--<div id="loading-video" class="bv" data-video="videos/loading.mp4"></div>!--> 
 		<script>
 		/* jQuery.noConflict() for using the plugin along with other libraries. 
@@ -4772,7 +4800,7 @@ que queiram participar.
 		
 		<!-- thumbnailScroller script -->
 		<script src="/s/jquery.thumbnailScroller.js"></script>
-
+		
 		<div id="fb-root"></div>
 		<script>
 			function fb_login(){

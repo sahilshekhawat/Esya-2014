@@ -65,18 +65,23 @@ def ajaxlogin(request):
                 if not request.POST.get('rem', None):
                     request.session.set_expiry(0)
                 data['success'] = "You have logged in"
+                event_list=[]
+                myString=""
+                events_list =Registration.objects.all().filter(registered_user=user.email)
+                for poll in events_list:
+					if poll.registered_user == request.user.email:
+						event_list.append(poll.event_registered)
+                myString = "\n".join(item for item in event_list)
+                data['events'] = myString
             else:
                 data['error'] = "There was an error, please try again"
         else:
             data['error']  = "Authentication failure! Incorrect username or password"
 
         data['username'] = username
+        
         return HttpResponse(simplejson.dumps(data), content_type='application/json')
 
-                #return render(request,'home/mainpage.html')
-                # Redirect to a success page.
-            #else:
-                # Return a 'disabled account' error message
 @csrf_exempt
 @ajax
 def ajaxregister(request):
@@ -94,11 +99,11 @@ def ajaxregister(request):
         usernamecount=User.objects.filter(username=username).count()
         if usernamecount != 0:
             data['error'] = "username already taken"
+            return HttpResponse(simplejson.dumps(data), content_type='application/json') #changes made
         if emailcount != 0:
             data['error'] = "email already registered"
-
+            return HttpResponse(simplejson.dumps(data), content_type='application/json')  #changes made
         newuser = User.objects.create_user(username,email,password)
-
         if a and b:
             newuser.first_name = a
             newuser.last_name = b
@@ -133,6 +138,7 @@ def ajaxlogout(request):
     data['error'] = ""
     auth_logout(request)
     data['success'] = "You have been successfully loggedout"
+    data['events']=""
     return HttpResponse(simplejson.dumps(data), content_type='application/json')
 
 
@@ -151,15 +157,28 @@ def eventregister(request):
                 print usermail
                 event = request.POST['event']
                 register_data = request.POST['register_data']
-                try:
-                    r = Registration(user_fname=user.first_name, user_lname=user.last_name, registered_user=usermail, event_registered=event,team_members=register_data)
-                    r.save()
-                    data['success']="You have successfully registered"
-                except:
-                    data['error'] = "Please Register and Login with Website before registering for event"
+                            #w = []
+                q = list(Registration.objects.all().filter(registered_user=usermail))
+                for i in range(len(q)):
+                    q[i] = q[i].event_registered
+                if event not in q: 
+                    try:
+                        r = Registration(user_fname=user.first_name, user_lname=user.last_name, registered_user=usermail, event_registered=event,team_members=register_data)
+                        r.save()
+                        event_list=[]
+                        myString=""
+                        events_list =Registration.objects.all().filter(registered_user=usermail)
+                        for poll in events_list:
+                            if poll.registered_user == usermail:
+                                event_list.append(poll.event_registered)
+                        myString = " ".join(item for item in event_list)
+                        data['events'] = myString
+                        data['success']="You have successfully registered"
+                    except:
+                        data['error'] = "Please Register and Login with Website before registering for event"
+                else:
+                    data['error'] = "You have already Registered for this Event"
 
-                events = Registration.objects.all().filter(registered_user=usermail)
-                data['events']=str(events)
             else:
                 data['error'] = "Please register or login (with a Email address"
         else:
@@ -170,9 +189,3 @@ def eventregister(request):
 
     print data
     return HttpResponse(simplejson.dumps(data), content_type='application/json')
-
-
-
-
-
-    #eventregister()

@@ -40,9 +40,21 @@ def index1(request):
     events=""
     #if request.user.is_authenticated():
     #    events = Registration.objects.all().filter(registered_user=request.user.email)
-
-
     return render(request,'home/index.html',{'events':events})
+def index2(request):
+    #if request.user.is_authenticated():
+    #    return render(request, 'home/index_login.html', {'user': request.user})
+    #else:
+    #    try:
+    #        if isEmailVerified(request.user.id)==False:
+    #            Message+="Psst. Don't forget to confirm your email! Just look for the message we sent you."
+    #    except:
+    #        Message=""
+    namee=""
+    if request.user.is_authenticated():
+        namee = user
+
+    return render(request,'home/index.html',{'namee':namee})
 
 def allevents(request):
     return render(request, 'home/allevents.html')
@@ -122,11 +134,11 @@ def ajaxregister(request):
         abc = profile(user_firstname=str(a), user_lastname=str(b), user=str(email),college=str(college),mobile=str(phone))
         abc.save()
         #newuser.college = request.POST['college']
-        user = authenticate(username=username, password=password)
-        if user is not None:
-            login(request,user)
-        data['success'] = "You have successfully registered and logged in"
-        data['username'] = username
+        #user = authenticate(username=username, password=password)
+        #if user is not None:
+        #    login(request,user)
+        #data['success'] = "You have successfully registered and logged in"
+        #data['username'] = username
         #else:
         #    data['error'] = "An Error has occured please try again"
         return HttpResponse(simplejson.dumps(data), content_type='application/json')
@@ -177,10 +189,69 @@ def eventregister(request):
                     except:
                         data['error'] = "Please Register and Login with Website before registering for event"
                 else:
-                    data['error'] = "You have already Registered for this Event"
+					data['error'] = "abc"
 
             else:
-                data['error'] = "Please register or login (with a Email address"
+                data['error'] = "Please register or login with a Email address"
+        else:
+            data['error']="Please register or Login"
+    else:
+        data = {}
+        data['error'] = "please register or login"
+
+    print data
+    return HttpResponse(simplejson.dumps(data), content_type='application/json')
+@ajax
+@csrf_exempt
+def eventregister55(request):
+    if request.method== "POST" and request.is_ajax():
+        data = {}
+        data['error'] = ""
+        if request.user.is_authenticated():
+            user = request.user
+            if request.user.email:
+                usermail = request.user.email
+                print user.first_name
+                print user.last_name
+                print usermail
+                event = request.POST['event']
+                register_data = request.POST['register_data']
+                            #w = []
+                q = list(Registration.objects.all().filter(registered_user=usermail))
+                for i in range(len(q)):
+                    q[i] = q[i].event_registered
+                if event not in q: 
+                    try:
+                        r = Registration(user_fname=user.first_name, user_lname=user.last_name, registered_user=usermail, event_registered=event,team_members=register_data)
+                        r.save()
+                        event_list=[]
+                        myString=""
+                        events_list =Registration.objects.all().filter(registered_user=usermail)
+                        for poll in events_list:
+                            if poll.registered_user == usermail:
+                                event_list.append(poll.event_registered)
+                        myString = " ".join(item for item in event_list)
+                        data['events'] = myString
+                        data['success']="You have successfully registered"
+                    except:
+                        data['error'] = "Please Register and Login with Website before registering for event"
+                else:
+					k=Registration.objects.filter(event_registered=event)
+					k.delete();
+					r = Registration(user_fname=user.first_name, user_lname=user.last_name, registered_user=usermail, event_registered=event,team_members=register_data)
+					r.save()
+					event_list=[]
+					myString=""
+					events_list =Registration.objects.all().filter(registered_user=usermail)
+					for poll in events_list:
+						if poll.registered_user == usermail:
+							event_list.append(poll.event_registered)
+					myString = " ".join(item for item in event_list)
+					data['events'] = myString	
+					data['error'] = "You have already Registered for this Event"
+
+            else:
+                data['error'] = "Please register or login with a Email address"
         else:
             data['error']="Please register or Login"
     else:

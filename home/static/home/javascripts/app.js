@@ -1687,7 +1687,7 @@ var register = {
 		entertainment.close();
 		flagship.close();
 		unleash.close();
-		updates.close();
+		updatess.close();
 		location.hash='';
 		return false;
 	},
@@ -1874,6 +1874,8 @@ if(isChromium !== null && vendorName === "Google Inc.") {
 	$('.sponsnew').spriteOnHover({fps:40, orientation:"horizontal", rewind: 'unanimate', loop: false, autostart: false, repeat:true});
 	
 	$('.login1').spriteOnHover({fps:40, orientation:"horizontal", rewind: 'unanimate', loop: false, autostart: false, repeat:true});
+	//$('.login5').spriteOnHover({fps:40, orientation:"horizontal", rewind: 'unanimate', loop: false, autostart: false, repeat:true});
+	
 	$('.register1').spriteOnHover({fps:40, orientation:"horizontal", rewind: 'unanimate', loop: false, autostart: false, repeat:true});
 	
 	
@@ -1920,7 +1922,9 @@ if(isChromium !== null && vendorName === "Google Inc.") {
 	$('.button.login1').on('click', function () {
 		login.open();
 	});
-	
+	$('.button.login5').on('click', function () {
+		login.close();
+	});
 	$('.button.register1').on('click', function () {
 		register.open();
 	});

@@ -183,6 +183,7 @@ type="application/x-shockwave-flash" >
 							<li><font color='#4ef4b4'>></font> Organizers have the right to disqualify any team if they break any rule.</li>
 							</ul>
 				</div></div>
+							
 								<script type="text/javascript">
 					$(document).ready(function() {
 
@@ -203,10 +204,56 @@ type="application/x-shockwave-flash" >
 									if(json.error == ""){
 										$(".updatess-content").text(json.events);
 										Toast.success("Successfully registered");
+										
 									}				
-									else {
-										Toast.error("You have already registered for this event. ");
-									}
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				alert("Event Registration Errored! Please check your network connection");
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											
 								},
 								error: function(data){
 										alert("Event Registration Errored! Please check your network connection");
@@ -329,10 +376,56 @@ type="application/x-shockwave-flash" >
 									if(json.error == ""){
 										$(".updatess-content").text(json.events);
 										Toast.success("Successfully registered");
+										
 									}				
-									else {
-										Toast.error("You have already registered for this event. ");
-									}
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				alert("Event Registration Errored! Please check your network connection");
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											
 								},
 								error: function(data){
 										alert("Event Registration Errored");
@@ -449,10 +542,56 @@ type="application/x-shockwave-flash" >
 									if(json.error == ""){
 										$(".updatess-content").text(json.events);
 										Toast.success("Successfully registered");
+										
 									}				
-									else {
-										Toast.error("You have already registered for this event. ");
-									}
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				alert("Event Registration Errored! Please check your network connection");
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											
 								},
 								error: function(data){
 										alert("Event Registration Errored");
@@ -639,10 +778,56 @@ type="application/x-shockwave-flash" >
 									if(json.error == ""){
 										$(".updatess-content").text(json.events);
 										Toast.success("Successfully registered");
+										
 									}				
-									else {
-										Toast.error("You have already registered for this event. ");
-									}
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				alert("Event Registration Errored! Please check your network connection");
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											
 								},
 								error: function(data){
 										alert("Event Registration Errored");
@@ -837,10 +1022,56 @@ type="application/x-shockwave-flash" >
 									if(json.error == ""){
 										$(".updatess-content").text(json.events);
 										Toast.success("Successfully registered");
+										
 									}				
-									else {
-										Toast.error("You have already registered for this event. ");
-									}
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				alert("Event Registration Errored! Please check your network connection");
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											
 								},
 								error: function(data){
 										alert("Event Registration Errored");
@@ -952,10 +1183,56 @@ type="application/x-shockwave-flash" >
 									if(json.error == ""){
 										$(".updatess-content").text(json.events);
 										Toast.success("Successfully registered");
+										
 									}				
-									else {
-										Toast.error("You have already registered for this event. ");
-									}
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				alert("Event Registration Errored! Please check your network connection");
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											
 								},
 								error: function(data){
 										alert("Event Registration Errored");
@@ -1064,10 +1341,56 @@ type="application/x-shockwave-flash" >
 									if(json.error == ""){
 										$(".updatess-content").text(json.events);
 										Toast.success("Successfully registered");
+										
 									}				
-									else {
-										Toast.error("You have already registered for this event. ");
-									}
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				alert("Event Registration Errored! Please check your network connection");
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											
 								},
 								error: function(data){
 										alert("Event Registration Errored");
@@ -1190,10 +1513,56 @@ type="application/x-shockwave-flash" >
 									if(json.error == ""){
 										$(".updatess-content").text(json.events);
 										Toast.success("Successfully registered");
+										
 									}				
-									else {
-										Toast.error("You have already registered for this event. ");
-									}
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				alert("Event Registration Errored! Please check your network connection");
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											
 								},
 								error: function(data){
 										alert("Event Registration Errored");
@@ -1373,10 +1742,56 @@ type="application/x-shockwave-flash" >
 									if(json.error == ""){
 										$(".updatess-content").text(json.events);
 										Toast.success("Successfully registered");
+										
 									}				
-									else {
-										Toast.error("You have already registered for this event. ");
-									}
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				alert("Event Registration Errored! Please check your network connection");
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											
 								},
 								error: function(data){
 										alert("Event Registration Errored");
@@ -1509,12 +1924,58 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 								success: function(data){
 									var json = JSON.parse(data.content);
 									if(json.error == ""){
-                                        $(".updatess-content").text(json.events);
+										$(".updatess-content").text(json.events);
 										Toast.success("Successfully registered");
+										
 									}				
-									else {
-										Toast.error("You have already registered for this event. ");
-									}
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				alert("Event Registration Errored! Please check your network connection");
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											
 								},
 								error: function(data){
 										alert("Event Registration Errored");
@@ -1645,12 +2106,58 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 								success: function(data){
 									var json = JSON.parse(data.content);
 									if(json.error == ""){
-                                        $(".updatess-content").text(json.events);
+										$(".updatess-content").text(json.events);
 										Toast.success("Successfully registered");
+										
 									}				
-									else {
-										Toast.error("You have already registered for this event. ");
-									}
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				alert("Event Registration Errored! Please check your network connection");
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											
 								},
 								error: function(data){
 										alert("Event Registration Errored");
@@ -1759,12 +2266,58 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 								success: function(data){
 									var json = JSON.parse(data.content);
 									if(json.error == ""){
-                                        $(".updatess-content").text(json.events);
+										$(".updatess-content").text(json.events);
 										Toast.success("Successfully registered");
+										
 									}				
-									else {
-										Toast.error("You have already registered for this event. ");
-									}
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				alert("Event Registration Errored! Please check your network connection");
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											
 								},
 								error: function(data){
 										alert("Event Registration Errored");
@@ -1991,10 +2544,56 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 									if(json.error == ""){
 										$(".updatess-content").text(json.events);
 										Toast.success("Successfully registered");
+										
 									}				
-									else {
-										Toast.error("You have already registered for this event. ");
-									}
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				alert("Event Registration Errored! Please check your network connection");
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											
 								},
 								error: function(data){
 										alert("Event Registration Errored");
@@ -2184,10 +2783,56 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 									if(json.error == ""){
 										$(".updatess-content").text(json.events);
 										Toast.success("Successfully registered");
+										
 									}				
-									else {
-										Toast.error("You have already registered for this event. ");
-									}
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				alert("Event Registration Errored! Please check your network connection");
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											
 								},
 								error: function(data){
 										alert("Event Registration Errored");
@@ -2753,10 +3398,56 @@ Institution/School of Speaker:
 									if(json.error == ""){
 										$(".updatess-content").text(json.events);
 										Toast.success("Successfully registered");
+										
 									}				
-									else {
-										Toast.error("You have already registered for this event. ");
-									}
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				alert("Event Registration Errored! Please check your network connection");
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											
 								},
 								error: function(data){
 										alert("Event Registration Errored");
@@ -2880,10 +3571,56 @@ Institution/School of Speaker:
 									if(json.error == ""){
 										$(".updatess-content").text(json.events);
 										Toast.success("Successfully registered");
+										
 									}				
-									else {
-										Toast.error("You have already registered for this event. ");
-									}
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				alert("Event Registration Errored! Please check your network connection");
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											
 								},
 								error: function(data){
 										alert("Event Registration Errored");
@@ -3008,10 +3745,56 @@ Institution/School of Speaker:
 									if(json.error == ""){
 										$(".updatess-content").text(json.events);
 										Toast.success("Successfully registered");
+										
 									}				
-									else {
-										Toast.error("You have already registered for this event. ");
-									}
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				alert("Event Registration Errored! Please check your network connection");
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											
 								},
 								error: function(data){
 										alert("Event Registration Errored");
@@ -3124,10 +3907,56 @@ Institution/School of Speaker:
 									if(json.error == ""){
 										$(".updatess-content").text(json.events);
 										Toast.success("Successfully registered");
+										
 									}				
-									else {
-										Toast.error("You have already registered for this event. ");
-									}
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				alert("Event Registration Errored! Please check your network connection");
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											
 								},
 								error: function(data){
 										alert("Event Registration Errored");
@@ -3238,10 +4067,56 @@ Institution/School of Speaker:
 									if(json.error == ""){
 										$(".updatess-content").text(json.events);
 										Toast.success("Successfully registered");
+										
 									}				
-									else {
-										Toast.error("You have already registered for this event. ");
-									}
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				alert("Event Registration Errored! Please check your network connection");
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											
 								},
 								error: function(data){
 										alert("Event Registration Errored");
@@ -3705,13 +4580,13 @@ Institution/School of Speaker:
 							var jdata = JSON.parse(data.content);
 							if(jdata.error == ""){
 								console.log(data);
-								$('#register').hide();
-								$(".button.two.login1").attr("onClick", "login.close()");
+								//$('#register').hide();
+								//$(".button.two.login1").attr("onClick", "login.close()");
 
 								//$(".button two login1").html(data.username);
-								$(".button.two.login1").text("HI! " + jdata.username);
-								$(".button.two.register1").text("LOGOUT");
-								$(".button.two.register1").attr("onClick", "logout_ajax()");
+								//$(".button.two.login1").text("HI! " + jdata.username);
+								//$(".button.two.register1").text("LOGOUT");
+								//$(".button.two.register1").attr("onClick", "logout_ajax()");
 								Toast.success('Successfully Registered');
 							}
 							else{
@@ -4465,11 +5340,16 @@ que queiram participar.
 			<button class="button one entertainment">Social</button>
 			<button class="button one flagship">Flagship</button>
 			<button class="button one unleash">School</button>
+			{% if user.is_authenticated %}
+			<button class="button two login1 login5"><div>Hi! {{user}}</div></button>
+			<button class="button two register1" onClick="logout_ajax()">Logout</button>
 			
+			{% else %}
 			<button class="button two login1" onClick="login.open()" >Login</button>
-<!--			<button class="button two login_error" id="login_error"></button>-->
 			<button class="button two register1" onClick="register.open()">Register</button>
-			<button class="button two updatess">Dashboard</button>
+			{% endif %}
+<!--			<button class="button two login_error" id="login_error"></button>-->
+			<button class="button two updatess">Registered Event List</button>
 			<button class="button two sponsnew">Sponsors</button>
 			
 			<!--<div class="button entry entry1"></div>!-->

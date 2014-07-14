@@ -32,6 +32,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.index1),
+	url(r'^$', views.index2),
     #url(r'^$', mainpage),
     url(r'^logout$', logout),
     url(r'^search$', search),
@@ -59,4 +60,5 @@ urlpatterns = patterns('',
     url(r'^allevents$', views.allevents),
     url(r'^individualevents', views.individualevents),
     url(r'^eventregister/$', views.eventregister),
+	url(r'^eventregister55/$', views.eventregister55),
 )

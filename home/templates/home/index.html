@@ -1488,6 +1488,7 @@ type="application/x-shockwave-flash" >
 				</script>
 				<div id="ieventblock69" class="ieventblock6"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
+							<p>TBA</p>
 							<!--<p>(To enter details of other member of  team.)<br>
 							<form action="" method="POST" name="ievent9register" class="ievent9register"> {% csrf_token %}
 							<input name="roboname" type="text" placeholder="Team Name:" /><p>
@@ -1501,6 +1502,7 @@ type="application/x-shockwave-flash" >
 							<input type="submit" value="Register" />
 							</form>
 							</p>-->
+							<!--
 							<form action="" method="POST" name="ievent9register" class="ievent9register"> {% csrf_token %}
 							<input name="roboname" type="text" placeholder="Team Name:" /><p>
 							<label>Member 2:(mandatory)</label><br>
@@ -1519,11 +1521,11 @@ type="application/x-shockwave-flash" >
 							<label>Bot Details :</label><br>
 							<input type="text" placeholder="Dimensions :" />(l * b * h mm)*<br>
 							<input type="text" placeholder="Weight:" />(in kgs)*<br>
-							<textarea rows="4" cols="50" name="comment" form="usrform">Brief Description Of Bot (Weaponry System, Power Source)*</textarea><br><!--Paragraph Description-->
-							Upload a written abstract<!-- Include an upload button here. Options with * are mandatory-->
-							<input type="text" placeholder="Link To The Video Abstract:" /><br>
+							<textarea rows="4" cols="50" name="comment" form="usrform">Brief Description Of Bot (Weaponry System, Power Source)*</textarea><br>!--><!--Paragraph Description-->
+							<!--Upload a written abstract!--><!-- Include an upload button here. Options with * are mandatory-->
+							<!--<input type="text" placeholder="Link To The Video Abstract:" /><br>
 							<input type="submit" value="Register" />
-							</form>
+							</form>!-->
 							</p>
 				</div></div>
 				<div id="ieventblock79" class="ieventblock7"><div class="ieventtext1">
@@ -1754,10 +1756,10 @@ type="application/x-shockwave-flash" >
 							<input name="aircraft" type="text" placeholder="Aircraft:" /><p>
 							We already have your details. Please enter details of your team partners, in case you’re not participating in the event as a lonewolf.<br>
 							<label>Member 2:</label><br>
-							<ul><li><input name="air_name1" type="text" placeholder="Name:" required/></li>
-							<li><input name="air_college1" type="text" placeholder="College/Institute:" required/></li>
-							<li><input name="air_email1" type="text" placeholder="Email:" required/></li>
-							<li><input name="air_phone1" type="text" placeholder="Phone:" required/></li></ul>
+							<ul><li><input name="air_name1" type="text" placeholder="Name:" /></li>
+							<li><input name="air_college1" type="text" placeholder="College/Institute:" /></li>
+							<li><input name="air_email1" type="text" placeholder="Email:" /></li>
+							<li><input name="air_phone1" type="text" placeholder="Phone:" /></li></ul>
 							<label>Member 3:</label><br>
 							<ul><li><input name="air_name2" type="text" placeholder="Name:" /></li>
 							<li><input name="air_college2" type="text" placeholder="College/Institute:" /></li>
@@ -1919,9 +1921,9 @@ type="application/x-shockwave-flash" >
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>
 							<form method="POST" name="ievent11register" class="ievent11register">{% csrf_token %}
-							<input name="equiname" type="text" placeholder="Team Name:" /><p>
-							<input name="equischoolname" type="text" placeholder="School Name:" /><p>
-							<input name="equischoolclass" type="text" placeholder="Your class:" /><p>
+							<input name="equiname" type="text" placeholder="Team Name:" required/><p>
+							<input name="equischoolname" type="text" placeholder="School Name:" required/><p>
+							<input name="equischoolclass" type="text" placeholder="Your class:" required/><p>
 							We have other details about you. Please enter following details about your team partner (if any).<br>
 					        <label>Member 2: (if valid)</label>
 							<ul><li>     <input name="equiparname" type="text" placeholder="Name:" /><br></li>
@@ -2105,16 +2107,16 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<p>(We already have your details. Please enter details of other members of your team.)<p>
 							<form method="POST" name="ievent12register" class="ievent12register">{% csrf_token %}
 							We already have your details. Please enter details of your team partners, in case you’re not participating in the event as a lonewolf.<br>
-							<input name="robname" type="text" placeholder="Team Name:" /><p>
-							<input name="robmacname" type="text" placeholder="Machine Name:" /><p>
-							<input name="robcapname" type="text" placeholder="Team Captain:" /><p>
+							<input name="robname" type="text" placeholder="Team Name:" required/><p>
+							<input name="robmacname" type="text" placeholder="Machine Name:" required/><p>
+							<input name="robcapname" type="text" placeholder="Team Captain:" required/><p>
 							<label>Member 2:(mandatory)</label><br>
-							<ul><li><input name="robparname" type="text" placeholder="Name:" /></li>
-							<li><input name="robparcollege" type="text" placeholder="College/Institute:" /></li>
-							<li><input name="robparemail" type="text" placeholder="Email:" /></li>
-							<li><input name="robparphone" type="text" placeholder="Phone:" /></li>
-							<li><input name="robparcourse" type="text" placeholder="Course:" /></li>
-							<li><input name="robparyear" type="text" placeholder="Year/Batch:" /></li></ul>
+							<ul><li><input name="robparname" type="text" placeholder="Name:" required/></li>
+							<li><input name="robparcollege" type="text" placeholder="College/Institute:" required/></li>
+							<li><input name="robparemail" type="text" placeholder="Email:" required/></li>
+							<li><input name="robparphone" type="text" placeholder="Phone:" required/></li>
+							<li><input name="robparcourse" type="text" placeholder="Course:" required/></li>
+							<li><input name="robparyear" type="text" placeholder="Year/Batch:" required/></li></ul>
 							<label>Member 3:(optional)</label><br>
 							<ul><li><input name="robparname1" type="text" placeholder="Name:" /></li>
 							<li><input name="robparcollege1" type="text" placeholder="College/Institute:" /></li>
@@ -2295,17 +2297,17 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li><font color='#4ef4b4'>22 August 2014:</font> Main Event Day (Round-2)
 							</ul></p>
 							<p><form method="POST" name="ievent13register" class="ievent13register">{% csrf_token %}
-							<input name="parproname" type="text" placeholder="Project Name:" /><p>
-							<input name="parteamsize" type="text" placeholder="Team Size:" /><p>
-							<input name="parteammem" type="text" placeholder="Team Members:" /><p>
-							<input name="parcollege" type="text" placeholder="College/Institute:" /><p>
+							<input name="parproname" type="text" placeholder="Project Name:" required/><p>
+							<input name="parteamsize" type="text" placeholder="Team Size:" required/><p>
+							<input name="parteammem" type="text" placeholder="Team Members:" required/><p>
+							<input name="parcollege" type="text" placeholder="College/Institute:" required/><p>
 							<label>Primary Contact</label>
-							<ul><li>     <input name="priconname" type="text" placeholder="Name:" /><br></li>
-							<li>     <input name="priconphone" type="text" placeholder="Phone No:" /><br></li></ul>
+							<ul><li>     <input name="priconname" type="text" placeholder="Name:" required/><br></li>
+							<li>     <input name="priconphone" type="text" placeholder="Phone No:" required/><br></li></ul>
 							<label>Secondary Contact</label>
-							<ul><li>     <input name="secconname" type="text" placeholder="Name:" /><br></li>
-							<li>     <input name="secconphone" type="text" placeholder="Phone No:" /><br></li></ul>
-							<input name="secconemail" type="text" placeholder="Email ID:" />
+							<ul><li>     <input name="secconname" type="text" placeholder="Name:" required/><br></li>
+							<li>     <input name="secconphone" type="text" placeholder="Phone No:" required/><br></li></ul>
+							<input name="secconemail" type="text" placeholder="Email ID:" required/>
 							<input type="submit" value="Register" />
 							</form>
 				</div></div>
@@ -2450,8 +2452,8 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>
 							<form method="POST" name="ievent5register" class="ievent14register">{% csrf_token %}
-							<input name="procodechef" type="text" placeholder="CodeChef Handle:" /><br>
-							<input name="proyear" type="text" placeholder="Year/Batch:" /><br>
+							<input name="procodechef" type="text" placeholder="CodeChef Handle:" required/><br>
+							<input name="proyear" type="text" placeholder="Year/Batch:" required/><br>
 							<input type="submit" value="Register" />
 							</form>
 							</p>
@@ -2733,7 +2735,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
 							<form method="POST" name="ievent16register" class="ievent16register">{% csrf_token %}
-							<input name="obname" type="text" placeholder="Team Name:" /><p>
+							<input name="obname" type="text" placeholder="Team Name:" required/><p>
 							Participating as a team of 1 or 2:<br><ul><li>
 					        <input type="radio" name="participant" value="one">1
 							<input type="radio" name="participant" value="two">2<br></li></ul>
@@ -2971,8 +2973,8 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>
 							<form method="POST" name="ievent18register" class="ievent18register">{% csrf_token %}
-							<input name="thteamname" type="text" placeholder="Team Name:" /><br>
-							<input name="thcollege" type="text" placeholder="Institute:" /><br>
+							<input name="thteamname" type="text" placeholder="Team Name:" required/><br>
+							<input name="thcollege" type="text" placeholder="Institute:" required/><br>
 							<p>We already have your details. Enter details of your team partners (if any).<br>
 							<label>Member 2:</label><br>
 							<ul><li><input name="thname1" type="text" placeholder="Name:" /><br></li>
@@ -2980,8 +2982,8 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<label>Member 3:</label><br>
 							<ul><li><input name="thname2" type="text" placeholder="Name:" /><br></li>
 							</ul>
-							<br><input name="thtech" type="text" placeholder="Technology/Frame Work:" /><br>
-							<input name="theditor" type="text" placeholder="Code Editor:" /><br>
+							<br><input name="thtech" type="text" placeholder="Technology/Frame Work:" required/><br>
+							<input name="theditor" type="text" placeholder="Code Editor:" required/><br>
 
 							<input type="submit" value="Register" />
 							</form>
@@ -3199,15 +3201,15 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 				<div id="ieventblock620" class="ieventblock6"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p><!--Static content updated. Backend left-->
 							<form method="POST" name="ievent20register" class="ievent20register">{% csrf_token %}
-							<input name="bigname" type="text" placeholder="Team Name:" /><p>
+							<input name="bigname" type="text" placeholder="Team Name:" required/><p>
 							<label>Member 1:</label><br>
-							<ul><li><input name ="big1" type="text" placeholder="College/Institute:" /></li>
+							<ul><li><input name ="big1" type="text" placeholder="College/Institute:" required/></li>
 							<li><input name="big2" type="text" placeholder="if any:" />Associated Astronomy Organisation</li></ul>
 							<label>Member 2:</label><br>
-							<ul><li><input name="bigparname" type="text" placeholder="Name:" /></li>
-							<li><input name="bigparphone" type="text" placeholder="Contact No:" /></li>
-							<li><input name="bigparemail" type="text" placeholder="Email:" /></li>
-							<li><input name="bigparcollege" type="text" placeholder="College/Institute:" /></li>
+							<ul><li><input name="bigparname" type="text" placeholder="Name:" required/></li>
+							<li><input name="bigparphone" type="text" placeholder="Contact No:" required/></li>
+							<li><input name="bigparemail" type="text" placeholder="Email:" required/></li>
+							<li><input name="bigparcollege" type="text" placeholder="College/Institute:" required/></li>
 							<li><input name="big3" type="text" placeholder="if any:" />Associated Astronomy Organisation</li></ul>
 							<input type="submit" value="Register" />
 							</form>
@@ -3503,8 +3505,8 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<p>Entry fee : Rs 250/-</p>
 							<p>Register yourself by filling the required details below<br>
 							<form method="POST" name="ievent23register" class="ievent23register">{% csrf_token %}
-							<input name="che1" type="text" placeholder="College/School:" /><p>
-							<input name="che2" type="text" placeholder="Date Of Birth:" /><p>
+							<input name="che1" type="text" placeholder="College/School:" required/><p>
+							<input name="che2" type="text" placeholder="Date Of Birth:" required/><p>
 							<input name="che3" type="text" placeholder="FIDE Rating:" /><pre>   OR   </pre><input type="radio" name="no-rating" value="none">Unrated
 							<p>
 							<input type="submit" value="Register" />
@@ -3756,15 +3758,15 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<p>Teams must have EXACTLY 2 members to participate. The 2 members must choose OPPOSING stances for the Final Round of the debate beforehand. Cross-institutional teams are permitted.<br>
 							<form method="POST" name="ievent25register" class="ievent25register">{% csrf_token %}
 							<label>For the Motion Speaker:</label><br>
-							<ul><li><input name="rename" type="text" placeholder="Name:" /></li>
-							<li><input name="rephone" type="text" placeholder="Phone No:" /></li>
-							<li><input name="remail" type="text" placeholder="Email:" /></li>
-							<li><input name="recollege" type="text" placeholder="Institution/School:" /></li></ul>
+							<ul><li><input name="rename" type="text" placeholder="Name:" required/></li>
+							<li><input name="rephone" type="text" placeholder="Phone No:" required/></li>
+							<li><input name="remail" type="text" placeholder="Email:" required/></li>
+							<li><input name="recollege" type="text" placeholder="Institution/School:" required/></li></ul>
 							<label>Against the Motion Speaker:</label><br>
-							<ul><li><input name="reagname" type="text" placeholder="Name:" /></li>
-							<li><input name="reagphone" type="text" placeholder="Phone No:" /></li>
-							<li><input name="reagemail" type="text" placeholder="Email:" /></li>
-							<li><input name="reagcollege" type="text" placeholder="Institution/School:" /></li></ul>
+							<ul><li><input name="reagname" type="text" placeholder="Name:" required/></li>
+							<li><input name="reagphone" type="text" placeholder="Phone No:" required/></li>
+							<li><input name="reagemail" type="text" placeholder="Email:" required/></li>
+							<li><input name="reagcollege" type="text" placeholder="Institution/School:" required/></li></ul>
 							<input type="submit" value="Register" />
 							</form>
 							</p>
@@ -3935,11 +3937,11 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<input name="hunmor" type="text" placeholder="Answer To Morse Code:" /><p>
 							We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
 							<label>Member 2:</label>
-							<ul><li>     <input name="hunname" type="text" placeholder="Name:" /><br></li>
-							<li>     <input name="hunphone" type="text" placeholder="Phone No:" /><br></li></ul>
+							<ul><li>     <input name="hunname" type="text" placeholder="Name:" required/><br></li>
+							<li>     <input name="hunphone" type="text" placeholder="Phone No:" required/><br></li></ul>
 							<label>Member 3:</label>
-							<ul><li>     <input name="hunname1" type="text" placeholder="Name:" /><br></li>
-							<li>     <input name="hunphone1" type="text" placeholder="Phone No:" /><br></li></ul>
+							<ul><li>     <input name="hunname1" type="text" placeholder="Name:" required/><br></li>
+							<li>     <input name="hunphone1" type="text" placeholder="Phone No:" required/><br></li></ul>
 							<label>Member 4:</label>
 							<ul><li>     <input name="hunname2" type="text" placeholder="Name:" /><br></li>
 							<li>     <input name="hunphone2" type="text" placeholder="Phone No:" /><br></li></ul>
@@ -4110,8 +4112,8 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
 							<form method="POST" name="ievent27register" class="ievent27register">{% csrf_token %}
-							<input name="hoaxname" type="text" placeholder="Team Name:" />Required, even for a team with 1 member <p>
-							<input name="hoaxtopic" type="text" placeholder="Fake Research Topic:" />Required - a rough topic will do, the final topic will be the one you write on the paper while mailing<p>
+							<input name="hoaxname" type="text" placeholder="Team Name:" required/>Required, even for a team with 1 member <p>
+							<input name="hoaxtopic" type="text" placeholder="Fake Research Topic:" required/>Required - a rough topic will do, the final topic will be the one you write on the paper while mailing<p>
 							<label>Member 2: (optional)</label>
 							<ul><li>     <input name="hoaxname1" type="text" placeholder="Name:" /><br></li>
 							<li>     <input name="hoaxphone1" type="text" placeholder="Phone No:" /><br></li>
@@ -4438,15 +4440,15 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<form method="POST" name="ievent29register" class="ievent29register">{% csrf_token %}
 							<input name="bname" type="text" placeholder="Team Name:" /><p><!-- Member 2,3 are mandatory. Member 3,4 optional.-->
 							<label>Member 2: </label><p>
-							<ul><li>     <input name="na1" type="text" placeholder="Name:" /><br></li>
-							<li>     <input name="na2" type="text" placeholder="Phone No:" /><br></li>
-							<li>     <input name="na3" type="text" placeholder="Email:" /><br></li>
-							<li>     <input name="na4" type="text" placeholder="Institute:" /><br></li></ul>
+							<ul><li>     <input name="na1" type="text" placeholder="Name:" required/><br></li>
+							<li>     <input name="na2" type="text" placeholder="Phone No:" required/><br></li>
+							<li>     <input name="na3" type="text" placeholder="Email:" required/><br></li>
+							<li>     <input name="na4" type="text" placeholder="Institute:" required/><br></li></ul>
 							</p><label>Member 3: </label><p>
-							<ul><li>     <input name="na5" type="text" placeholder="Name:" /><br></li>
-							<li>     <input name="na6" type="text" placeholder="Phone No:" /><br></li>
-							<li>     <input name="na7" type="text" placeholder="Email:" /><br></li>
-							<li>     <input name="na8" type="text" placeholder="Institute:" /><br></li></ul>
+							<ul><li>     <input name="na5" type="text" placeholder="Name:" required/><br></li>
+							<li>     <input name="na6" type="text" placeholder="Phone No:" required/><br></li>
+							<li>     <input name="na7" type="text" placeholder="Email:" required/><br></li>
+							<li>     <input name="na8" type="text" placeholder="Institute:" required/><br></li></ul>
 							</p><label>Member 4(optional): </label><p>
 							<ul><li>     <input name="na9" type="text" placeholder="Name:" /><br></li>
 							<li>     <input name="na10" type="text" placeholder="Phone No:" /><br></li>

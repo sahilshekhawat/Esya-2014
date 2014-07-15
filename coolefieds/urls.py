@@ -61,4 +61,6 @@ urlpatterns = patterns('',
     url(r'^individualevents', views.individualevents),
     url(r'^eventregister/$', views.eventregister),
 	url(r'^eventregister55/$', views.eventregister55),
+	url(r'^eventregister33/$', views.eventregister33),
+	
 )

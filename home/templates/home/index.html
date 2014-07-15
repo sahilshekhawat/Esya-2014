@@ -172,7 +172,6 @@ type="application/x-shockwave-flash" >
 							<ul>
 							<li><font color='#4ef4b4'>Team Size:</font> At Most 2 members</li>
 							<li><font color='#4ef4b4'>Duration:</font> 2 Hours</li>
-							<li><font color='#4ef4b4'>No. of Questions:</font> 5</li>
 							<li><font color='#4ef4b4'>></font> Users are ranked according to the weight of the problems solved. Ties will be broken by the total time for each user in ascending order of time.</li>
 							<li><font color='#4ef4b4'>></font> Event is open to all College/Institute students. Cross-college teams are allowed.</li>
 							<li><font color='#4ef4b4'>></font> Multiple Teams are allowed from one college.</li>
@@ -242,7 +241,7 @@ type="application/x-shockwave-flash" >
 																			}
 																		},
 																		error: function(data){
-																				alert("Event Registration Errored! Please check your network connection");
+																				Toast.info('Error Encountered! Please try again.');;
 																					}
 																			});
 																		return false;
@@ -257,7 +256,7 @@ type="application/x-shockwave-flash" >
 												Toast.error(json.error);
 								},
 								error: function(data){
-										alert("Event Registration Errored! Please check your network connection");
+										Toast.info('Error Encountered! Please try again.');;
 								}
 						});
 					return false;
@@ -274,10 +273,10 @@ type="application/x-shockwave-flash" >
 					<ul><li>       <input type="radio" name="participant" value="one">1
 							<input type="radio" name="participant" value="two">2<br></li></ul>
 							<label>Member 2: (if valid)</label>
-							<ul><li>     <input name="darparname" type="text" placeholder="Name of team partner:" />If valid<br></li>
-							<li>     <input name="darparphone" type="text" placeholder="Phone No of team partner:" />If valid<br></li>
-							<li>     <input name="darparemail"type="text" placeholder="Email of team partner:" />If valid<br></li>
-							<li>     <input name="darparcollege" type="text" placeholder="Institute of team partner:" />If valid<br></li></ul>
+							<ul><li>     <input name="darparname" type="text" placeholder="Name of team partner:" /><br></li>
+							<li>     <input name="darparphone" type="text" placeholder="Phone No of team partner:" /><br></li>
+							<li>     <input name="darparemail"type="text" placeholder="Email of team partner:" /><br></li>
+							<li>     <input name="darparcollege" type="text" placeholder="Institute of team partner:" /><br></li></ul>
 							<input type="submit" value="Register" />
 							</form>
 							</p>
@@ -304,8 +303,8 @@ type="application/x-shockwave-flash" >
 							<br>
 							<li><font color='#4ef4b4'>Harsh Vaibhav</font></li>
 							<li>+91-9654725319</li>
-							<li>Harsh12040@iiitd.ac.in</li>
-							</p>
+							<li>harsh12040@iiitd.ac.in</li>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock8" class="ieventblock8"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
@@ -346,8 +345,8 @@ type="application/x-shockwave-flash" >
 							<ul>
 							<li><font color='#4ef4b4'>Team Size:</font> 2</li>
 							<li><font color='#4ef4b4'>Duration:</font> 2 Hours</li>
-							<li><font color='#4ef4b4'>Language:</font> C</li>
-							<li><font color='#4ef4b4'>No. of Questions:</font> 5</li>
+							<li><font color='#4ef4b4'>Language:</font> C (To be compiled in GCC)</li>
+							<!--<li><font color='#4ef4b4'>No. of Questions:</font> 5</li>!-->
 							<li><font color='#4ef4b4'>></font> Event is open to all College/Institute students. Cross-college teams are allowed.</li>
 							<li><font color='#4ef4b4'>></font> Multiple Teams are allowed from one college.</li>
 							<li><font color='#4ef4b4'>></font> The decision of the organizers shall be final and binding.</li>
@@ -394,7 +393,7 @@ type="application/x-shockwave-flash" >
 															
 															console.log("register function called");
 
-															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+															var dataString = '&event=SegFault' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
 
 																console.log(dataString);
 																$.ajax({
@@ -415,7 +414,7 @@ type="application/x-shockwave-flash" >
 																			}
 																		},
 																		error: function(data){
-																				alert("Event Registration Errored! Please check your network connection");
+																				Toast.info('Error Encountered! Please try again.');;
 																					}
 																			});
 																		return false;
@@ -431,7 +430,7 @@ type="application/x-shockwave-flash" >
 											
 								},
 								error: function(data){
-										alert("Event Registration Errored");
+										Toast.info('Error Encountered!');;
 								}
 						});
 					return false;
@@ -448,10 +447,10 @@ type="application/x-shockwave-flash" >
 					        <input type="radio" name="participant" value="one">1
 							<input type="radio" name="participant" value="two">2<br></li></ul>
 							<label>Member 2: (if valid)</label>
-							<ul><li>     <input name="segparname" type="text" placeholder="Name of team partner:" />If valid<br></li>
-							<li>     <input name="segparphone" type="text" placeholder="Phone No of team partner:" />If valid<br></li>
-							<li>     <input name="segparemail" type="text" placeholder="Email of team partner:" />If valid<br></li>
-							<li>     <input name="segparcollege" type="text" placeholder="Institute of team partner:" />If valid<br></li></ul>
+							<ul><li>     <input name="segparname" type="text" placeholder="Name of team partner:" /><br></li>
+							<li>     <input name="segparphone" type="text" placeholder="Phone No of team partner:" /><br></li>
+							<li>     <input name="segparemail" type="text" placeholder="Email of team partner:" /><br></li>
+							<li>     <input name="segparcollege" type="text" placeholder="Institute of team partner:" /><br></li></ul>
 							<input type="submit" value="Register" />
 							</form>
 							</p>
@@ -471,7 +470,7 @@ type="application/x-shockwave-flash" >
 							<li><font color='#4ef4b4'>Saumya Jain</font></li>
 							<li>+91-9582919122</li>
 							<li>saumya12089@iiitd.ac.in</li>
-							</p>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock82" class="ieventblock8"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
@@ -501,8 +500,8 @@ type="application/x-shockwave-flash" >
 							<li>
 						      ProSort is the onsite programming contest (organised by IIIT-Delhi’s programming club, Foobar) of Esya’14. Standard scoring rules apply, with a twist. Participation is in teams of at most 2 and the contest is for 2 hours.</li>
     						  <li><font color='#4ef4b4'>Twist :</font></li>
-
-						      <li>If any question is solved by K teams, that question is discarded and won’t be considered for scoring. That means the score for all teams except 1st 3 teams that solved that question is decremented by 1 and the time taken to solve that question, and all penalties due to it, are subtracted from the cumulative times.</li> 
+						      <li> The score for solving a question is awarded only for the first K teams who solve it(K=0.2 x no. of teams). After K successful submissions, the question is ‘locked’ and cannot be attempted anymore.</li> 
+						    </ul>  
 							</p>
 							<br>
 							<hr>
@@ -510,13 +509,13 @@ type="application/x-shockwave-flash" >
 							<ul>
 							<li><font color='#4ef4b4'>Team Size:</font> At most 2 Members</li>
 							<li><font color='#4ef4b4'>Duration:</font> 2 Hours</li>
-							<li><font color='#4ef4b4'>No. of Questions:</font> 10</li>
+							
 							<li><font color='#4ef4b4'>Language:</font> C,C++, Java</li>
-							<li><font color='#4ef4b4'>No. of Questions:</font> 5</li>
+							
 							<li><font color='#4ef4b4'>></font> All the problems have equal weightage.</li>
 							<li><font color='#4ef4b4'>></font> Users are ranked according to the most problems solved. Ties will be broken by the total time for each user in ascending order of time.</li>
 							<li><font color='#4ef4b4'>></font> Event is open to all College/Institute students. Cross-college teams are allowed.</li>
-							<li><font color='#4ef4b4'>></font> 20 penalty minutes for every previously rejected run for that problem(Wrong answer, Time limit exceeded, Runtime Error, Compilation Error).</li>
+							<li><font color='#4ef4b4'>></font> 20 penalty minutes for every previously rejected run for that problem (Wrong answer, Time limit exceeded, Runtime Error, Compilation Error).</li>
 							<li><font color='#4ef4b4'>></font> Multiple Teams are allowed from one college.</li>
 							<li><font color='#4ef4b4'>></font> The decision of the organizers shall be final and binding.</li>
 							<li><font color='#4ef4b4'>></font> The organizers reserve the right to change the rules as they deem fit.</li>
@@ -562,7 +561,7 @@ type="application/x-shockwave-flash" >
 															
 															console.log("register function called");
 
-															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+															var dataString = '&event=ProSort' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
 
 																console.log(dataString);
 																$.ajax({
@@ -583,7 +582,7 @@ type="application/x-shockwave-flash" >
 																			}
 																		},
 																		error: function(data){
-																				alert("Event Registration Errored! Please check your network connection");
+																				Toast.info('Error Encountered! Please try again.');;
 																					}
 																			});
 																		return false;
@@ -598,7 +597,7 @@ type="application/x-shockwave-flash" >
 												Toast.error(json.error);
 								},
 								error: function(data){
-										alert("Event Registration Errored");
+										Toast.info('Error Encountered!');;
 								}
 						});
 					return false;
@@ -615,10 +614,10 @@ type="application/x-shockwave-flash" >
 					        <input type="radio" name="participant" value="one">1
 							<input type="radio" name="participant" value="two">2<br></li></ul>
 							<label>Member 2: (if valid)</label>
-							<ul><li>     <input name="proparname" type="text" placeholder="Name of team partner:" />If valid<br></li>
-							<li>     <input name="proparphone" type="text" placeholder="Phone No of team partner:" />If valid<br></li>
-							<li>     <input name="proparemail" type="text" placeholder="Email of team partner:" />If valid<br></li>
-							<li>     <input name="proparcollege" type="text" placeholder="Institute of team partner:" />If valid<br></li></ul>
+							<ul><li>     <input name="proparname" type="text" placeholder="Name of team partner:" /><br></li>
+							<li>     <input name="proparphone" type="text" placeholder="Phone No of team partner:" /><br></li>
+							<li>     <input name="proparemail" type="text" placeholder="Email of team partner:" /><br></li>
+							<li>     <input name="proparcollege" type="text" placeholder="Institute of team partner:" /><br></li></ul>
 							<input type="submit" value="Register" />
 							</form>
 							</p>
@@ -642,7 +641,7 @@ type="application/x-shockwave-flash" >
 							<li><font color='#4ef4b4'>Shubhorup Biswas</font></li>
 							<li>+91-9650597515</li>
 							<li>shubhorup12103@iiitd.ac.in</li>
-							</p>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock83" class="ieventblock8"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
@@ -706,7 +705,7 @@ type="application/x-shockwave-flash" >
 							<li><font color='#4ef4b4'>Shivendra Vikram</font></li>
 							<li>+91-8505890693</li>
 							<li>shivendravikram12096@iiitd.ac.in</li>
-							
+							</ul>
 							</p>
 				</div></div>
 				<div id="ieventblock84" class="ieventblock8"><div class="ieventtext1">
@@ -737,7 +736,7 @@ type="application/x-shockwave-flash" >
 							<li>
 						    Concision in style, precision in thought, decision in life. - Victor Hugo
 							Being correct is not enough! At Code in Less, we test not only your programming skills but how well you optimize your code. </li>
-    						  <li><font color='#4ef4b4'>Twist :</font></li>
+    						</ul>
 
 						     </p>
 							<br>
@@ -747,10 +746,9 @@ type="application/x-shockwave-flash" >
 							<li><font color='#4ef4b4'>Team Size:</font> At most 2 Members</li>
 							<li><font color='#4ef4b4'>Duration:</font> 2 Hours</li>
 							<li><font color='#4ef4b4'>Language:</font> C,C++, Java</li>
-							<li><font color='#4ef4b4'>No. of Questions:</font> 5</li>
+							
 							<li><font color='#4ef4b4'>></font> Questions would be of varying difficulty.</li>
-							<li><font color='#4ef4b4'>></font> Your code should contain as less lines as possible. </li>
-							<li><font color='#4ef4b4'>></font> Number of lines will be counted by the number of “ ; ” delimiter in your code.</li>
+							
 							<li><font color='#4ef4b4'>></font> Internet access will not be allowed.</li>
 							<li><font color='#4ef4b4'>></font> Event is open to all College/Institute students. Cross-college teams are allowed.</li>
 							<li><font color='#4ef4b4'>></font> Your code should contain as less lines as possible. </li>
@@ -799,7 +797,7 @@ type="application/x-shockwave-flash" >
 															
 															console.log("register function called");
 
-															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+															var dataString = '&event=Code InLess' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
 
 																console.log(dataString);
 																$.ajax({
@@ -820,7 +818,7 @@ type="application/x-shockwave-flash" >
 																			}
 																		},
 																		error: function(data){
-																				alert("Event Registration Errored! Please check your network connection");
+																				Toast.info('Error Encountered! Please try again.');;
 																					}
 																			});
 																		return false;
@@ -836,7 +834,7 @@ type="application/x-shockwave-flash" >
 											
 								},
 								error: function(data){
-										alert("Event Registration Errored");
+										Toast.info('Error Encountered!');;
 								}
 						});
 					return false;
@@ -872,7 +870,7 @@ type="application/x-shockwave-flash" >
 							<li><font color='#4ef4b4'>Garvita Allabadi</font></li>
 							<li>+91-9990237732</li>
 							<li>garvita12133@iiitd.ac.in</li>							
-							</p>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock85" class="ieventblock8"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
@@ -909,33 +907,113 @@ type="application/x-shockwave-flash" >
 							<ul>
 							<li><font color='#4ef4b4'>Team Size:</font> At most 2 Members</li>
 							<li><font color='#4ef4b4'>Duration:</font> 1.5 Hours</li>
-							<li><font color='#4ef4b4'>Language:</font> C,C++, Java</li>
-							<li><font color='#4ef4b4'>No. of Questions:</font> 5</li>
+							<!--<li><font color='#4ef4b4'>Language:</font> C,C++, Java</li>!-->
+							
 							<li><font color='#4ef4b4'>></font> Documentation for MySQL will be provided </li>
 							<li><font color='#4ef4b4'>></font> Internet access will not be allowed.</li>
 							<li><font color='#4ef4b4'>></font> Event is open to all College/Institute students. Cross-college teams are allowed.</li>
-							<li><font color='#4ef4b4'>></font> Your code should contain as less lines as possible. </li>
-							<li><font color='#4ef4b4'>></font> Multiple Teams are allowed from one college.</li>
+							<!--<li><font color='#4ef4b4'>></font> Your code should contain as less lines as possible. </li>
+!-->							<li><font color='#4ef4b4'>></font> Multiple Teams are allowed from one college.</li>
 							<li><font color='#4ef4b4'>></font> The decision of the organizers shall be final and binding.</li>
 							<li><font color='#4ef4b4'>></font> The organizers reserve the right to change the rules as they deem fit.</li>
 							<li><font color='#4ef4b4'>></font> Organizers have the right to disqualify any team if they break any rule.</li>
 							
 							</ul>
 				</div></div>
+				<script type="text/javascript">
+					$(document).ready(function() {
+
+						$('.ievent6register').submit(function(e) {
+							e.preventDefault();
+							console.log("register function called");
+
+						var dataString = '&event=Data Cruches' +
+										 '&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+						console.log(dataString);
+						$.ajax({
+								type: 'POST',
+								url: '/eventregister/',
+								data: dataString,
+								success: function(data){
+									var json = JSON.parse(data.content);
+									if(json.error == ""){
+										$(".updatess-content").text(json.events);
+										Toast.success("Successfully registered");
+										
+									}				
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Data Cruches' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				Toast.info('Error Encountered! Please try again.');;
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											if(json.error=="Please register or Login")
+												Toast.error(json.error);
+								},
+								error: function(data){
+										Toast.info('Error Encountered! Please try again.');;
+								}
+						});
+					return false;
+				});
+			});
+				</script>
 				<div id="ieventblock66" class="ieventblock6"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>Register here only if not registering as a Techathlon team, and you wish to participate in the event separately.<br>
 							We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
-							<form method="POST" name="ievent6register">
+							<form method="POST" name="ievent6register" class="ievent6register">
 							<input type="text" placeholder="Team Name:" /><p>
 							Participating as a team of 1 or 2:<br><ul><li>
 					        <input type="radio" name="participant" value="one">1
 							<input type="radio" name="participant" value="two">2<br></li></ul>
 							<label>Member 2: (if valid)</label>
-							<ul><li>     <input type="text" placeholder="Name of team partner:" />If valid<br></li>
-							<li>     <input type="text" placeholder="Phone No of team partner:" />If valid<br></li>
-							<li>     <input type="text" placeholder="Email of team partner:" />If valid<br></li>
-							<li>     <input type="text" placeholder="Institute of team partner:" />If valid<br></li></ul>
+							<ul><li>     <input type="text" placeholder="Name of team partner:" /><br></li>
+							<li>     <input type="text" placeholder="Phone No of team partner:" /><br></li>
+							<li>     <input type="text" placeholder="Email of team partner:" /><br></li>
+							<li>     <input type="text" placeholder="Institute of team partner:" /><br></li></ul>
 							<input type="submit" value="Register" />
 							</form>
 							</p>
@@ -949,13 +1027,13 @@ type="application/x-shockwave-flash" >
 							<li>Magus12141@iiitd.ac.in</li>
 							<br>
 							<li><font color='#4ef4b4'>Talha Ahmad Siddiqui</font></li>
-							<li>+91-9990237732</li>
+							<li>+91-9717286169</li>
 							<li>Talhaahmad12111@iiitd.ac.in</li>							
 							<br>
 							<li><font color='#4ef4b4'>Pulkit Arora</font></li>
 							<li>+91-9811999394</li>
 							<li>Pulkit12082@iiitd.ac.in</li>	
-							</p>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock86" class="ieventblock8"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
@@ -983,28 +1061,21 @@ type="application/x-shockwave-flash" >
 							<p> 
 							<ul>
 							<li>
-						    k you can do better than Kruskal, Fibonacci, or Euclid? This is the event to prove your mettle. Show us how well you can design an algorithm and win exciting prizes.</li>
+						    Think you can do better than Kruskal, Fibonacci, or Euclid? This is the event to prove your mettle. Show us how well you can design an algorithm and win exciting prizes.</li>
+						    <li>You will be tested on your skills in solving and designing efficient algorithms in terms of time and space complexity.</li>
 							<li>“An algorithm must be seen to be believed” -Donald Knuth</li>
-							<li>http://xkcd.com/844/  - Don’t worry you only need pseudocode. </li>
-							<li>Teams of size two will be tested on their skills in solving and designing efficient algorithms for the given problems. It will be a written test in which participants will be expected to communicate with their team member only. Questions will test your ability to think on your feet and come up with algorithms in a very limited time frame.</li>
 							</p>
 							<br>
 							<hr>
 							<p align='center'><font color='#4ef4b4' size='5'>RULES AND GUIDELINES</font></p>
 							<ul>
 							<li><font color='#4ef4b4'>Team Size:</font> At most 2 Members</li>
-							<li><font color='#4ef4b4'>Duration:</font> 80 Minutes</li>
-							<li><font color='#4ef4b4'>Language:</font> C,C++, Java</li>
-							<li><font color='#4ef4b4'>No. of Questions:</font> 5</li>
-							<li><font color='#4ef4b4'>></font> Only pseudo code is required.</li>
+							
+							<li><font color='#4ef4b4'>></font> Only pseudo code is required, it is a written test.</li>
 							<li><font color='#4ef4b4'>></font> Internet access will not be allowed.</li>
 							<li><font color='#4ef4b4'>></font> Time and space complexity of the algorithm will be used to break ties. </li>
-							<li><font color='#4ef4b4'>></font> Event is open to all College/Institute students. Cross-college teams are allowed.</li>
-							<li><font color='#4ef4b4'>></font> Your code should contain as less lines as possible. </li>
-							<li><font color='#4ef4b4'>></font> Multiple Teams are allowed from one college.</li>
-							<li><font color='#4ef4b4'>></font> The decision of the organizers shall be final and binding.</li>
-							<li><font color='#4ef4b4'>></font> The organizers reserve the right to change the rules as they deem fit.</li>
-							<li><font color='#4ef4b4'>></font> Organizers have the right to disqualify any team if they break any rule.</li>
+							<li><font color='#4ef4b4'>></font> The decision of the organisers shall be final and binding and they can change the rules as they deem fit.</li>
+							<li><font color='#4ef4b4'>></font> Teams will be disqualified if they break any rule.</li>
 							
 							</ul>
 				</div></div>
@@ -1045,7 +1116,7 @@ type="application/x-shockwave-flash" >
 															
 															console.log("register function called");
 
-															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+															var dataString = '&event=BrainFuzz' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
 
 																console.log(dataString);
 																$.ajax({
@@ -1066,7 +1137,7 @@ type="application/x-shockwave-flash" >
 																			}
 																		},
 																		error: function(data){
-																				alert("Event Registration Errored! Please check your network connection");
+																				Toast.info('Error Encountered! Please try again.');;
 																					}
 																			});
 																		return false;
@@ -1081,7 +1152,7 @@ type="application/x-shockwave-flash" >
 												Toast.error(json.error);
 								},
 								error: function(data){
-										alert("Event Registration Errored");
+										Toast.info('Error Encountered!');;
 								}
 						});
 					return false;
@@ -1092,16 +1163,16 @@ type="application/x-shockwave-flash" >
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>Register here only if not registering as a Techathlon team, and you wish to participate in the event separately.<br>
 							We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
-							<form method="POST" name="ievent3register" class="ievent7register">{% csrf_token %}
+							<form method="POST" name="ievent7register" class="ievent7register">{% csrf_token %}
 							<input name="braname" type="text" placeholder="Team Name:" /><p>
 							Participating as a team of 1 or 2:<br><ul><li>
 					        <input type="radio" name="participant" value="one">1
 							<input type="radio" name="participant" value="two">2<br></li></ul>
 							<label>Member 2: (if valid)</label>
-							<ul><li>     <input name="braparname" type="text" placeholder="Name of team partner:" />If valid<br></li>
-							<li>     <input name="braparphone" type="text" placeholder="Phone No of team partner:" />If valid<br></li>
-							<li>     <input name="braparemail" type="text" placeholder="Email of team partner:" />If valid<br></li>
-							<li>     <input name="braparcollege" type="text" placeholder="Institute of team partner:" />If valid<br></li></ul>
+							<ul><li>     <input name="braparname" type="text" placeholder="Name of team partner:" /><br></li>
+							<li>     <input name="braparphone" type="text" placeholder="Phone No of team partner:" /><br></li>
+							<li>     <input name="braparemail" type="text" placeholder="Email of team partner:" /><br></li>
+							<li>     <input name="braparcollege" type="text" placeholder="Institute of team partner:" /><br></li></ul>
 							<input type="submit" value="Register" />
 							</form>
 							</p>
@@ -1121,7 +1192,7 @@ type="application/x-shockwave-flash" >
 							<li><font color='#4ef4b4'>Pulkit Manocha</font></li>
 							<li>+91-8826239900</li>
 							<li>pulkit12083@iiitd.ac.in</li>	
-							</p>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock87" class="ieventblock8"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
@@ -1207,7 +1278,7 @@ type="application/x-shockwave-flash" >
 															
 															console.log("register function called");
 
-															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+															var dataString = '&event=CircuitTrix' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
 
 																console.log(dataString);
 																$.ajax({
@@ -1228,7 +1299,7 @@ type="application/x-shockwave-flash" >
 																			}
 																		},
 																		error: function(data){
-																				alert("Event Registration Errored! Please check your network connection");
+																				Toast.info('Error Encountered! Please try again.');;
 																					}
 																			});
 																		return false;
@@ -1243,7 +1314,7 @@ type="application/x-shockwave-flash" >
 												Toast.error(json.error);
 								},
 								error: function(data){
-										alert("Event Registration Errored");
+										Toast.info('Error Encountered!');;
 								}
 						});
 					return false;
@@ -1281,7 +1352,7 @@ type="application/x-shockwave-flash" >
 							<li><font color='#4ef4b4'>Sanchit Agarwal</font></li>
 							<li>+91-9015249868</li>
 							<li>sanchit12156@iiitd.ac.in</li>	
-							</p>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock88" class="ieventblock8"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
@@ -1319,7 +1390,7 @@ type="application/x-shockwave-flash" >
 							<li>
 							For more details download : 
 							<ul>
-							<li><font color='#4ef4b4'>></font><a href="https://www.dropbox.com/s/611pktgayb7v8jc/RoboWars.pdf?dl=1"><img src="/s/pdfs/pdfim.png" width="30px" height="35px"  /></a></li>
+							<li><font color='#4ef4b4'>></font><a href="https://www.dropbox.com/s/611pktgayb7v8jc/RoboWars.pdf?dl=1" target="_blank"><img src="pdfs/pdfim.png" width="30px" height="35px" pagespeed_lsc_url="http://esya.iiitd.edu.in/pdfs/pdfim.png"/></a></li>
 							</ul>
 							</li>
 							<br>
@@ -1366,7 +1437,7 @@ type="application/x-shockwave-flash" >
 															
 															console.log("register function called");
 
-															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+															var dataString = '&event=RoboWars' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
 
 																console.log(dataString);
 																$.ajax({
@@ -1387,7 +1458,7 @@ type="application/x-shockwave-flash" >
 																			}
 																		},
 																		error: function(data){
-																				alert("Event Registration Errored! Please check your network connection");
+																				Toast.info('Error Encountered! Please try again.');;
 																					}
 																			});
 																		return false;
@@ -1402,7 +1473,7 @@ type="application/x-shockwave-flash" >
 												Toast.error(json.error);
 								},
 								error: function(data){
-										alert("Event Registration Errored");
+										Toast.info('Error Encountered!');;
 								}
 						});
 					return false;
@@ -1411,7 +1482,7 @@ type="application/x-shockwave-flash" >
 				</script>
 				<div id="ieventblock69" class="ieventblock6"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
-							<p>(To enter details of other member of  team.)<br>
+							<!--<p>(To enter details of other member of  team.)<br>
 							<form action="" method="POST" name="ievent9register" class="ievent9register"> {% csrf_token %}
 							<input name="roboname" type="text" placeholder="Team Name:" /><p>
 							<input name="roboparname" type="text" placeholder="Name of team members:" /><p><label>(Max 2 members, Leave this section blank if you are registering as an individual)</label><p>
@@ -1421,6 +1492,30 @@ type="application/x-shockwave-flash" >
 							<label>(Highly recommended to have own laptops for circuit simulation)</label><p>
 							<input name="robosim" type="text" placeholder="Preferred Circuit Simulator:" /><p>
 							<label>(eg. LT spice or Multisim ,Proteus etc.)<label><p>				
+							<input type="submit" value="Register" />
+							</form>
+							</p>-->
+							<form action="" method="POST" name="ievent9register" class="ievent9register"> {% csrf_token %}
+							<input name="roboname" type="text" placeholder="Team Name:" /><p>
+							<label>Member 2:(mandatory)</label><br>
+							<ul><li><input type="text" placeholder="Name:" /></li>
+							<li><input type="text" placeholder="College/Institute:" /></li></ul>
+							<label>Member 3:(mandatory)</label><br>
+							<ul><li><input type="text" placeholder="Name:" /></li>
+							<li><input type="text" placeholder="College/Institute:" /></li></ul>
+							<label>Member 4:(optional)</label><br>
+							<ul><li><input type="text" placeholder="Name:" /></li>
+							<li><input type="text" placeholder="College/Institute:" /></li></ul>
+							<label>Member 5:(optional)</label><br>
+							<ul><li><input type="text" placeholder="Name:" /></li>
+							<li><input type="text" placeholder="College/Institute:" /></li></ul>
+							<input type="text" placeholder="Phone No:" /><br>
+							<label>Bot Details :</label><br>
+							<input type="text" placeholder="Dimensions :" />(l * b * h mm)*<br>
+							<input type="text" placeholder="Weight:" />(in kgs)*<br>
+							<textarea rows="4" cols="50" name="comment" form="usrform">Brief Description Of Bot (Weaponry System, Power Source)*</textarea><br><!--Paragraph Description-->
+							Upload a written abstract<!-- Include an upload button here. Options with * are mandatory-->
+							<input type="text" placeholder="Link To The Video Abstract:" /><br>
 							<input type="submit" value="Register" />
 							</form>
 							</p>
@@ -1444,7 +1539,7 @@ type="application/x-shockwave-flash" >
 							<li><font color='#4ef4b4'>Udayan Tandon</font></li>
 							<li>+91-9999267017</li>
 							<li>udayan12167@iiitd.ac.in</li>	
-							</p>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock89" class="ieventblock8"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
@@ -1477,22 +1572,22 @@ type="application/x-shockwave-flash" >
 							<hr>
 							<p align='center'><font color='#4ef4b4' size='5'>RULES AND GUIDELINES</font></p>
 							<ul>
-							<li><font color='#4ef4b4'>></font>The event will be held in two parts - Qualifiers and Finals. </li>
-							<li><font color='#4ef4b4'>></font>Both will be comprised of simple or a set of simple tasks to be followed in the arena and will test the basic flight and manoeuvre skills. </li>
-							<li><font color='#4ef4b4'>></font>The complete judging criteria along with the event will be disclosed on the spot. </li>
-							<li><font color='#4ef4b4'>></font>It can be expected that the judging criteria will have a high weightage to lower timings and smoother flights.</li>
-							<li><font color='#4ef4b4'>></font>The aircraft must fit in a box of 1500mm x 1500mm x 1500mm and must be less than 2kg in weight.</li>
-							<li><font color='#4ef4b4'>></font>The aircraft need not be a RC Plane but can be a Tri/Quad/Penta/Hexa Rotors or Heli or any other flying object that adheres to the given rules and specifications. Any creative ideas are welcome. The event format will be neutral for all such objects. The aircraft however must be  remotely controlled.</li>
-							<li><font color='#4ef4b4'>></font>The aircraft must only be powered by electric motors. Use of IC Engines is not allowed. Non powered aircraft are not allowed.</li>
-							<li><font color='#4ef4b4'>></font>Radios: The use of 2.4GHz or 72MHz Radio is required. 2.4GHz is highly preferred.
+							<li><font color='#4ef4b4'>></font> The event will be held in two parts - Qualifiers and Finals. </li>
+							<li><font color='#4ef4b4'>></font> Both will be comprised of simple or a set of simple tasks to be followed in the arena and will test the basic flight and manoeuvre skills. </li>
+							<li><font color='#4ef4b4'>></font> The complete judging criteria along with the event will be disclosed on the spot. </li>
+							<li><font color='#4ef4b4'>></font> It can be expected that the judging criteria will have a high weightage to lower timings and smoother flights.</li>
+							<li><font color='#4ef4b4'>></font> The aircraft must fit in a box of 1500mm x 1500mm x 1500mm and must be less than 2kg in weight.</li>
+							<li><font color='#4ef4b4'>></font> The aircraft need not be a RC Plane but can be a Tri/Quad/Penta/Hexa Rotors or Heli or any other flying object that adheres to the given rules and specifications. Any creative ideas are welcome. The event format will be neutral for all such objects. The aircraft however must be  remotely controlled.</li>
+							<li><font color='#4ef4b4'>></font> The aircraft must only be powered by electric motors. Use of IC Engines is not allowed. Non powered aircraft are not allowed.</li>
+							<li><font color='#4ef4b4'>></font> Radios: The use of 2.4GHz or 72MHz Radio is required. 2.4GHz is highly preferred.
 							Metal Propellers are not allowed.</li>
-							<li><font color='#4ef4b4'>></font>The maximum power is 1.5kW and maximum e.m.f. between any two points should be less than 22.2V.</li>
-							<li><font color='#4ef4b4'>></font>Use of gyroscopes is allowed.</li>
-							<li><font color='#4ef4b4'>></font>The aircraft should either be hand launched or taken off from ground. Using of launching mechanisms is strictly prohibited.</li>
-							<li><font color='#4ef4b4'>></font>The aircraft should be completely wireless at the time of flight at all costs.</li>
-							<li><font color='#4ef4b4'>></font>The event will be conducted in the IIIT-Delhi field which is an open ground. All participants need to bring their own aircraft and all the necessary equipments.</li>
-							<li><font color='#4ef4b4'>></font>The organizers, Esya’14 or IIITD will not be responsible for any injuries or equipment/aircraft loss in the event and the participant will be solely responsible.</li>
-							<li><font color='#4ef4b4'>></font>Although the constraints are huge, yet small and light aircrafts are advised for the event due to the size of the field. Participants with large aircrafts will require better flying skills to do the same task.</li>
+							<li><font color='#4ef4b4'>></font> The maximum power is 1.5kW and maximum e.m.f. between any two points should be less than 22.2V.</li>
+							<li><font color='#4ef4b4'>></font> Use of gyroscopes is allowed.</li>
+							<li><font color='#4ef4b4'>></font> The aircraft should either be hand launched or taken off from ground. Using of launching mechanisms is strictly prohibited.</li>
+							<li><font color='#4ef4b4'>></font> The aircraft should be completely wireless at the time of flight at all costs.</li>
+							<li><font color='#4ef4b4'>></font> The event will be conducted in the IIIT-Delhi field which is an open ground. All participants need to bring their own aircraft and all the necessary equipments.</li>
+							<li><font color='#4ef4b4'>></font> The organizers, Esya’14 or IIITD will not be responsible for any injuries or equipment/aircraft loss in the event and the participant will be solely responsible.</li>
+							<li><font color='#4ef4b4'>></font> Although the constraints are huge, yet small and light aircrafts are advised for the event due to the size of the field. Participants with large aircrafts will require better flying skills to do the same task.</li>
 							<li><font color='#4ef4b4'>></font> Event is open to all College/Institute students(Under Graduates). Cross-college teams are allowed.</li>
 							<li><font color='#4ef4b4'>></font> Multiple Teams are allowed from one college.</li>
 							<li><font color='#4ef4b4'>></font> The decision of the organizers shall be final and binding.</li>
@@ -1508,7 +1603,7 @@ type="application/x-shockwave-flash" >
 							e.preventDefault();
 							console.log("register function called");
 
-						var dataString = '&event=aeronuts' +
+						var dataString = '&event=Aeronuts' +
 										 '&register_data=' + $('input[name=aircraft]').val()+ '\n' + $('input[name=air_name1]').val()  +'\n' + $('input[name=air_email1]').val() +'\n' +  $('input[name=air_college1]').val() +'\n' + $('input[name=air_phone1]').val() +'\n' + $('input[name=air_name2]').val() +'\n' + $('input[name=air_email2]').val() +'\n' + $('input[name=air_college2]').val() +'\n' + $('input[name=air_phone2]').val() +'\n' + $('input[name=air_name3]').val() +'\n' +  $('input[name=air_email3]').val() +'\n' + $('input[name=air_college3]').val()+ '\n' +$('input[name=air_phone3]').val(); 
 
 						console.log(dataString);
@@ -1539,7 +1634,7 @@ type="application/x-shockwave-flash" >
 															
 															console.log("register function called");
 
-															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+															var dataString = '&event=Aeronuts' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
 
 																console.log(dataString);
 																$.ajax({
@@ -1560,7 +1655,7 @@ type="application/x-shockwave-flash" >
 																			}
 																		},
 																		error: function(data){
-																				alert("Event Registration Errored! Please check your network connection");
+																				Toast.info('Error Encountered! Please try again.');;
 																					}
 																			});
 																		return false;
@@ -1575,7 +1670,7 @@ type="application/x-shockwave-flash" >
 												Toast.error(json.error);
 								},
 								error: function(data){
-										alert("Event Registration Errored");
+										Toast.info('Error Encountered!');;
 								}
 						});
 					return false;
@@ -1685,7 +1780,7 @@ type="application/x-shockwave-flash" >
 							<li><font color='#4ef4b4'>Arushi Jain</font></li>
 							<li>+91-9650732552</li>
 							<li>arushi13023@iiitd.ac.in</li>		
-							</p>
+							</ul></p>
 						
 				</div></div>
 				<div id="ieventblock810" class="ieventblock8"><div class="ieventtext1">
@@ -1752,7 +1847,7 @@ type="application/x-shockwave-flash" >
 									if(json.error == ""){
 										$(".updatess-content").text(json.events);
 										Toast.success("Successfully registered");
-										
+							k8			
 									}				
 									else 
 									{
@@ -1769,7 +1864,7 @@ type="application/x-shockwave-flash" >
 															
 															console.log("register function called");
 
-															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+															var dataString = '&event=Equipotential' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
 
 																console.log(dataString);
 																$.ajax({
@@ -1790,7 +1885,7 @@ type="application/x-shockwave-flash" >
 																			}
 																		},
 																		error: function(data){
-																				alert("Event Registration Errored! Please check your network connection");
+																				Toast.info('Error Encountered! Please try again.');;
 																					}
 																			});
 																		return false;
@@ -1805,7 +1900,7 @@ type="application/x-shockwave-flash" >
 												Toast.error(json.error);
 								},
 								error: function(data){
-										alert("Event Registration Errored");
+										Toast.info('Error Encountered!');;
 								}
 						});
 					return false;
@@ -1822,9 +1917,9 @@ type="application/x-shockwave-flash" >
 							We have other details about you. Please enter following details about your team partner (if any).<br>
 					        <label>Member 2: (if valid)</label>
 							<ul><li>     <input name="equiparname" type="text" placeholder="Name:" /><br></li>
+							<li>     <input name="equiparcollege" type="text" placeholder="Class:" /><br></li>
 							<li>     <input name="equiparphone" type="text" placeholder="Phone No:" /><br></li>
-							<li>     <input name="equiparemail" type="text" placeholder="Email:" /><br></li>
-							<li>     <input name="equiparcollege" type="text" placeholder="Institute:" /><br></li></ul>
+							<li>     <input name="equiparemail" type="text" placeholder="Email:" /><br></li></ul>							
 							<input type="submit" value="Register" />
 							</form></p>
 				</div></div>
@@ -1843,7 +1938,7 @@ type="application/x-shockwave-flash" >
 							<li><font color='#4ef4b4'>Siddhant Verma</font></li>
 							<li>+91-7838138148</li>
 							<li>siddhant12165@iiitd.ac.in</li>		
-							</p>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock811" class="ieventblock8"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
@@ -1886,11 +1981,11 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							And the stronger you become, the easier it gets for you to find TR3. </li><li>
 							For more details download : 
 							<ul>
-							<li><font color='#4ef4b4'>></font><a href="https://www.dropbox.com/s/611pktgayb7v8jc/RoboWars.pdf?dl=1"><img src="/s/pdfs/pdfim.png" width="30px" height="35px"  /></a></li>
-							<li><font color='#4ef4b4'>></font><a href="https://www.dropbox.com/s/1fjwe0qozqrdx2a/Round1%28T1%29.jpg?dl=1"><img src="/s/pdfs/imageim.png" width="35px" height="35px"  /></a></li>
-							<li><font color='#4ef4b4'>></font><a href="https://www.dropbox.com/s/ij065uar784wcsz/Round2%28T2%29.jpg?dl=1"><img src="/s/pdfs/imageim.png" width="35px" height="35px"  /></a></li>
-							<li><font color='#4ef4b4' >></font><a href="https://www.dropbox.com/s/z2i59lfgelaqk4d/Round3%28T3%29.jpg?dl=1"><img src="/s/pdfs/imageim.png" width="35px" height="35px"  /></a></li>
-							</ul>
+							<li><font color='#4ef4b4'>></font><a href="https://www.dropbox.com/s/50520jg92xkyntj/RoboCon.pdf" target="_blank"><img src="pdfs/pdfim.png" width="30px" height="35px" pagespeed_lsc_url="http://esya.iiitd.edu.in/pdfs/pdfim.png"/></a></li>
+							<!--<li><font color='#4ef4b4'>></font><a href="https://www.dropbox.com/s/1fjwe0qozqrdx2a/Round1%28T1%29.jpg?dl=1"><img src="pdfs/imageim.png" width="35px" height="35px"  /></a></li>
+							<li><font color='#4ef4b4'>></font><a href="https://www.dropbox.com/s/ij065uar784wcsz/Round2%28T2%29.jpg?dl=1"><img src="pdfs/imageim.png" width="35px" height="35px"  /></a></li>
+							<li><font color='#4ef4b4' >></font><a href="https://www.dropbox.com/s/z2i59lfgelaqk4d/Round3%28T3%29.jpg?dl=1"><img src="pdfs/imageim.png" width="35px" height="35px"  /></a></li>
+							!--></ul>
 							</li>
 							</p>
 							<br>
@@ -1954,7 +2049,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 															
 															console.log("register function called");
 
-															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+															var dataString = '&event=RoboCon' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
 
 																console.log(dataString);
 																$.ajax({
@@ -1975,7 +2070,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 																			}
 																		},
 																		error: function(data){
-																				alert("Event Registration Errored! Please check your network connection");
+																				Toast.info('Error Encountered! Please try again.');;
 																					}
 																			});
 																		return false;
@@ -1990,7 +2085,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 												Toast.error(json.error);
 								},
 								error: function(data){
-										alert("Event Registration Errored");
+										Toast.info('Error Encountered!');;
 								}
 						});
 					return false;
@@ -2045,7 +2140,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li><font color='#4ef4b4'>Varun Kumar  </font></li>
 							<li>+91-9716057062   </li>
 							<li>varun13169@iiitd.ac.in</li>		
-							</p>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock812" class="ieventblock8"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
@@ -2076,12 +2171,12 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li>
 						    If you have an idea, we have the platform!</li><li>
 							At Esya 2014, the technical festival of IIIT Delhi, we invite all innovators with a keen interest to better the world for good.</li><li>
-							Our aim is to encourage the youth to come up with technological innovations to solve any of the numerous social problems the country is facing today</li>
+							Our aim is to encourage the youth to come up with technological innovations to solve any of the numerous social problems the country is facing today.</li>
 							</p>
 							<li>
 							For more details download : 
 							<ul>
-							<li><font color='#4ef4b4'>></font><a href="https://www.dropbox.com/s/qfa6pg9l56hhtod/Prayatna.pdf?dl=1"><img src="/s/pdfs/pdfim.png" width="30px" height="35px"  /></a></li>
+							<li><font color='#4ef4b4'>></font><a href="https://www.dropbox.com/s/4v1ox6qtxjk71vl/Prayatna.pdf" target="_blank"><img src="pdfs/pdfim.png" width="30px" height="35px" pagespeed_lsc_url="http://esya.iiitd.edu.in/pdfs/pdfim.png"/></a></li>
 							</ul>
 							</li>
 							<br>
@@ -2137,7 +2232,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 															
 															console.log("register function called");
 
-															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+															var dataString = '&event=Prayatna' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
 
 																console.log(dataString);
 																$.ajax({
@@ -2158,7 +2253,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 																			}
 																		},
 																		error: function(data){
-																				alert("Event Registration Errored! Please check your network connection");
+																				Toast.info('Error Encountered! Please try again.');;
 																					}
 																			});
 																		return false;
@@ -2173,7 +2268,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 												Toast.error(json.error);
 								},
 								error: function(data){
-										alert("Event Registration Errored");
+										Toast.info('Error Encountered!');;
 								}
 						});
 					return false;
@@ -2216,7 +2311,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li><font color='#4ef4b4'>Shubham Verma   </font></li>
 							<li>+91-9650550808</li>
 							<li>Shubham12162@iiitd.ac.in</li>								
-							</p>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock813" class="ieventblock8"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
@@ -2246,13 +2341,13 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li>
 						    The power of coding can not be undermined because in it lies the heart of computer science.  It is the power of programming which has reduced some of the most ambiguous, tricky and impossible-looking tasks to the mere job of writing a computer program and asking the obedient machine to solve them with its rapid computing capacity.
 						    </li><li>
-							<font color='#4ef4b4'>FooBar</font>, IIIT-Delhi’s programming club, brings to you an online programming contest - ProCon! You get an amazing chance to win big this August. With questions set to challenge you and bring out the best in you, we call out to all you people hungry for coding - log on to CodeChef, prove your programming ability and walk away with some amazing prizes and awesome memories. Show us your skills, creativity, swiftness and aptitude and you shall be rewarded. Be ready for a two and a half hour coding marathon!</li>
+							<font color='#4ef4b4'>FooBar</font>, IIIT-Delhi’s programming club, brings to you an online programming contest - ProCon! You get an amazing chance to win big this August. With questions set to challenge you and bring out the best in you, we call out to all you people hungry for coding - prove your programming ability and walk away with some amazing prizes and awesome memories. Show us your skills, creativity, swiftness and aptitude and you shall be rewarded. Be ready for a two and a half hour coding marathon!</li>
 							</p>
 							<br>
 							<hr>
 							<p align='center'><font color='#4ef4b4' size='5'>RULES AND GUIDELINES</font></p>
 							<ul>
-							<li><font color='#4ef4b4'>Team Size:</font> Individual Participation Only</li>
+							<li><font color='#4ef4b4'>Team Size:</font> Atmost 2 Members</li>
 							<li><font color='#4ef4b4'>Duration:</font> 2.5 Hours</li>
 							<li><font color='#4ef4b4'>Language:</font> All</li>
 							<li><font color='#4ef4b4'>></font> The decision of the organizers shall be final and binding.</li>
@@ -2298,7 +2393,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 															
 															console.log("register function called");
 
-															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+															var dataString = '&event=Procon' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
 
 																console.log(dataString);
 																$.ajax({
@@ -2319,7 +2414,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 																			}
 																		},
 																		error: function(data){
-																				alert("Event Registration Errored! Please check your network connection");
+																				Toast.info('Error Encountered! Please try again.');;
 																					}
 																			});
 																		return false;
@@ -2334,7 +2429,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 												Toast.error(json.error);
 								},
 								error: function(data){
-										alert("Event Registration Errored");
+										Toast.info('Error Encountered!');;
 								}
 						});
 					return false;
@@ -2367,7 +2462,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li><font color='#4ef4b4'>Pulkit Arora </font></li>
 							<li>+91-9811999394</li>
 							<li>Pulkit12082@iiitd.ac.in</li>		
-							</p>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock814" class="ieventblock8"><div class="ieventtext1">
 						<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
@@ -2404,11 +2499,12 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<br>	
 							<li><font color='#4ef4b4'>Classes 10th and below:</font> Eligible for Prizes</li>
 							<li><font color='#4ef4b4'>Classes 11th and 12th:</font> Eligible for Prizes + Bonus Marks</li>
-							<br>	
-							<li><font color='#4ef4b4'>Preliminary Round:</font></li>
+							<br>
+							<li><font color='#4ef4b4'>Languages Allowed:</font> C/C++/Python/Java</li>
+							<br><li><font color='#4ef4b4'>Preliminary Round:</font></li>
 							<li>1st August 2014</li>
-							<li>Hosted Online and at IIIT-Delhi Campus</li>
-							<li>100 students that qualify from this round shall proceed to the Finals</li>
+							<li>Will be hosted Online on <a href="http://www.codechef.com/">Code Chef</a>. For student's who do not have access to internet, contest will be conducted at IIIT-Delhi Campus</li>
+							<li>Students that qualify from this round shall proceed to the Finals</li>
 							<br>
 							<li><font color='#4ef4b4'>Final Round:</font></li>
 							<li>22nd August 2014</li>
@@ -2420,13 +2516,11 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<p align='center'><font color='#4ef4b4' size='5'>RULES AND GUIDELINES</font></p>
 							<p><font color='#4ef4b4' size='4'>PRELIMS</font></p>
 							<ul>
-							<li><font color='#4ef4b4'>>Date:</font> 1st August, 2014</li>
-							<li><font color='#4ef4b4'>>Day:</font> Friday</li>
-							<li><font color='#4ef4b4'>>Time:</font> 12:00PM - 3:00PM</li>
-							<li><font color='#4ef4b4'>>Venue:</font> Participants can code at home or prefer to come to the institute</li>
-							<li><font color='#4ef4b4'>>Participation:</font> Students from all Classes</li>
-							<li><font color='#4ef4b4'>>No. of Questions:</font> 7</li>
-							<li><font color='#4ef4b4'>>Total Marks:</font> 70</li>
+							<li><font color='#4ef4b4'>>Date:</font> 1st August, 2014 Friday</li>
+							<li><font color='#4ef4b4'>>Time:</font> 9:30 AM - 12:30 PM</li>
+							<li><font color='#4ef4b4'>>Venue:</font> Contest will be held online at <a href="http://www.codechef.com/">Code Chef </a> so, participants can code from home or prefer to come to the institute</li>
+							<li><font color='#4ef4b4'>>Eligibility:</font> School Students from all Classes</li>
+							
 							<li><font color='#4ef4b4'>>Duration:</font> 180 Minutes</li>
 							<li><font color='#4ef4b4'>>Language:</font> C, C++, Java, Python</li>
 							<li><font color='#4ef4b4'>></font> Time and space complexity of the algorithm will be used to break ties. </li>
@@ -2434,29 +2528,35 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li><font color='#4ef4b4'>></font> The organizers reserve the right to change the rules as they deem fit.</li>
 							<li><font color='#4ef4b4'>></font> Organizers have the right to disqualify any team if they break any rule.</li>
 							<br>
+							<li><font color='#4ef4b4'>></font> The three following contests will be a part of the preliminary round and will be held together.</li>
+							<br>
 							<li><font color='#4ef4b4'>1. Coding contest:</font> </li>
-							<li><font color='#4ef4b4'>></font> A problem statement will be provided, with a sample input and output. The participant will be expected to write a code which solves the given problem. Once the problem is submitted, it would be tested with a wide range of inputs. If all the outputs come as expected within the stipulated time then that particular solution shall be accepted.</li>
-							<li><font color='#4ef4b4'>>No of Questions:</font> 3 </li>
-							<li><font color='#4ef4b4'>>Duration:</font> 90 minutes </li>
+							<li><font color='#4ef4b4'>></font> A problem statement will be provided, with a sample input and output. The participant will be expected to write a code which solves the given problem.</li>
+							
 							<br>
 							<li><font color='#4ef4b4'>2. Debugging:</font> </li>
-							<li><font color='#4ef4b4'>></font> The contestant would first be required to select his/her programming language. Correspondingly a code file will appear on their screen. Without providing any problem statement, the contestant will be expected to fix all the bugs by making assumptions about the purpose of the code (Sample input and output will be provided). The testing of the solution will take place in the same way as the coding contest.</li>
-							<li><font color='#4ef4b4'>>No of Questions:</font> 2 </li>
-							<li><font color='#4ef4b4'>>Duration:</font> 30 minutes </li>
+							<li><font color='#4ef4b4'>></font> A Problem statement and a code would be given to the student, he/she will be expected to fix all the bugs by looking at the sample input/output.</li>
+							
 							<br>
 							<li><font color='#4ef4b4'>3. Encrypt Decrypt</font> </li>
-							<li><font color='#4ef4b4'>></font> A message will be provided in an encrypted form along with the original message. The contestant has to figure out what all steps are used to transcend from encrypted text to the original one and even vice-versa. After figuring this out he/she has to write a piece of code which can perform the same job. A large input file will be provide in which all the text is encrypted using the same algorithm. The code written must generate an output file which contains simple readable information.</li>
-							<li><font color='#4ef4b4'>> No of Questions:</font> 2 </li>
-							<li><font color='#4ef4b4'>> Duration:</font> 60 minutes </li>
-							<li><font color='#4ef4b4'>> Marking Scheme:</font> </li>
+							<li><font color='#4ef4b4'>></font> A message will be provided in an encrypted form along with the original message. The contestant has to figure out the encryption scheme and write a code that can perform the same job.</li>
+							
+							<br>
+							<li><font color='#4ef4b4'> Marking Scheme:</font> </li>
 							<li><font color='#4ef4b4'>></font> Each Question carries 10 marks. </li>
 							<li><font color='#4ef4b4'>></font> No partial marking will be given. </li>
-							<li><font color='#4ef4b4'>></font> Penalty may be imposed in case of wrong submission depending upon the nature of the problem. </li>
+							<br>
+							<li><font color='#4ef4b4'>></font>Further details will be provided before the contest.</li>
 							</ul>
+							<p><font color='#4ef4b4' size='4'>FINALS</font></p>
+							<ul>
+							<li><font color='#4ef4b4'>>Date:</font> 22nd August, 2014 Friday</li>
+							<li><font color='#4ef4b4'>>Venue:</font> IIIT Delhi Campus</li>
+							<li><font color='#4ef4b4'>></font>More details to be announced soon</li></ul>
 				</div></div>
 				<div id="ieventblock615" class="ieventblock6"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
-							<p>The last date to register is <font color='#4ef4b4' size='5'>20th July, 2014</font>.</p>
+							<p>The last date to register is <font color='#4ef4b4' size='5'>23rd July, 2014</font>.</p>
 							<p>Each school needs to fill <a href="http://goo.gl/dJ2I2j">this form</a>. </p>
 							<p>Individual students need to fill <a href="http://goo.gl/8Nem3K">this form</a> separately. 
 
@@ -2481,7 +2581,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li><font color='#4ef4b4'>Soumya Sharma </font></li>
 							<li>+91-9871699406 </li>
 							<li>soumya13106@iiitd.ac.in</li>			
-							</p>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock815" class="ieventblock8"><div class="ieventtext1">
 
@@ -2509,7 +2609,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<p> 
 							<ul>
 							<li>
-						    Think you are creative coder?Time to prove it! Inspired by The International Obfuscated C Code Contest,IIITD presents OBFUSCODE.The idea is simple-to create the most bizarre,unusual code that does something cool and needless to say should compile.Use nifty tricks(C has plenty of it) to hide logic,write code in an amazing format(see this) or just hack the ioccc judgement tool :).</li>
+						    Think you are creative coder?Time to prove it! Inspired by The International Obfuscated C Code Contest,IIITD presents OBFUSCODE.The idea is simple-to create the most bizarre,unusual code that does something cool and needless to say should compile.Use nifty tricks(C has plenty of it) to hide logic,write code in an amazing format(<a href="http://www.digitalcraft.org/iloveyou/images/press/obfuscated_code_yang.gif">see this</a>) or just hack the ioccc judgement tool :).</li>
 							<li> 
 							The event consist of two rounds:-</li>
 							<li><font color='#4ef4b4'>Preliminary Round (1 Hour)</font>- For shortlisting  best performing teams.</li><
@@ -2522,7 +2622,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li><font color='#4ef4b4'>Team Size:</font> At most 2 Members</li>
 							<li><font color='#4ef4b4'>Duration:</font> 3 Hours</li>
 							<li><font color='#4ef4b4'>Language:</font> C</li>
-							<li><font color='#4ef4b4'>No. of Questions:</font> 5</li>
+							
 							<li><font color='#4ef4b4'>></font>Use of phones is prohibited during the contest.</li>
 							<li><font color='#4ef4b4'>></font>Only one entry per round will be judged.</li>
 							<li><font color='#4ef4b4'>></font>Any code that fails to compile will be rejected.</li>
@@ -2575,7 +2675,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 															
 															console.log("register function called");
 
-															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+															var dataString = '&event=OBFUSCODE' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
 
 																console.log(dataString);
 																$.ajax({
@@ -2596,7 +2696,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 																			}
 																		},
 																		error: function(data){
-																				alert("Event Registration Errored! Please check your network connection");
+																				Toast.info('Error Encountered! Please try again.');;
 																					}
 																			});
 																		return false;
@@ -2611,7 +2711,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 												Toast.error(json.error);
 								},
 								error: function(data){
-										alert("Event Registration Errored");
+										Toast.info('Error Encountered!');;
 								}
 						});
 					return false;
@@ -2620,8 +2720,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 				</script>
 				<div id="ieventblock616" class="ieventblock6"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
-							<p>Register here only if not registering as a Techathlon team, and you wish to participate in the event separately.<br>
-							We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
+							<p>We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
 							<form method="POST" name="ievent16register" class="ievent16register">{% csrf_token %}
 							<input name="obname" type="text" placeholder="Team Name:" /><p>
 							Participating as a team of 1 or 2:<br><ul><li>
@@ -2655,7 +2754,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li><font color='#4ef4b4'>Hammad Akhtar   </font></li>
 							<li>+91-9718052178</li>
 							<li>hammad13060@iiitd.ac.in</li>		
-							</p>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock816" class="ieventblock8"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
@@ -2690,11 +2789,9 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<ul>
 							<li><font color='#4ef4b4'>></font> The (clichéd) “No Rules” guidelines shall be followed. </li>
 							<li><font color='#4ef4b4'>></font> Event is open to all College/Institute students. Cross-college teams are allowed.</li>
-							<li><font color='#4ef4b4'>></font> Your code should contain as less lines as possible. </li>
 							<li><font color='#4ef4b4'>></font> Multiple Teams are allowed from one college.</li>
 							<li><font color='#4ef4b4'>></font> The decision of the organizers shall be final and binding.</li>
 							<li><font color='#4ef4b4'>></font> The organizers reserve the right to change the rules as they deem fit.</li>
-							<li><font color='#4ef4b4'>></font> Organizers have the right to disqualify any team if they break any rule.</li>
 							
 							</ul>
 				</div></div>
@@ -2721,7 +2818,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li><font color='#4ef4b4'>Vinayak Shukl</font></li>
 							<li>+91-9953161779</li>
 							<li>vinayak11118@iiitd.ac.in</li>		
-							</p>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock817" class="ieventblock8"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
@@ -2750,10 +2847,10 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li>
 						    <font color='#4ef4b4'>function hackathon</font>( ideas, coffee )</li><li>
 						    {</li><li>
-						    ideas += awesomeness;</li><li>
-						        coffee += food;</li><li>
-						        code = work( ideas, coffee );</li><li>
-						        return code;</li><li>
+						    <pre>    ideas += awesomeness;</pre></li><li>
+						    <pre>    coffee += food;</pre></li><li>
+						    <pre>    code = work( ideas, coffee );</pre></li><li>
+						    <pre>    return code;</pre></li><li>
   							}</li>
 							<li><font color='#4ef4b4'>Byld</font>, the software development club of IIIT-Delhi shouts out to all the designers and developers out there, who can't wait to bring their next app idea to life. We at Byld, invite you to the Overnight Hackathon at Esya'14, to work over 16 sleepless hours with one great idea and a team of tireless creative minds. Spend the night building an app that stands out from the rest, while we keep you fueled with food and lots of coffee! </li>
 							</p>
@@ -2768,7 +2865,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li><font color='#4ef4b4'>></font> The theme will be announced a night before the event. Use that time to think about what you want to Byld.</li>
 							<li><font color='#4ef4b4'>></font> Registrations are online/on-the-spot. But you have to report to the registration desk at the day of the hackathon.</li>
 							<li><font color='#4ef4b4'>></font> Participants are supposed to carry their own laptops, chargers and testing devices.</li>
-							<li><font color='#4ef4b4'>></font> Please check soon as you register with us if the platform you’re using is acceptable. If there is any doubt, please contact us.</li>
+							<li><font color='#4ef4b4'>></font> Please check if the platform you’re using is acceptable. If there is any doubt, please contact us.</li>
 							<li><font color='#4ef4b4'>></font> To ensure a level field for all contestants, all code and design must be created during the duration of the Hackathon. We want to ensure that all participants start off on the same footing and we also want to preserve the true nature of a hackathon. You are, however, free to make plans, create wireframes, and brainstorm prior to the event. The only exception to this rule would include material that is freely available to the public. Some examples of this would be: public domain images, open source libraries. We take this rule very seriously for the sake of all members attending the event. Failure to comply may result in the offending team's disqualification.</li>
 							<li><font color='#4ef4b4'>></font> Your App must relate to the theme, and must comply with the submission deadline.</li>
 							<li><font color='#4ef4b4'>></font> All teams retain full ownership of what they have created during the Hackathon.</li>
@@ -2815,7 +2912,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 															
 															console.log("register function called");
 
-															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+															var dataString = '&event=Hackathon' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
 
 																console.log(dataString);
 																$.ajax({
@@ -2836,7 +2933,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 																			}
 																		},
 																		error: function(data){
-																				alert("Event Registration Errored! Please check your network connection");
+																				Toast.info('Error Encountered! Please try again.');;
 																					}
 																			});
 																		return false;
@@ -2851,7 +2948,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 												Toast.error(json.error);
 								},
 								error: function(data){
-										alert("Event Registration Errored");
+										Toast.info('Error Encountered!');;
 								}
 						});
 					return false;
@@ -2861,7 +2958,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 				<div id="ieventblock618" class="ieventblock6"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>
-							<form method="POST" name="ievent10register" class="ievent18register">{% csrf_token %}
+							<form method="POST" name="ievent18register" class="ievent18register">{% csrf_token %}
 							<input name="thteamname" type="text" placeholder="Team Name:" /><br>
 							<input name="thcollege" type="text" placeholder="Institute:" /><br>
 							<p>We already have your details. Enter details of your team partners (if any).<br>
@@ -2897,7 +2994,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li><font color='#4ef4b4'>Tushar Gupta </font></li>
 							<li>+91-9711936912</li>
 							<li>tushar13113@iiitd.ac.in</li>		
-							</p>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock818" class="ieventblock8"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
@@ -2932,9 +3029,10 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<hr>
 							<p align='center'><font color='#4ef4b4' size='5'>RULES AND GUIDELINES</font></p>
 							<ul>
-							<li><font color='#4ef4b4'>DOTA 2:</font><a href="https://www.dropbox.com/s/30jqrw37d6vledc/DOTA2.pdf?dl=1"><img src="/s/pdfs/pdfim.png" width="30px" height="35px"  /></a></li>
-							<li><font color='#4ef4b4'>Counter Stike 1.6:</font><a href="https://www.dropbox.com/s/tmpuf94fzmscct5/CS1.6.pdf?dl=1"><img src="/s/pdfs/pdfim.png" width="30px" height="35px"  /></a></li>
-							<li><font color='#4ef4b4'>NFS: Most Wanted:</font><a href="https://www.dropbox.com/s/7pwyw3c5gru6uxi/NFS.pdf?dl=1"><img src="/s/pdfs/pdfim.png" width="30px" height="35px"  /></a></li>
+							<li><font color='#4ef4b4'>DOTA 2:</font><a href="https://www.dropbox.com/s/30jqrw37d6vledc/DOTA2.pdf?dl=1" target="_blank"><img src="pdfs/pdfim.png" width="30px" height="35px" pagespeed_lsc_url="http://esya.iiitd.edu.in/pdfs/pdfim.png"/></a></li>
+							<li><font color='#4ef4b4'>Counter Stike 1.6:</font><a href="https://www.dropbox.com/s/tmpuf94fzmscct5/CS1.6.pdf?dl=1"><img src="pdfs/pdfim.png" width="30px" height="35px" target="_blank" pagespeed_lsc_url="http://esya.iiitd.edu.in/pdfs/pdfim.png"/></a></li>
+							<li><font color='#4ef4b4'>NFS: Most Wanted:</font><a href="https://www.dropbox.com/s/7pwyw3c5gru6uxi/NFS.pdf?dl=1" target="_blank"><img src="pdfs/pdfim.png" width="30px" height="35px" pagespeed_lsc_url="http://esya.iiitd.edu.in/pdfs/pdfim.png"/></a></li>
+							<li><font color='#4ef4b4'>FIFA:</font> TBD</li>
 							<li><font color='#4ef4b4'>></font> The decision of the organizers shall be final and binding.</li>
 							<li><font color='#4ef4b4'>></font> The organizers reserve the right to change the rules as they deem fit.</li>
 							<li><font color='#4ef4b4'>></font> Organizers have the right to disqualify any team if they break any rule.</li>
@@ -2964,7 +3062,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li><font color='#4ef4b4'>Mukul Gupta</font></li>
 							<li>+91-9654021198</li>
 							<li>mukul12146@iiitd.ac.in </li>	
-							</p>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock819" class="ieventblock8"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
@@ -2987,8 +3085,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 				<a class="ieventblock4" onclick="document.getElementById('ieventblock820').style.display = 'block';document.getElementById('ieventblock620').style.display = 'none';document.getElementById('ieventblock720').style.display = 'none';document.getElementById('ieventblock520').style.display = 'none';"><div class="ieventtext">PRIZES</div></a>
 				<div id="ieventblock520" class="ieventblock5"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>RULES AND GUIDELINES</font></p>
-							Coming Soon
-							<!--<p align='center'><font color='#4ef4b4'>"Forget Implementation, You only need conceptualization"</font></p>
+							<p align='center'><font color='#4ef4b4'>"Forget Implementation, You only need conceptualization"</font></p>
 							<p> 
 							<ul>
 							<li>Greetings Earthlings!</li><li> 
@@ -3000,22 +3097,112 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<ul>
 							<li><font color='#4ef4b4'>Team Size:</font> 2 Members</li>
 							<li><font color='#4ef4b4'>></font> Event is open to all College/Institute students. Cross-college teams are allowed.</li>
-							<li><font color='#4ef4b4'>></font> Your code should contain as less lines as possible. </li>
 							<li><font color='#4ef4b4'>></font> Multiple Teams are allowed from one college.</li>
 							<li><font color='#4ef4b4'>></font> The decision of the organizers shall be final and binding.</li>
 							<li><font color='#4ef4b4'>></font> The organizers reserve the right to change the rules as they deem fit.</li>
 							<li><font color='#4ef4b4'>></font> Organizers have the right to disqualify any team if they break any rule.</li>
-							
-							</ul>!-->
+							</ul>
 				</div></div>
+				<script type="text/javascript">
+					$(document).ready(function() {
+
+						$('.ievent20register').submit(function(e) {
+							e.preventDefault();
+							console.log("register function called");
+
+						var dataString = '&Big Bang V2.0' +
+										 '&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+						console.log(dataString);
+						$.ajax({
+								type: 'POST',
+								url: '/eventregister/',
+								data: dataString,
+								success: function(data){
+									var json = JSON.parse(data.content);
+									if(json.error == ""){
+										$(".updatess-content").text(json.events);
+										Toast.success("Successfully registered");
+										
+									}				
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Big Bang V2.0' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				Toast.info('Error Encountered! Please try again.');;
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											if(json.error=="Please register or Login")
+												Toast.error(json.error);
+								},
+								error: function(data){
+										Toast.info('Error Encountered! Please try again.');;
+								}
+						});
+					return false;
+				});
+			});
+				</script>
 				<div id="ieventblock620" class="ieventblock6"><div class="ieventtext1">
-							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
-							<p>Coming Soon</p>
+							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p><!--Static content updated. Backend left-->
+							<form method="POST" name="ievent20register" class="ievent20register">{% csrf_token %}
+							<input type="text" placeholder="Team Name:" /><p>
+							<label>Member 1:</label><br>
+							<li><input type="text" placeholder="College/Institute:" /></li>
+							<li><input type="text" placeholder="Associated Astronomy Organisation:" />(if any)</li></ul>
+							<label>Member 3:</label><br>
+							<ul><li><input type="text" placeholder="Name:" /></li>
+							<li><input type="text" placeholder="Contact No:" /></li>
+							<li><input type="text" placeholder="Email:" /></li>
+							<li><input type="text" placeholder="College/Institute:" /></li>
+							<li><input type="text" placeholder="Associated Astronomy Organisation:" />(if any)</li></ul>
+							</form>
+							
 				</div></div>
 				<div id="ieventblock720" class="ieventblock7"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>CONTACT</font></p>
-							Coming Soon
-							<!--<p>
+							
+							<p>
 							<ul>
 							<li><font color='#4ef4b4'>Megha Arora </font></li>
 							<li>+91-9873990399</li>
@@ -3028,15 +3215,14 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li><font color='#4ef4b4'>Chaitanya Kumar</font></li>
 							<li>+91-9210385626</li>
 							<li>Chaitanya12031@iiitd.ac.in</li>		
-							</p>!-->
+							</ul></p>
 				</div></div>
 				<div id="ieventblock820" class="ieventblock8"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
-							Coming Soon
-							<!--<p>
+							<p>
 							<ul>
 							<li><font color='#4ef4b4'>Prizes :</font> TBA</li>
-							<li><font color='#4ef4b4'>Disclaimer:</font> Prizes are subject to the quality of entries, and would be given at the discretion of the Organizers and Esya OC.</li></ul></p>!-->
+							<li><font color='#4ef4b4'>Disclaimer:</font> Prizes are subject to the quality of entries, and would be given at the discretion of the Organizers and Esya OC.</li></ul></p>
 
 				</div></div>
 			</div>
@@ -3055,7 +3241,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 				<a class="ieventblock3" onclick="document.getElementById('ieventblock721').style.display = 'block';document.getElementById('ieventblock621').style.display = 'none';document.getElementById('ieventblock521').style.display = 'none';document.getElementById('ieventblock821').style.display = 'none';"><div class="ieventtext">CONTACT</div></a>
 				<a class="ieventblock4" onclick="document.getElementById('ieventblock821').style.display = 'block';document.getElementById('ieventblock621').style.display = 'none';document.getElementById('ieventblock721').style.display = 'none';document.getElementById('ieventblock521').style.display = 'none';"><div class="ieventtext">PRIZES</div></a>
 				<div id="ieventblock521" class="ieventblock5"><div class="ieventtext1">
-							<p align='center'><font color='#4ef4b4'>"Forget Implementation, You only need conceptualization"</font></p>
+							<!--<p align='center'><font color='#4ef4b4'>"Forget Implementation, You only need conceptualization"</font></p>
 							<p> 
 							<ul>
 							<li>
@@ -3083,18 +3269,19 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li><font color='#4ef4b4'>></font> The organizers reserve the right to change the rules as they deem fit.</li>
 							<li><font color='#4ef4b4'>></font> Organizers have the right to disqualify any team if they break any rule.</li>
 							
-							</ul>
+							</ul>!-->
+							<p>Coming Soon</p>
 				</div></div>
 				<div id="ieventblock621" class="ieventblock6"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
-							<p>TBA</p>
+							<p>Coming Soon</p>
 				</div></div>
 				<div id="ieventblock721" class="ieventblock7"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>CONTACT</font></p>
 							<p>
-							<ul>
+							<!--<ul>
 							<li><font color='#4ef4b4'>Nischay Malhan  </font></li>
-							<li>+91--9654076822</li>
+							<li>+91-9654076822</li>
 							<li>nischay13144@iiitd.ac.in</li>
 							<br>
 							<li><font color='#4ef4b4'>Sanket Jain   </font></li>
@@ -3104,7 +3291,8 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li><font color='#4ef4b4'>Varun Kumar  </font></li>
 							<li>+91-9716057062   </li>
 							<li>varun13169@iiitd.ac.in</li>		
-							</p>
+							</p>!-->
+							<p>Coming Soon</p>
 				</div></div>
 				<div id="ieventblock821" class="ieventblock8"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
@@ -3144,12 +3332,12 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li><font color='#4ef4b4'>></font> To participate, sign up at our website http://chakravyuhaiiitd.com. Only individual participation is allowed.</li>
 							<li><font color='#4ef4b4'>></font> Get cracking and complete as many levels as you can.</li>
 							<li><font color='#4ef4b4'>></font> The three winners will be decided on the basis of maximum level reached and the time taken (after the start of Chakravyuha) to reach that level, in this order.</li>
-							<li><font color='#4ef4b4'>></font> Event is open to all College/Institute students. Cross-college teams are allowed.</li>
+							
 							<li><font color='#4ef4b4'>></font> You will have to have registered through a valid email ID in order to be eligible for the prizes.</li>
-							<li><font color='#4ef4b4'>></font> Multiple Teams are allowed from one college.</li>
+						
 							<li><font color='#4ef4b4'>></font> The decision of the organizers shall be final and binding.</li>
 							<li><font color='#4ef4b4'>></font> The organizers reserve the right to change the rules as they deem fit.</li>
-							<li><font color='#4ef4b4'>></font> Organizers have the right to disqualify any team if they break any rule.</li>
+							<li><font color='#4ef4b4'>></font> Organizers have the right to disqualify any participant if they break any rule.</li>
 							
 							</ul>
 				</div></div>
@@ -3163,7 +3351,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<ul>
 							<li><font color='#4ef4b4'>Gurshabad Grover</font></li>
 							<li>+91-9873686518</li>
-							<li>nischay13144@iiitd.ac.in</li>
+							<li>gurshabad13038@iiitd.ac.in</li>
 							<br>
 							<li><font color='#4ef4b4'>Rohit Chandra </font></li>
 							<li>+91-7840880366 </li>
@@ -3192,66 +3380,149 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 				<a class="ieventblock3" onclick="document.getElementById('ieventblock723').style.display = 'block';document.getElementById('ieventblock623').style.display = 'none';document.getElementById('ieventblock523').style.display = 'none';document.getElementById('ieventblock823').style.display = 'none';"><div class="ieventtext">CONTACT</div></a>
 				<a class="ieventblock4" onclick="document.getElementById('ieventblock823').style.display = 'block';document.getElementById('ieventblock623').style.display = 'none';document.getElementById('ieventblock723').style.display = 'none';document.getElementById('ieventblock523').style.display = 'none';"><div class="ieventtext">PRIZES</div></a>
 				<div id="ieventblock523" class="ieventblock5"><div class="ieventtext1">
-							<p align='center'><font color='#4ef4b4' size='5'>RULES AND GUIDELINES</font></p>
-							Coming Soon
-							<!--<p align='center'><font color='#4ef4b4'>"Forget Implementation, You only need conceptualization"</font></p>
+							<p align='center'><font color='#4ef4b4'>“The pin is mightier than the sword” - Reinfeld</font></p>
 							<p> 
 							<ul>
 							<li>
-						    k you can do better than Kruskal, Fibonacci, or Euclid? This is the event to prove your mettle. Show us how well you can design an algorithm and win exciting prizes.</li>
-							<li>“An algorithm must be seen to be believed” -Donald Knuth</li>
-							<li>http://xkcd.com/844/  - Don’t worry you only need pseudocode. </li>
-							<li>Teams of size two will be tested on their skills in solving and designing efficient algorithms for the given problems. It will be a written test in which participants will be expected to communicate with their team member only. Questions will test your ability to think on your feet and come up with algorithms in a very limited time frame.</li>
+						    IIIT-Delhi's hosts its first ever Chess Tournament. Compete against the best in the city and win amazing prizes.</li>
 							</p>
 							<br>
 							<hr>
 							<p align='center'><font color='#4ef4b4' size='5'>RULES AND GUIDELINES</font></p>
 							<ul>
-							<li><font color='#4ef4b4'>Team Size:</font> At most 2 Members</li>
-							<li><font color='#4ef4b4'>Duration:</font> 80 Minutes</li>
-							<li><font color='#4ef4b4'>Language:</font> C,C++, Java</li>
-							<li><font color='#4ef4b4'>No. of Questions:</font> 5</li>
-							<li><font color='#4ef4b4'>></font> Only pseudo code is required.</li>
-							<li><font color='#4ef4b4'>></font> Internet access will not be allowed.</li>
-							<li><font color='#4ef4b4'>></font> Time and space complexity of the algorithm will be used to break ties. </li>
-							<li><font color='#4ef4b4'>></font> Event is open to all College/Institute students. Cross-college teams are allowed.</li>
-							<li><font color='#4ef4b4'>></font> Your code should contain as less lines as possible. </li>
-							<li><font color='#4ef4b4'>></font> Multiple Teams are allowed from one college.</li>
-							<li><font color='#4ef4b4'>></font> The decision of the organizers shall be final and binding.</li>
-							<li><font color='#4ef4b4'>></font> The organizers reserve the right to change the rules as they deem fit.</li>
-							<li><font color='#4ef4b4'>></font> Organizers have the right to disqualify any team if they break any rule.</li>
+							<li><font color='#4ef4b4'>Team Size:</font> Individual Participation</li>
+							<li><font color='#4ef4b4'>Time format:</font> 25 minutes + 10 Seconds or 30 minutes each</li>
+							<li><font color='#4ef4b4'>Walk over time:</font> 15 minutes.</li>
+							<li><font color='#4ef4b4'>></font> Swiss League Event.</li>
+							<li><font color='#4ef4b4'>></font> The tournament will be played as per FIDE’s Rules and Regulations.</li>
+							<li><font color='#4ef4b4'>></font> All players will play all 7 rounds. </li>
+							<li><font color='#4ef4b4'>></font> Kindly, bring your own Chess Clocks.</li>
+							<li><font color='#4ef4b4'>></font> In case of tied scores after the end of the tournament, a blitz match might be conducted as a tie-breaker, though the discretion lies in the hands of the organisers. </li>
+							<li><font color='#4ef4b4'>></font> In the case of any dispute or claim, the decision of the arbiter will be final and binding to all rules and regulations.</li>
 							
-							</ul>!-->
+							</ul>
 				</div></div>
+				<script type="text/javascript">
+					$(document).ready(function() {
+
+						$('.ievent23register').submit(function(e) {
+							e.preventDefault();
+							console.log("register function called");
+
+						var dataString = '&event=Chess' +
+										 '&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+						console.log(dataString);
+						$.ajax({
+								type: 'POST',
+								url: '/eventregister/',
+								data: dataString,
+								success: function(data){
+									var json = JSON.parse(data.content);
+									if(json.error == ""){
+										$(".updatess-content").text(json.events);
+										Toast.success("Successfully registered");
+										
+									}				
+									else 
+									{
+											//Toast.error(json.error);
+											if(json.error=="abc")
+											{
+												if(confirm("Your previous registration details will be modified."))
+												{
+													
+														$(document).ready(function() 
+														{
+
+														{
+															
+															console.log("register function called");
+
+															var dataString = '&event=Chess' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+
+																console.log(dataString);
+																$.ajax({
+																		type: 'POST',
+																		url: '/eventregister55/',
+																		data: dataString,
+																		success: function(data){
+																			var json = JSON.parse(data.content);
+																			if(json.error == ""){
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																				
+																			}
+																			else
+																			{
+																				$(".updatess-content").text(json.events);
+																				Toast.success("Successfully registered");
+																			}
+																		},
+																		error: function(data){
+																				Toast.info('Error Encountered! Please try again.');;
+																					}
+																			});
+																		return false;
+																	}
+																});
+																							
+														}
+														}
+										
+											}
+											if(json.error=="Please register or Login")
+												Toast.error(json.error);
+								},
+								error: function(data){
+										Toast.info('Error Encountered! Please try again.');;
+								}
+						});
+					return false;
+				});
+			});
+				</script>
 				<div id="ieventblock623" class="ieventblock6"><div class="ieventtext1">
-							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
-							<p>Coming Soon</p>
+							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATION</font></p>
+							<p>First-come, first-served (Preference will still be given to international related players).</p>
+							<p>Entry fee : Rs 250/-</p>
+							<p>Register yourself by filling the required details below<br>
+							<form method="POST" name="ievent23register" class="ievent23register">{% csrf_token %}
+							<input type="text" placeholder="College/School:" /><p>
+							<input type="text" placeholder="Date Of Birth:" /><p>
+							<input type="text" placeholder="FIDE Rating:" /><pre>   OR   </pre><input type="radio" name="no-rating" value="none">Unrated
+							<p>
+							<input type="submit" value="Register" />
+							</form>
+							</p>
 				</div></div>
 				<div id="ieventblock723" class="ieventblock7"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>CONTACT</font></p>
-							Coming Soon
-							<!--<p>
+							<p>
 							<ul>
-							<li><font color='#4ef4b4'>Nischay Malhan  </font></li>
-							<li>+91--9654076822</li>
-							<li>nischay13144@iiitd.ac.in</li>
+							<li><font color='#4ef4b4'>Sanchit Gupta   </font></li>
+							<li>+91-9582293286</li>
+							<li>sanchit13088@iiitd.ac.in</li>
 							<br>
-							<li><font color='#4ef4b4'>Sanket Jain   </font></li>
-							<li>+91-9716081997</li>
-							<li>sanket13156@iiitd.ac.in</li>							
+							<li><font color='#4ef4b4'>Archit Agarwal    </font></li>
+							<li>+91-8860198398</li>
+							<li>archit11030@iiitd.ac.in</li>							
 							<br>
-							<li><font color='#4ef4b4'>Varun Kumar  </font></li>
-							<li>+91-9716057062   </li>
-							<li>varun13169@iiitd.ac.in</li>		
-							</p>!-->
+							<li><font color='#4ef4b4'>Ankit Verma   </font></li>
+							<li>+91-9810581076</li>
+							<li>ankit13017@iiitd.ac.in</li>	
+							<br>
+							<li><font color='#4ef4b4'>Shrey Shashank   </font></li>
+							<li>+91-9958847283</li>
+							<li>shrey12097@iiitd.ac.in</li>		
+							</p>
 				</div></div>
 				<div id="ieventblock823" class="ieventblock8"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
-							Coming Soon 
-							<!--<p>
+							<p>
 							<ul>
 							<li><font color='#4ef4b4'>Prizes :</font> TBA</li>
-							<li><font color='#4ef4b4'>Disclaimer:</font> Prizes are subject to the quality of entries, and would be given at the discretion of the Organizers and Esya OC.</li></ul></p>!-->
+							<li><font color='#4ef4b4'>Disclaimer:</font> Prizes are subject to the quality of entries, and would be given at the discretion of the Organizers and Esya OC.</li></ul></p>
 				</div></div>
 			</div>
 			<!--<button class="close"></button>!-->
@@ -3277,7 +3548,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<hr>
 							<p align='center'><font color='#4ef4b4' size='5'>RULES AND GUIDELINES</font></p>
 							<ul>
-							<li><font color='#4ef4b4'>Team Size:</font> Individual Participation</li>
+							li><font color='#4ef4b4'>Team Size:</font> Individual Participation</li>
 							
 							
 							<li><font color='#4ef4b4'>></font> The prelims will be held online on our facebook page. Each participant can submit maximum 3 photographs for any 3 themes along with a caption. You can choose ONLY ONE theme per ONE Photo. Winners will be selected from all the themes.</li>
@@ -3328,9 +3599,9 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<li>parth13146@iiitd.ac.in</li>							
 							<br>
 							<li><font color='#4ef4b4'>Archie Gupta</font></li>
-							<li>+91-0000000000</li>
+							<li>+91-9560776472</li>
 							<li>archie12023@iiitd.ac.in</li>		
-							</p>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock824" class="ieventblock8"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
@@ -3355,7 +3626,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<p align='center'><font color='#4ef4b4'>"He is no debator who cannot take two sides"</font></p>
 							<p> 
 							<ul>
-							<li>Presented to you by Voix de Literati, the Literary and Debating Society of IIIIT-D, a GD-Extempore-Debate event that will test not only your but your partner’s oratory skills to the hilt -- so draw your swords and get ready to battle it out! </li>
+							<li>Presented to you by Voix de Literati, the Literary and Debating Society of IIIT-D, a GD-Extempore-Debate event that will test not only yours but your partner’s oratory skills to the hilt -- so draw your swords and get ready to battle it out!</li>
 							<li>Your team will only get you so far though; the competition is tough, with eliminations at every turn, and only the best speaker will get rewarded with prizes and the glory of having the best rebuttal of all.</li>
 							</ul>
 							</p>
@@ -3365,36 +3636,28 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<ul>
 							<li><font color='#4ef4b4'>Team Size:</font> 2 Members</li>							
 							<li><font color='#4ef4b4'>></font> One team member takes part in the GD, while the other participates in the Turncoat Extempore.</li>
-							<li><font color='#4ef4b4'>></font>>Both GD and Turncoat will have on the spot topics based on “Technology”.</li>
-							<li><font color='#4ef4b4'>></font>>Team with highest aggregate score from these 2 rounds qualifies for the final round.* </li>
-							<li><font color='#4ef4b4'>></font>Both members take part in the final round debate on a pre-announced topic based on Esya’14’s theme- “ The Internet of Things”.</li>
-							<li><font color='#4ef4b4'>></font>>One team member speaks for the motion, while the other MUST speak against the motion.</li>
-							<li><font color='#4ef4b4'>></font>>Each participant has at most 2 interjections.</li>
-							<li><font color='#4ef4b4'>></font>>Cross-questioning is NOT allowed after the speaker’s rebuttal.</li>
+							<li><font color='#4ef4b4'>>></font> Both GD and Turncoat will have on the spot topics based on “Technology”.</li>
+							<li><font color='#4ef4b4'>>></font> Team with highest aggregate score from these 2 rounds qualifies for the final round. </li>
+							<li><font color='#4ef4b4'>></font> Both members take part in the final round debate on a pre-announced topic based on Esya’14’s theme- “ The Internet of Things”.</li>
+							<li><font color='#4ef4b4'>>></font> One team member speaks for the motion, while the other MUST speak against the motion.</li>
+							<li><font color='#4ef4b4'>>></font> Each participant has at most 2 interjections.</li>
+							<li><font color='#4ef4b4'>>></font> Cross-questioning is NOT allowed after the speaker’s rebuttal.</li>
 							<li><font color='#4ef4b4'>></font> Cross-institutional teams are allowed.</li>
-							<li><font color='#4ef4b4'>></font>>High school and college (UG/PG) students.</li>
-							<li><font color='#4ef4b4'>Online:</font> Bored of meaningless online arguments? We give you an online platform to debate on real issues. Win exciting prizes sitting at home!</li>
-							<li><font color='#4ef4b4'>></font>>A two-week long online precursor to the main on-campus event.</li>
-							<li><font color='#4ef4b4'>></font>>On-the-spot topic will be given, related to social issues/current events.</li>
-							<li><font color='#4ef4b4'>></font>>Two debaters will present their arguments and questions for or against the motion.</li>
-							<li><font color='#4ef4b4'>></font>>Pairing up of debaters and timings of online debates will be done on first-come, first-serve basis.</li>
-							<li><font color='#4ef4b4'>></font>>The organizers reserve the right to change the rules as they deem fit.</li>
-							<li><font color='#4ef4b4'>></font>>Organizers have the right to disqualify any team if they break any rule.</li>
+							<li><font color='#4ef4b4'>>></font> High school and college (UG/PG) students.</li>
+							<br>
+							<li><font color='#4ef4b4' size='4'>Online Rebuttal:</font> Bored of meaningless online arguments? We give you an online platform to debate on real issues. Win exciting prizes sitting at home!</li>
+							<li><font color='#4ef4b4'>>></font> A two-week long online precursor to the main on-campus event.</li>
+							<li><font color='#4ef4b4'>>></font> On-the-spot topic will be given, related to social issues/current events.</li>
+							<li><font color='#4ef4b4'>>></font> Two debaters will present their arguments and questions for or against the motion.</li>
+							<li><font color='#4ef4b4'>>></font> Pairing up of debaters and timings of online debates will be done on first-come, first-serve basis.</li>
+							<li><font color='#4ef4b4'>>></font> The organizers reserve the right to change the rules as they deem fit.</li>
+							<li><font color='#4ef4b4'>>></font> Organizers have the right to disqualify any team if they break any rule.</li>
 							
 							</ul>
 				</div></div>
 				<div id="ieventblock625" class="ieventblock6"><div class="ieventtext1">
-							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
-Name of Speaker (For the motion):
-Phone Number of Speaker:
-Email of Speaker:
-Institution/School of Speaker: 
-
-Name of Speaker (Against the motion):
-Phone Number of Speaker:
-Email of Speaker:
-Institution/School of Speaker:
-																											<script type="text/javascript">
+					<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
+					<script type="text/javascript">
 					$(document).ready(function() {
 
 						$('.ievent25register').submit(function(e) {
@@ -3431,7 +3694,7 @@ Institution/School of Speaker:
 															
 															console.log("register function called");
 
-															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+															var dataString = '&event=Rebuttal' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
 
 																console.log(dataString);
 																$.ajax({
@@ -3452,7 +3715,7 @@ Institution/School of Speaker:
 																			}
 																		},
 																		error: function(data){
-																				alert("Event Registration Errored! Please check your network connection");
+																				Toast.info('Error Encountered! Please try again.');;
 																					}
 																			});
 																		return false;
@@ -3467,7 +3730,7 @@ Institution/School of Speaker:
 												Toast.error(json.error);
 								},
 								error: function(data){
-										alert("Event Registration Errored");
+										Toast.info('Error Encountered!');;
 								}
 						});
 					return false;
@@ -3476,14 +3739,16 @@ Institution/School of Speaker:
 				</script>
 							<p>Teams must have EXACTLY 2 members to participate. The 2 members must choose OPPOSING stances for the Final Round of the debate beforehand. Cross-institutional teams are permitted.<br>
 							<form method="POST" name="ievent25register" class="ievent25register">{% csrf_token %}
-							<input name="rename" type="text" placeholder="Name of the speaker(For the motion):" /><p>
-							<input name="rephone" type="text" placeholder="Phone No of the speaker:" /><p>
-							<input name="remail" type="text" placeholder="Email of the speaker:" /><p>
-							<input name="recollege" type="text" placeholder="Institution/School of the speaker:" /><p>
-							<input name="reagname" type="text" placeholder="Name of the speaker(Against the motion):" /><p>
-							<input name="reagphone" type="text" placeholder="Phone No of the speaker:" /><p>
-							<input name="reagemail" type="text" placeholder="Email of the speaker:" /><p>
-							<input name="reagcollege" type="text" placeholder="Institution/School of the speaker:" /><p>
+							<label>For the Motion Speaker:</label><br>
+							<ul><li><input name="rename" type="text" placeholder="Name:" /></li>
+							<li><input name="rephone" type="text" placeholder="Phone No:" /></li>
+							<li><input name="remail" type="text" placeholder="Email:" /></li>
+							<li><input name="recollege" type="text" placeholder="Institution/School:" /></li></ul>
+							<label>Against the Motion Speaker:</label><br>
+							<ul><li><input name="reagname" type="text" placeholder="Name:" /></li>
+							<li><input name="reagphone" type="text" placeholder="Phone No:" /></li>
+							<li><input name="reagemail" type="text" placeholder="Email:" /></li>
+							<li><input name="reagcollege" type="text" placeholder="Institution/School:" /></li></ul>
 							<input type="submit" value="Register" />
 							</form>
 							</p>
@@ -3499,7 +3764,7 @@ Institution/School of Speaker:
 							<li><font color='#4ef4b4'>Anisha Agrawal </font></li>
 							<li>+91-9717730803</li>
 							<li>anisha12020@iiitd.ac.in</li>							
-								
+							</ul>	
 							</p>
 				</div></div>
 				<div id="ieventblock825" class="ieventblock8"><div class="ieventtext1">
@@ -3545,24 +3810,22 @@ Institution/School of Speaker:
 
 							Seen Sherlock? Now be Sherlock.
 							Prizes and laurels await you, only if you succeed in seizing the murderer!
-						    k you can do better than Kruskal, Fibonacci, or Euclid? This is the event to prove your mettle. Show us how well you can design an algorithm and win exciting prizes.</li>
+						    </li>
 						    </ul>
 							</p>
 							<br>
 							<hr>
 							<p align='center'><font color='#4ef4b4' size='5'>RULES AND GUIDELINES</font></p>
 							<ul>
-							<li><font color='#4ef4b4'>Team Size:</font> At most 2 Members</li>
-							<li><font color='#4ef4b4'>Duration:</font> 80 Minutes</li>
-							<li><font color='#4ef4b4'>Language:</font> C,C++, Java</li>
-							<li><font color='#4ef4b4'>No. of Questions:</font> 5</li>
-							<li><font color='#4ef4b4'>></font> Only pseudo code is required.</li>
+							<li><font color='#4ef4b4'>></font> Each team should comprise of 3-4 members. Cross college teams are allowed.</li>
+							<li><font color='#4ef4b4'>></font> Teams will face elimination leading up to the final round of the hunt, details of which will be revealed only to those who make it.</li>
+							<li><font color='#4ef4b4'>></font> In case of any discrepancy, the decision of the organisers will be final and binding.</li>
+							<li><font color='#4ef4b4'>></font> It will be a 2 day event with teams racing ACROSS the city to solve this murder mystery.</li>
+							<li><font color='#4ef4b4'>></font> No accomodation facility will be provided by IIIT-Delhi to teams which qualify for finals on second day.</li>
 							<li><font color='#4ef4b4'>></font> Internet access will not be allowed.</li>
-							<li><font color='#4ef4b4'>></font> Time and space complexity of the algorithm will be used to break ties. </li>
-							<li><font color='#4ef4b4'>></font> Event is open to all College/Institute students. Cross-college teams are allowed.</li>
-							<li><font color='#4ef4b4'>></font> Your code should contain as less lines as possible. </li>
+							<li><font color='#4ef4b4'>></font> A smart-phone with internet connectivity is a must!</li>
 							<li><font color='#4ef4b4'>></font> Multiple Teams are allowed from one college.</li>
-							<li><font color='#4ef4b4'>></font> The decision of the organizers shall be final and binding.</li>
+						
 							<li><font color='#4ef4b4'>></font> The organizers reserve the right to change the rules as they deem fit.</li>
 							<li><font color='#4ef4b4'>></font> Organizers have the right to disqualify any team if they break any rule.</li>
 							
@@ -3605,7 +3868,7 @@ Institution/School of Speaker:
 															
 															console.log("register function called");
 
-															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+															var dataString = '&event=HuntIT' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
 
 																console.log(dataString);
 																$.ajax({
@@ -3626,7 +3889,7 @@ Institution/School of Speaker:
 																			}
 																		},
 																		error: function(data){
-																				alert("Event Registration Errored! Please check your network connection");
+																				Toast.info('Error Encountered! Please try again.');
 																					}
 																			});
 																		return false;
@@ -3641,7 +3904,7 @@ Institution/School of Speaker:
 												Toast.error(json.error);
 								},
 								error: function(data){
-										alert("Event Registration Errored");
+										Toast.info('Error Encountered!');;
 								}
 						});
 					return false;
@@ -3686,7 +3949,7 @@ Institution/School of Speaker:
 							<li><font color='#4ef4b4'>Aditya Mishra</font></li>
 							<li>+91-9810467665</li>
 							<li>aditya12009@iiitd.ac.in</li>			
-							</p>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock826" class="ieventblock8"><div class="ieventtext1">
 
@@ -3721,17 +3984,19 @@ Institution/School of Speaker:
 							</p>
 							For more details download : 
 							<ul>
-							<li><font color='#4ef4b4'>></font><a href="https://www.dropbox.com/s/gg25kv16j12fxf5/FTR.pdf?dl=1"><img src="/s/pdfs/pdfim.png" width="30px" height="35px"  /></a></li>
+							<li><font color='#4ef4b4'>></font><a href="https://www.dropbox.com/s/gg25kv16j12fxf5/FTR.pdf?dl=1"><img src="pdfs/pdfim.png" width="30px" height="35px" pagespeed_lsc_url="http://esya.iiitd.edu.in/pdfs/pdfim.png"/></a></li>
 							</ul>
 							<br>
 							<hr>
 							<p align='center'><font color='#4ef4b4' size='5'>RULES AND GUIDELINES</font></p>
 							<ul>
 							<li><font color='#4ef4b4'>Team Size:</font> At most 3 Members</li>
+							<li><font color='#4ef4b4'>Preliminary Round (Online):</font> Mail your fake paper entries in the PDF format (you can include text as well as pictures) to <font color='#4ef4b4'>hoaxpocus@gmail.com by 5th August, 2014</font>. Please mention all the contact details in the mail or on the paper. </li>
 							<li><font color='#4ef4b4'>></font> The topic can be of any genre, regarding any personality, invention, event, etc in the world.</li>
 							<li><font color='#4ef4b4'>></font> The main topic cannot be real/true. It has to strictly be fake/hypothetical.But, the facts used to support the topic can either be fake or real. </li>
 							<li><font color='#4ef4b4'>></font> The maximum time for the presentations (final) is 10 minutes.</li>
 							<li><font color='#4ef4b4'>></font> Cross-college teams are allowed. </li>
+							<li><font color='#4ef4b4'>></font> This event is open for school students in grade 11 or 12 as well as college students.</li>
 							<li><font color='#4ef4b4'>></font> Alteration of the topic (from prelim to final) in any way will not be allowed. </li>
 							<li><font color='#4ef4b4'>></font> All the entries/submissions along with the team name are to be mailed to the email address provided below. Incase of multiple submissions,only the first one will be considered for evaluation. </li> 
 							<li><font color='#4ef4b4'>></font> Plagiarism in any form is strictly prohibited and will lead to disqualification. </li>
@@ -3743,7 +4008,7 @@ Institution/School of Speaker:
 							
 							</ul>
 				</div></div>
-																																			<script type="text/javascript">
+							<script type="text/javascript">
 					$(document).ready(function() {
 
 						$('.ievent27register').submit(function(e) {
@@ -3780,7 +4045,7 @@ Institution/School of Speaker:
 															
 															console.log("register function called");
 
-															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+															var dataString = '&event=Hoax Pocus' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
 
 																console.log(dataString);
 																$.ajax({
@@ -3801,7 +4066,7 @@ Institution/School of Speaker:
 																			}
 																		},
 																		error: function(data){
-																				alert("Event Registration Errored! Please check your network connection");
+																				Toast.info('Error Encountered! Please try again.');;
 																					}
 																			});
 																		return false;
@@ -3816,7 +4081,7 @@ Institution/School of Speaker:
 												Toast.error(json.error);
 								},
 								error: function(data){
-										alert("Event Registration Errored");
+										Toast.info('Error Encountered!');;
 								}
 						});
 					return false;
@@ -3858,7 +4123,7 @@ Institution/School of Speaker:
 							<li><font color='#4ef4b4'> Avikal Kohli</font></li>
 							<li>+91-8800661340</li>
 							<li>avikal13130@iiitd.ac.in</li>		
-							</p>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock827" class="ieventblock8"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
@@ -3913,7 +4178,7 @@ Institution/School of Speaker:
 							e.preventDefault();
 							console.log("register function called");
 
-						var dataString = '&event=XQuixIT' +
+						var dataString = '&event=xQuizIT' +
 										 '&register_data=' + $('input[name=xname]').val()+ '\n' + $('input[name=xphone]').val()  +'\n' + $('input[name=xemail]').val() +'\n' +  $('input[name=xcollege]').val();
 										 
 						console.log(dataString);
@@ -3943,7 +4208,7 @@ Institution/School of Speaker:
 															
 															console.log("register function called");
 
-															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+															var dataString = '&event=xQuizIT' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
 
 																console.log(dataString);
 																$.ajax({
@@ -3964,7 +4229,7 @@ Institution/School of Speaker:
 																			}
 																		},
 																		error: function(data){
-																				alert("Event Registration Errored! Please check your network connection");
+																				Toast.info('Error Encountered! Please try again.');;
 																					}
 																			});
 																		return false;
@@ -3979,7 +4244,7 @@ Institution/School of Speaker:
 												Toast.error(json.error);
 								},
 								error: function(data){
-										alert("Event Registration Errored");
+										Toast.info('Error Encountered!');;
 								}
 						});
 					return false;
@@ -4016,7 +4281,7 @@ Institution/School of Speaker:
 							<li><font color='#4ef4b4'>Mayank Vachher </font></li>
 							<li>+91-9811082480 </li>
 							<li>mayank13059@iiitd.ac.in</li>		
-							</p>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock828" class="ieventblock8"><div class="ieventtext1">
 
@@ -4052,7 +4317,7 @@ Institution/School of Speaker:
 							<hr>
 							<p align='center'><font color='#4ef4b4' size='5'>RULES AND GUIDELINES</font></p>
 							<ul>
-							<li><font color='#4ef4b4'>></font>A theme ( basically a product eg. a pen) will be given to you when the registration starts. You need to give us:
+							<li><font color='#4ef4b4'>></font>A theme ( basically a product eg. a pen) will be given to you when the registration starts. You need to give us:</li>
 							<li><font color='#4ef4b4'>Team Size:</font> 3 to 5 Members</li>
 							<li><font color='#4ef4b4'>></font>>A ‘brand-name’ that you think would be appropriate for selling that product</li>
 							<li><font color='#4ef4b4'>></font>>A logo design for your brand</li>
@@ -4104,7 +4369,7 @@ Institution/School of Speaker:
 															
 															console.log("register function called");
 
-															var dataString = '&event=Darwin Games' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
+															var dataString = '&event=Build Your Brand' +'&register_data=' + $('input[name=darname]').val()+ '\n' + $('input[name=darparname]').val()  +'\n' + $('input[name=darparphone]').val() +'\n' +  $('input[name=darparemail]').val() +'\n' + $('input[name=darparcollege]').val(); 
 
 																console.log(dataString);
 																$.ajax({
@@ -4125,7 +4390,7 @@ Institution/School of Speaker:
 																			}
 																		},
 																		error: function(data){
-																				alert("Event Registration Errored! Please check your network connection");
+																				Toast.info('Error Encountered! Please try again.');;
 																					}
 																			});
 																		return false;
@@ -4140,7 +4405,7 @@ Institution/School of Speaker:
 												Toast.error(json.error);
 								},
 								error: function(data){
-										alert("Event Registration Errored");
+										Toast.info('Error Encountered!');;
 								}
 						});
 					return false;
@@ -4149,16 +4414,31 @@ Institution/School of Speaker:
 				</script>
 				<div id="ieventblock629" class="ieventblock6"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
-							<p>(To enter details of other member of  team.)<br>
+							<p>(To enter details of other members of team.)<br>
 							<form method="POST" name="ievent29register" class="ievent29register">{% csrf_token %}
-							<input name="bname" type="text" placeholder="Team Name:" /><p>
-							<input name="bnameteam" type="text" placeholder="Name of team members:" /><p><label>(Max 2 members, Leave this section blank if you are registering as an individual)</label><p>
-							Will you be able to bring your own laptop:<p>
-					        <input type="radio" name="laptop" value="yes">Yes
-							<input type="radio" name="laptop" value="no">No<br>
-							<label>(Highly recommended to have own laptops for circuit simulation)</label><p>
-							<input name="bsim" type="text" placeholder="Preferred Circuit Simulator:" /><p>
-							<label>(eg. LT spice or Multisim ,Proteus etc.)<label><p>				
+							<input name="bname" type="text" placeholder="Team Name:" /><p><!-- Member 2,3 are mandatory. Member 3,4 optional.-->
+							<label>Member 2: </label><p>
+							<ul><li>     <input type="text" placeholder="Name:" /><br></li>
+							<li>     <input type="text" placeholder="Phone No:" /><br></li>
+							<li>     <input type="text" placeholder="Email:" /><br></li>
+							<li>     <input type="text" placeholder="Institute:" /><br></li></ul>
+							</p><label>Member 3: </label><p>
+							<ul><li>     <input type="text" placeholder="Name:" /><br></li>
+							<li>     <input type="text" placeholder="Phone No:" /><br></li>
+							<li>     <input type="text" placeholder="Email:" /><br></li>
+							<li>     <input type="text" placeholder="Institute:" /><br></li></ul>
+							</p><label>Member 4(optional): </label><p>
+							<ul><li>     <input type="text" placeholder="Name:" /><br></li>
+							<li>     <input type="text" placeholder="Phone No:" /><br></li>
+							<li>     <input type="text" placeholder="Email:" /><br></li>
+							<li>     <input type="text" placeholder="Institute:" /><br></li></ul>
+							</p><label>Member 5(optional): </label><p>
+							<ul><li>     <input type="text" placeholder="Name:" /><br></li>
+							<li>     <input type="text" placeholder="Phone No:" /><br></li>
+							<li>     <input type="text" placeholder="Email:" /><br></li>
+							<li>     <input type="text" placeholder="Institute:" /><br></li></ul>
+							</p><!-- Topic, Logo, Duration fields to be added later. Info not available right now-->
+							<p>Any further information regarding the event will be mailed to the coordinator of the team.</p>
 							<input type="submit" value="Register" />
 							</form>
 							</p>
@@ -4178,7 +4458,7 @@ Institution/School of Speaker:
 							<li><font color='#4ef4b4'>Atul Jain </font></li>
 							<li>+91-9818711051</li>
 							<li>atul13025@iiitd.ac.in</li>		
-							</p>
+							</ul></p>
 				</div></div>
 				<div id="ieventblock829" class="ieventblock8"><div class="ieventtext1">
 							<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
@@ -4201,15 +4481,72 @@ Institution/School of Speaker:
 				<a class="ieventblock4" onclick="document.getElementById('ieventblock830').style.display = 'block';document.getElementById('ieventblock630').style.display = 'none';document.getElementById('ieventblock730').style.display = 'none';document.getElementById('ieventblock530').style.display = 'none';"><div class="ieventtext">PRIZES</div></a>
 				<div id="ieventblock530" class="ieventblock5"><div class="ieventtext1">
 				<p align='center'><font color='#4ef4b4' size='5'>RULES AND GUIDELINES</font></p>
-							Coming Soon
+							
+							<p> 
+							<ul>
+							
+							<li>Esya presents Techathlon- one of a kind technical challenge.</li>
+							<li>The two day marathon will put the teams through gruelling tests to prove their mettle in.</li>
+							<li>From programming to toying with data to debugging, the winning team will have to excel at everything thrown at them.</li>
+
+							<li>This year, we make it bigger and how.</li>
+							<li>We present to you 6 (+1) events as a part of our unique Techathlon series:</li>
+							<li><font color='#4ef4b4'>BrainFuzz:</font> Designing algorithms</li>
+							<li><font color='#4ef4b4'>Code in Less:</font> Writing shortest codes</li>
+							<li><font color='#4ef4b4'>Darwin Games:</font> Coding in an unfamiliar environment</li>
+							<li><font color='#4ef4b4'>DataCrunches:</font> Database management event</li>
+							<li><font color='#4ef4b4'>ProSort:</font> The conventional programming event</li>
+							<li><font color='#4ef4b4'>SegFault:</font> Debugging event</li>
+							<li><font color='#4ef4b4'>Toast to Code:</font> The grand finale.</li>
+
+
+							<li>We promise you two days of epic fun. Come and win all the glory!</li>
+
+						    
+							</ul>
+							</p>
+							<br>
+							<hr>
+							<p align='center'><font color='#4ef4b4' size='5'>RULES AND GUIDELINES</font></p>
+							<ul>
+							<li><font color='#4ef4b4'>>Maximum team size allowed:</font> 4</li>
+							<li><font color='#4ef4b4'>></font>Only 2 team members are allowed to participate in any sub event and earn points for the team. </li>
+							<li><font color='#4ef4b4'>></font>Rest of the team members may participate in the said event but won’t be representing their team and hence will not be eligible for any points.</li>
+							<li><font color='#4ef4b4'>></font>To qualify for Toast to Code, EACH member shall have participated in at least 1 sub-event of Techathlon.</li>
+							<li><font color='#4ef4b4'>></font>ProSort is the (only) compulsory event.</li>
+							<li><font color='#4ef4b4'>></font>You can choose any 4 (or none) out of the remaining 5 events. But to make it even better, we allow you to participate in all 6 and consider only the best 5 scores.</li>
+							<li><font color='#4ef4b4'>></font>If you register for Techathlon via the registration tab, you need not register for the sub-events again. </li>
+							<li><font color='#4ef4b4'>></font>Techathlon teams earn following points for each sub-event:
+							<li><font color='#4ef4b4'>>1st position:</font> 100 points</li>
+							<li><font color='#4ef4b4'>>2nd position:</font> 80 points</li>
+							<li><font color='#4ef4b4'>>3rd position:</font> 60 points</li>
+							<li><font color='#4ef4b4'>>4th position:</font> 40 points</li>
+							<li><font color='#4ef4b4'>>5th position:</font> 25 points</li>
+							<li><font color='#4ef4b4'>>Participating:</font> 10 points</li>
+							<li><font color='#4ef4b4'>>Not Participating:</font> 0 point</li>
+							<li><font color='#4ef4b4'>></font>Teams with the highest aggregate scores will progress to the finale-Toast to Code. Details of this event are a well guarded secret and will be revealed on the spot to the qualifying teams.</li>
+							<li><font color='#4ef4b4'>></font>Any attempts of cheating or using any unfair means by any team member in any sub-event would lead to immediate disqualification of the entire team.</li>
+							<li><font color='#4ef4b4'>></font>Decision of event organizers and Organizing Committee of Esya’14 will be final and binding.</li>
+
+							</ul>
 				</div></div>
 				<div id="ieventblock630" class="ieventblock6"><div class="ieventtext1">
 				<p align='center'><font color='#4ef4b4' size='5'>REGISTRATION</font></p>
-							Coming Soon
+							<p>TBA</p>
 				</div></div>
 				<div id="ieventblock730" class="ieventblock7"><div class="ieventtext1">
 				<p align='center'><font color='#4ef4b4' size='5'>CONTACT</font></p>
-							Coming Soon
+							<p align='center'><font color='#4ef4b4' size='5'>CONTACT</font></p>
+							<p>
+							<ul>
+							<li><font color='#4ef4b4'>Harsh Manocha </font></li>
+							<li>+91-9810032832</li>
+							<li>harsh12134@iiitd.ac.in</li>
+							<br>
+							<li><font color='#4ef4b4'>Utkarsh Gupta </font></li>
+							<li>+91-9899922777</li>
+							<li>Utkarsh11117@iiitd.ac.in</li>		
+							</p>
 				</div></div>
 				<div id="ieventblock830" class="ieventblock8"><div class="ieventtext1">
 				<p align='center'><font color='#4ef4b4' size='5'>PRIZES</font></p>
@@ -5364,7 +5701,36 @@ que queiram participar.
 			{% if user.is_authenticated %}
 			<button class="button two login1 login5"><div>Hi! {{user}}</div></button>
 			<button class="button two register1" onClick="logout_ajax()">Logout</button>
-			
+			<script type="text/javascript">
+					$(document).ready(function() {
+
+						
+							
+							console.log("register function called");
+
+						var dataString = '&event=RoboWars' +
+										 '&register_data=' + $('input[name=roboname]').val()+ '\n' + $('input[name=roboparname]').val()  +'\n' + $('input[name=robosim]').val();
+										 
+						console.log(dataString);
+						$.ajax({
+								type: 'POST',
+								url: '/eventregister33/',
+								data: dataString,
+								success: function(data){
+									var json = JSON.parse(data.content);
+									if(json.error == ""){
+										$(".updatess-content").text(json.events);
+										//Toast.success("Successfully registered");
+										
+									}				
+								},
+								error: function(data){
+									//	Toast.info('Error Encountered!');;
+								}
+						});
+					return false;
+			});
+				</script>
 			{% else %}
 			<button class="button two login1" onClick="login.open()" >Login</button>
 			<button class="button two register1" onClick="register.open()">Register</button>

@@ -260,3 +260,56 @@ def eventregister55(request):
 
     print data
     return HttpResponse(simplejson.dumps(data), content_type='application/json')
+@ajax
+@csrf_exempt
+def eventregister33(request):
+    if request.method== "POST" and request.is_ajax():
+        data = {}
+        data['error'] = ""
+        if request.user.is_authenticated():
+            user = request.user
+            if request.user.email:
+                usermail = request.user.email
+                print user.first_name
+                print user.last_name
+                print usermail
+                event = request.POST['event']
+                register_data = request.POST['register_data']
+                            #w = []
+                q = list(Registration.objects.all().filter(registered_user=usermail))
+                for i in range(len(q)):
+                    q[i] = q[i].event_registered
+                if event not in q: 
+                    try:
+                        event_list=[]
+                        myString=""
+                        events_list =Registration.objects.all().filter(registered_user=usermail)
+                        for poll in events_list:
+                            if poll.registered_user == usermail:
+                                event_list.append(poll.event_registered)
+                        myString = " ".join(item for item in event_list)
+                        data['events'] = myString
+                        data['success']="You have successfully registered"
+                    except:
+                        data['error'] = ""
+                else:
+					event_list=[]
+					myString=""
+					events_list =Registration.objects.all().filter(registered_user=usermail)
+					for poll in events_list:
+						if poll.registered_user == usermail:
+							event_list.append(poll.event_registered)
+					myString = " ".join(item for item in event_list)
+					data['events'] = myString	
+					data['error'] = ""
+
+            else:
+                data['error'] = "Error in connection"
+        else:
+            data['error']="Error in connection"
+    else:
+        data = {}
+        data['error'] = "Error in connection"
+
+    print data
+    return HttpResponse(simplejson.dumps(data), content_type='application/json')

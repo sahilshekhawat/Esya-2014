@@ -4634,8 +4634,26 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 			});
 				</script>
 				<div id="ieventblock630" class="ieventblock6"><div class="ieventtext1">
-				<p align='center'><font color='#4ef4b4' size='5'>REGISTRATION</font></p>
-							<p>TBA</p>
+				<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
+							<p><font color='#4ef4b4'>Registration for Techathlon sub-events, only if NOT registering as a Techathlon team.</font></p>
+							<p>We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
+							<form method="POST" name="ievent30register" class="ievent30register">{% csrf_token %}
+							<input name="techs" type="text" placeholder="Team Size(Max 4):" /><p>
+							<label>Member 2: (optional)</label>
+							<ul><li>     <input name="techn1" type="text" placeholder="Name:" /><br></li>
+							<li>     <input name="teche1" type="text" placeholder="Email:" /><br></li>
+							<li>     <input name="techi1" type="text" placeholder="Institute:" /><br></li></ul>
+							<label>Member 3: (optional)</label>
+							<ul><li>     <input name="techn2" type="text" placeholder="Name:" /><br></li>
+							<li>     <input name="teche2" type="text" placeholder="Email:" /><br></li>
+							<li>     <input name="techi2" type="text" placeholder="Institute:" /><br></li></ul>
+							<label>Member 4: (optional)</label>
+							<ul><li>     <input name="techn3" type="text" placeholder="Name:" /><br></li>
+							<li>     <input name="teche3" type="text" placeholder="Email:" /><br></li>
+							<li>     <input name="techi3" type="text" placeholder="Institute:" /><br></li></ul>
+							<input type="submit" value="Register" />
+							</form>
+							</p>
 				</div></div>
 				<div id="ieventblock730" class="ieventblock7"><div class="ieventtext1">
 				<p align='center'><font color='#4ef4b4' size='5'>CONTACT</font></p>

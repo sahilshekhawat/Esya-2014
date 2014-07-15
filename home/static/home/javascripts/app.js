@@ -1926,7 +1926,8 @@ if(isChromium !== null && vendorName === "Google Inc.") {
 		login.close();
 	});
 	$('.button.register1').on('click', function () {
-		register.open();
+        document.getElementById('captchaa').click();
+        register.open();
 	});
 	$('.reg2').on('click', function () {
 		register.open();

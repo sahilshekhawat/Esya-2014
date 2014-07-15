@@ -17,7 +17,7 @@ from home.models import Registration
 import datetime
 import simplejson
 from home.models import *
-
+from recaptcha.client import captcha
 
 def index(request):
     now= datetime.datetime.now()
@@ -96,43 +96,61 @@ def ajaxlogin(request):
 
 @csrf_exempt
 @ajax
-def ajaxregister(request):
+def ajaxregister(request) :
+    print "some"
     if request.method == "POST" and request.is_ajax():
+        print "some2"
         data = {}
         data['error'] = ""
-        username = request.POST['username']
-        password = request.POST['password']
-        email = request.POST['email']
-        #college = request.POST['college']
-        a = request.POST.get('firstname', False)
-        b = request.POST.get('lastname', False)
-        #print username, password, email, a,b,c
-        emailcount=User.objects.filter(email=email).count()
-        usernamecount=User.objects.filter(username=username).count()
-        if usernamecount != 0:
-            data['error'] = "username already taken"
-            return HttpResponse(simplejson.dumps(data), content_type='application/json') #changes made
-        if emailcount != 0:
-            data['error'] = "email already registered"
-            return HttpResponse(simplejson.dumps(data), content_type='application/json')  #changes made
-        newuser = User.objects.create_user(username,email,password)
-        if a and b:
-            newuser.first_name = a
-            newuser.last_name = b
-            newuser.save()
+        print request.POST['recaptcha_challenge_field']
+        print request.POST['recaptcha_response_field']
+
+        response = captcha.submit(  
+			request.POST['recaptcha_challenge_field'],  
+            request.POST['recaptcha_response_field'],  
+            '6LeS7_YSAAAAAJqyW_GgLq4k5hbQeWiN53jWDr9b',  
+            request.META['REMOTE_ADDR'],)
+        
+        print response
+        if response.is_valid:
+            print "human"
+            username = request.POST['username']
+            password = request.POST['password']
+            email = request.POST['email']
+            #college = request.POST['college']
+            a = request.POST.get('firstname', False)
+            b = request.POST.get('lastname', False)
+            #print username, password, email, a,b,c
+            emailcount=User.objects.filter(email=email).count()
+            usernamecount=User.objects.filter(username=username).count()
+            if usernamecount != 0:
+                data['error'] = "username already taken"
+                return HttpResponse(simplejson.dumps(data), content_type='application/json') #changes made
+            if emailcount != 0:
+                data['error'] = "email already registered"
+                return HttpResponse(simplejson.dumps(data), content_type='application/json')  #changes made
+            newuser = User.objects.create_user(username,email,password)
+            if a and b:
+                newuser.first_name = a
+                newuser.last_name = b
+                newuser.save()
 
 
-            print "profile saved"
+                print "profile saved"
+            else:
+                data['error_name'] = "please provide your name details"
+
+            college = request.POST['college']
+            phone = request.POST['phone']
+            print "college==" + str(college)
+            print "phone==" + str(phone)
+
+            abc = profile(user_firstname=str(a), user_lastname=str(b), user=str(email),college=str(college),mobile=str(phone))
+            abc.save()
+            
         else:
-            data['error_name'] = "please provide your name details"
-
-        college = request.POST['college']
-        phone = request.POST['phone']
-        print "college==" + str(college)
-        print "phone==" + str(phone)
-
-        abc = profile(user_firstname=str(a), user_lastname=str(b), user=str(email),college=str(college),mobile=str(phone))
-        abc.save()
+            print "bot"
+            data['error']="wrong recaptcha"
         #newuser.college = request.POST['college']
         #user = authenticate(username=username, password=password)
         #if user is not None:
@@ -142,6 +160,7 @@ def ajaxregister(request):
         #else:
         #    data['error'] = "An Error has occured please try again"
         return HttpResponse(simplejson.dumps(data), content_type='application/json')
+
 
 @ajax
 @csrf_exempt

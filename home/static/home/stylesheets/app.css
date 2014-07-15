@@ -2247,11 +2247,11 @@ section.current .animate {
 /* line 160, ../sass/landing.scss */
 /* line 164, ../sass/landing.scss */
 #updatess .updatess-content {
-  width: 110px;
+  width: 420px;
   height: 360px;
   position: absolute;
   top: 110px;
-  left: 220px;
+  left: 65px;
   padding-right: 30px;
   overflow: auto;
   font-size: 14px;

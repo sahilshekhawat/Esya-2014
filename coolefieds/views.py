@@ -83,7 +83,7 @@ def ajaxlogin(request):
                 for poll in events_list:
 					if poll.registered_user == request.user.email:
 						event_list.append(poll.event_registered)
-                myString = "\n".join(item for item in event_list)
+                myString = "  |  ".join(item for item in event_list)
                 data['events'] = myString
             else:
                 data['error'] = "There was an error, please try again"
@@ -183,7 +183,7 @@ def eventregister(request):
                         for poll in events_list:
                             if poll.registered_user == usermail:
                                 event_list.append(poll.event_registered)
-                        myString = " ".join(item for item in event_list)
+                        myString = "  |  ".join(item for item in event_list)
                         data['events'] = myString
                         data['success']="You have successfully registered"
                     except:
@@ -230,7 +230,7 @@ def eventregister55(request):
                         for poll in events_list:
                             if poll.registered_user == usermail:
                                 event_list.append(poll.event_registered)
-                        myString = " ".join(item for item in event_list)
+                        myString = "  |  ".join(item for item in event_list)
                         data['events'] = myString
                         data['success']="You have successfully registered"
                     except:
@@ -246,7 +246,7 @@ def eventregister55(request):
 					for poll in events_list:
 						if poll.registered_user == usermail:
 							event_list.append(poll.event_registered)
-					myString = " ".join(item for item in event_list)
+					myString = "  |  ".join(item for item in event_list)
 					data['events'] = myString	
 					data['error'] = "You have already Registered for this Event"
 
@@ -287,7 +287,7 @@ def eventregister33(request):
                         for poll in events_list:
                             if poll.registered_user == usermail:
                                 event_list.append(poll.event_registered)
-                        myString = " ".join(item for item in event_list)
+                        myString = "  |  ".join(item for item in event_list)
                         data['events'] = myString
                         data['success']="You have successfully registered"
                     except:
@@ -299,7 +299,7 @@ def eventregister33(request):
 					for poll in events_list:
 						if poll.registered_user == usermail:
 							event_list.append(poll.event_registered)
-					myString = " ".join(item for item in event_list)
+					myString = "  |  ".join(item for item in event_list)
 					data['events'] = myString	
 					data['error'] = ""
 

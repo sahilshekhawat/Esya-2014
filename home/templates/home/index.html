@@ -268,7 +268,7 @@ type="application/x-shockwave-flash" >
 							<p>Register here only if not registering as a Techathlon team, and you wish to participate in the event separately.<br>
 							We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
 							<form method="POST" name="ievent1register" class="ievent1register">{% csrf_token %}
-							<input name="darname" type="text" placeholder="Team Name:" /><p>
+							<input name="darname" type="text" placeholder="Team Name:" required/><p>
 							Participating as a team of 1 or 2:<br>
 					<ul><li>       <input type="radio" name="participant" value="one">1
 							<input type="radio" name="participant" value="two">2<br></li></ul>
@@ -443,7 +443,7 @@ type="application/x-shockwave-flash" >
 							<p>Register here only if not registering as a Techathlon team, and you wish to participate in the event separately.<br>
 							We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
 							<form method="POST" name="ievent2register" class="ievent2register">{% csrf_token %}
-							<input name="segname" type="text" placeholder="Team Name:" /><p>
+							<input name="segname" type="text" placeholder="Team Name:" required/><p>
 							Participating as a team of 1 or 2:<br>
 					        <input type="radio" name="participant" value="one">1
 							<input type="radio" name="participant" value="two">2<br></li></ul>
@@ -611,7 +611,7 @@ type="application/x-shockwave-flash" >
 							<p>Register here only if not registering as a Techathlon team, and you wish to participate in the event separately.<br>
 							We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
 							<form method="POST" name="ievent3register"class="ievent3register">{% csrf_token %}
-							<input name="proname" type="text" placeholder="Team Name:" /><p>
+							<input name="proname" type="text" placeholder="Team Name:" required/><p>
 							Participating as a team of 1 or 2:<br><ul><li>
 					        <input type="radio" name="participant" value="one">1
 							<input type="radio" name="participant" value="two">2<br></li></ul>
@@ -850,7 +850,7 @@ type="application/x-shockwave-flash" >
 							<p>Register here only if not registering as a Techathlon team, and you wish to participate in the event separately.<br>
 							We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
 							<form method="POST" name="ievent5register" class="ievent5register">{% csrf_token %}
-							<input name="codename" type="text" placeholder="Team Name:" /><p>
+							<input name="codename" type="text" placeholder="Team Name:" required/><p>
 							Participating as a team of 1 or 2:<br><ul><li>
 					        <input type="radio" name="participant" value="one">1
 							<input type="radio" name="participant" value="two">2<br></li></ul>
@@ -1008,7 +1008,7 @@ type="application/x-shockwave-flash" >
 							<p>Register here only if not registering as a Techathlon team, and you wish to participate in the event separately.<br>
 							We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
 							<form method="POST" name="ievent6register" class="ievent6register">
-							<input name="se1" type="text" placeholder="Team Name:" /><p>
+							<input name="se1" type="text" placeholder="Team Name:" required/><p>
 							Participating as a team of 1 or 2:<br><ul><li>
 					        <input type="radio" name="participant" value="one">1
 							<input type="radio" name="participant" value="two">2<br></li></ul>
@@ -1168,7 +1168,7 @@ type="application/x-shockwave-flash" >
 							<p>Register here only if not registering as a Techathlon team, and you wish to participate in the event separately.<br>
 							We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
 							<form method="POST" name="ievent7register" class="ievent7register">{% csrf_token %}
-							<input name="braname" type="text" placeholder="Team Name:" /><p>
+							<input name="braname" type="text" placeholder="Team Name:" required/><p>
 							Participating as a team of 1 or 2:<br><ul><li>
 					        <input type="radio" name="participant" value="one">1
 							<input type="radio" name="participant" value="two">2<br></li></ul>
@@ -1330,13 +1330,13 @@ type="application/x-shockwave-flash" >
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>(To enter details of other member of  team.)<br>
 							<form method="POST" name="ievent8register" class="ievent8register">{% csrf_token %}
-							<input name="cirname" type="text" placeholder="Team Name:" /><p>
+							<input name="cirname" type="text" placeholder="Team Name:" required/><p>
 							<input name="cirparname" type="text" placeholder="Name of team members:" /><p><label>(Max 2 members, Leave this section blank if you are registering as an individual)</label><p>
 							Will you be able to bring your own laptop:<p>
-					        <input name="cirp1" type="text" name="laptop" placeholder="Yes/No"/>
+					        <input name="cirp1" type="text" name="laptop" placeholder="Yes/No" required/>
 							<br>
 							<label>(Highly recommended to have own laptops for circuit simulation)</label><p>
-							<input name="cirsim" type="text" placeholder="Preferred Circuit Simulator:" /><p>
+							<input name="cirsim" type="text" placeholder="Preferred Circuit Simulator:" required/><p>
 							<label>(eg. LT spice or Multisim ,Proteus etc.)<label><p>				
 							<input type="submit" value="Register" />
 							</form>
@@ -1753,7 +1753,7 @@ type="application/x-shockwave-flash" >
 							<p>
 							<form method="POST" name="ievent10register" class="ievent10register"> {% csrf_token %}
 							<label>The type of aircraft you will be bringing on the event day:</label>
-							<input name="aircraft" type="text" placeholder="Aircraft:" /><p>
+							<input name="aircraft" type="text" placeholder="Aircraft:" required/><p>
 							We already have your details. Please enter details of your team partners, in case you’re not participating in the event as a lonewolf.<br>
 							<label>Member 2:</label><br>
 							<ul><li><input name="air_name1" type="text" placeholder="Name:" /></li>

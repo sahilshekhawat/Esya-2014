@@ -268,7 +268,7 @@ type="application/x-shockwave-flash" >
 							<p>Register here only if not registering as a Techathlon team, and you wish to participate in the event separately.<br>
 							We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
 							<form method="POST" name="ievent1register" class="ievent1register">{% csrf_token %}
-							<input name="darname" type="text" placeholder="Team Name:" /><p>
+							<input name="darname" type="text" placeholder="Team Name:" required/><p>
 							Participating as a team of 1 or 2:<br>
 					<ul><li>       <input type="radio" name="participant" value="one">1
 							<input type="radio" name="participant" value="two">2<br></li></ul>
@@ -443,7 +443,7 @@ type="application/x-shockwave-flash" >
 							<p>Register here only if not registering as a Techathlon team, and you wish to participate in the event separately.<br>
 							We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
 							<form method="POST" name="ievent2register" class="ievent2register">{% csrf_token %}
-							<input name="segname" type="text" placeholder="Team Name:" /><p>
+							<input name="segname" type="text" placeholder="Team Name:" required/><p>
 							Participating as a team of 1 or 2:<br>
 					        <input type="radio" name="participant" value="one">1
 							<input type="radio" name="participant" value="two">2<br></li></ul>
@@ -611,7 +611,7 @@ type="application/x-shockwave-flash" >
 							<p>Register here only if not registering as a Techathlon team, and you wish to participate in the event separately.<br>
 							We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
 							<form method="POST" name="ievent3register"class="ievent3register">{% csrf_token %}
-							<input name="proname" type="text" placeholder="Team Name:" /><p>
+							<input name="proname" type="text" placeholder="Team Name:" required/><p>
 							Participating as a team of 1 or 2:<br><ul><li>
 					        <input type="radio" name="participant" value="one">1
 							<input type="radio" name="participant" value="two">2<br></li></ul>
@@ -850,7 +850,7 @@ type="application/x-shockwave-flash" >
 							<p>Register here only if not registering as a Techathlon team, and you wish to participate in the event separately.<br>
 							We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
 							<form method="POST" name="ievent5register" class="ievent5register">{% csrf_token %}
-							<input name="codename" type="text" placeholder="Team Name:" /><p>
+							<input name="codename" type="text" placeholder="Team Name:" required/><p>
 							Participating as a team of 1 or 2:<br><ul><li>
 					        <input type="radio" name="participant" value="one">1
 							<input type="radio" name="participant" value="two">2<br></li></ul>
@@ -1008,7 +1008,7 @@ type="application/x-shockwave-flash" >
 							<p>Register here only if not registering as a Techathlon team, and you wish to participate in the event separately.<br>
 							We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
 							<form method="POST" name="ievent6register" class="ievent6register">
-							<input name="se1" type="text" placeholder="Team Name:" /><p>
+							<input name="se1" type="text" placeholder="Team Name:" required/><p>
 							Participating as a team of 1 or 2:<br><ul><li>
 					        <input type="radio" name="participant" value="one">1
 							<input type="radio" name="participant" value="two">2<br></li></ul>
@@ -1168,7 +1168,7 @@ type="application/x-shockwave-flash" >
 							<p>Register here only if not registering as a Techathlon team, and you wish to participate in the event separately.<br>
 							We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
 							<form method="POST" name="ievent7register" class="ievent7register">{% csrf_token %}
-							<input name="braname" type="text" placeholder="Team Name:" /><p>
+							<input name="braname" type="text" placeholder="Team Name:" required/><p>
 							Participating as a team of 1 or 2:<br><ul><li>
 					        <input type="radio" name="participant" value="one">1
 							<input type="radio" name="participant" value="two">2<br></li></ul>
@@ -1330,13 +1330,13 @@ type="application/x-shockwave-flash" >
 							<p align='center'><font color='#4ef4b4' size='5'>REGISTRATIONS</font></p>
 							<p>(To enter details of other member of  team.)<br>
 							<form method="POST" name="ievent8register" class="ievent8register">{% csrf_token %}
-							<input name="cirname" type="text" placeholder="Team Name:" /><p>
+							<input name="cirname" type="text" placeholder="Team Name:" required/><p>
 							<input name="cirparname" type="text" placeholder="Name of team members:" /><p><label>(Max 2 members, Leave this section blank if you are registering as an individual)</label><p>
 							Will you be able to bring your own laptop:<p>
-					        <input name="cirp1" type="text" name="laptop" placeholder="Yes/No"/>
+					        <input name="cirp1" type="text" name="laptop" placeholder="Yes/No" required/>
 							<br>
 							<label>(Highly recommended to have own laptops for circuit simulation)</label><p>
-							<input name="cirsim" type="text" placeholder="Preferred Circuit Simulator:" /><p>
+							<input name="cirsim" type="text" placeholder="Preferred Circuit Simulator:" required/><p>
 							<label>(eg. LT spice or Multisim ,Proteus etc.)<label><p>				
 							<input type="submit" value="Register" />
 							</form>
@@ -1753,7 +1753,7 @@ type="application/x-shockwave-flash" >
 							<p>
 							<form method="POST" name="ievent10register" class="ievent10register"> {% csrf_token %}
 							<label>The type of aircraft you will be bringing on the event day:</label>
-							<input name="aircraft" type="text" placeholder="Aircraft:" /><p>
+							<input name="aircraft" type="text" placeholder="Aircraft:" required/><p>
 							We already have your details. Please enter details of your team partners, in case you’re not participating in the event as a lonewolf.<br>
 							<label>Member 2:</label><br>
 							<ul><li><input name="air_name1" type="text" placeholder="Name:" /></li>
@@ -4560,7 +4560,7 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							console.log("register function called");
 
 						var dataString = '&event=Techathlon' +
-										 '&register_data=' + $('input[name=tname]').val()+ '\n'+ $('input[name=t1]').val()+ '\n'+ $('input[name=t2]').val()+ '\n'+ $('input[name=t3]').val()+ '\n'+ $('input[name=t4]').val()+ '\n'+ $('input[name=t5]').val()+ '\n'+ $('input[name=t6]').val()+ '\n'+ $('input[name=t7]').val()+ '\n'+ $('input[name=t8]').val()+ '\n'+ $('input[name=t9]').val();
+										 '&register_data=' + $('input[name=tname]').val()+ '\n'+ $('input[name=t1]').val()+ '\n'+ $('input[name=t2]').val()+ '\n'+ $('input[name=t3]').val()+ '\n'+ $('input[name=t4]').val()+ '\n'+ $('input[name=t5]').val()+ '\n'+ $('input[name=t6]').val()+ '\n'+ $('input[name=t7]').val()+ '\n'+ $('input[name=t8]').val()+ '\n'+ $('input[name=t9]').val()+ '\n'+ $('input[name=t10]').val()+ '\n'+ $('input[name=t11]').val()+ '\n'+ $('input[name=t12]').val();
 										 console.log(dataString);
 						$.ajax({
 								type: 'POST',
@@ -4587,8 +4587,8 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 														{
 															
 															console.log("register function called");
-                                                            var dataString = '&event=Techathlon' +
-										 '&register_data=' + $('input[name=tname]').val()+ '\n'+ $('input[name=t1]').val()+ '\n'+ $('input[name=t2]').val()+ '\n'+ $('input[name=t3]').val()+ '\n'+ $('input[name=t4]').val()+ '\n'+ $('input[name=t5]').val()+ '\n'+ $('input[name=t6]').val()+ '\n'+ $('input[name=t7]').val()+ '\n'+ $('input[name=t8]').val()+ '\n'+ $('input[name=t9]').val();
+															var dataString = '&event=Techathlon' +
+										 '&register_data=' + $('input[name=tname]').val()+ '\n'+ $('input[name=t1]').val()+ '\n'+ $('input[name=t2]').val()+ '\n'+ $('input[name=t3]').val()+ '\n'+ $('input[name=t4]').val()+ '\n'+ $('input[name=t5]').val()+ '\n'+ $('input[name=t6]').val()+ '\n'+ $('input[name=t7]').val()+ '\n'+ $('input[name=t8]').val()+ '\n'+ $('input[name=t9]').val()+ '\n'+ $('input[name=t10]').val()+ '\n'+ $('input[name=t11]').val()+ '\n'+ $('input[name=t12]').val();
 						
 
 										
@@ -4638,19 +4638,19 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							<p><font color='#4ef4b4'>Registration for Techathlon sub-events, only if NOT registering as a Techathlon team.</font></p>
 							<p>We already have your details. Please enter details of your team partner, in case you’re not participating in the event as a lonewolf.<br>
 							<form method="POST" name="ievent30register" class="ievent30register">{% csrf_token %}
-							<input name="tname" type="text" placeholder="Team Size(Max 4):" /><p>
+							<input name="techs" type="text" placeholder="Team Size(Max 4):" /><p>
 							<label>Member 2: (optional)</label>
-							<ul><li>     <input name="t1" type="text" placeholder="Name:" /><br></li>
-							<li>     <input name="t2" type="text" placeholder="Email:" /><br></li>
-							<li>     <input name="t3" type="text" placeholder="Institute:" /><br></li></ul>
+							<ul><li>     <input name="techn1" type="text" placeholder="Name:" /><br></li>
+							<li>     <input name="teche1" type="text" placeholder="Email:" /><br></li>
+							<li>     <input name="techi1" type="text" placeholder="Institute:" /><br></li></ul>
 							<label>Member 3: (optional)</label>
-							<ul><li>     <input name="t4" type="text" placeholder="Name:" /><br></li>
-							<li>     <input name="t5" type="text" placeholder="Email:" /><br></li>
-							<li>     <input name="t6" type="text" placeholder="Institute:" /><br></li></ul>
+							<ul><li>     <input name="techn2" type="text" placeholder="Name:" /><br></li>
+							<li>     <input name="teche2" type="text" placeholder="Email:" /><br></li>
+							<li>     <input name="techi2" type="text" placeholder="Institute:" /><br></li></ul>
 							<label>Member 4: (optional)</label>
-							<ul><li>     <input name="t7" type="text" placeholder="Name:" /><br></li>
-							<li>     <input name="t8" type="text" placeholder="Email:" /><br></li>
-							<li>     <input name="t9" type="text" placeholder="Institute:" /><br></li></ul>
+							<ul><li>     <input name="techn3" type="text" placeholder="Name:" /><br></li>
+							<li>     <input name="teche3" type="text" placeholder="Email:" /><br></li>
+							<li>     <input name="techi3" type="text" placeholder="Institute:" /><br></li></ul>
 							<input type="submit" value="Register" />
 							</form>
 							</p>
@@ -5040,12 +5040,12 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 					<form class="login" id="loginform" method="POST" name="form">{% csrf_token %}
 							<div>
 								<label>Username:</label>
-								<input type="text" name="username_login"required/>
+								<input type="text" name="username_login"/>
 								<span class="error">This is an error</span>
 							</div>
 							<div>
 								<label>Password: </label>
-								<input type="password" name="password_login" required/>
+								<input type="password" name="password_login" />
 								<span class="error">This is an error</span>
 							</div>
 							<div class="bottom">
@@ -5112,24 +5112,24 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 						
 							<div class="af">
 								<label>Name:</label>
-								<input type="text" name="firstname" required/>
+								<input type="text" name="firstname" />
 								<span class="error">This is an error</span>
 							</div >
 							<div class="af">
 								<label>Username:</label>
-								<input type="text" name="username_register"required/>
+								<input type="text" name="username_register"/>
 								<span class="error">This is an error</span>
 							</div class="af">
 							
 							<div class="af">
 								<label>Phone No.</label>
-								<input type="text" name="phone"required/>
+								<input type="text" name="phone"/>
 								<span class="error">This is an error</span>
 							</div class="af">
 							
 							<div class="af">
 								<label>Email:</label>
-								<input type="text" name="email"required/>
+								<input type="text" name="email"/>
 								<span class="error">This is an error</span>
 							</div>
                             <!--
@@ -5140,12 +5140,12 @@ Take up this challenge and enter the realms of electronics hidden from you”</f
 							</div>!-->
 							<div class="af">
 								<label>Password:</label>
-								<input type="password" name="password_register"required/>
+								<input type="password" name="password_register"/>
 								<span class="error">This is an error</span>
 							</div>
 							<div class="af">
 								<label>College/School Name</label>
-								<input type="text" name="college"required/>
+								<input type="text" name="college"/>
 								<span class="error">This is an error</span>
 							</div>
 							
@@ -5249,31 +5249,7 @@ Coming Soon
 				<br>Near Govindpuri Metro Station,
 				<br>New Delhi, 110020
 				<br><br></p>
-                <p style="text-align: center"><font color="#0D9986">For more information contact:</font>
-                <br>
-                <br>
-                Ramon Bhaduria
-                <br>
-                ramon11085@iiitd.ac.in
-                <br>
-                9873752572
-                <br>
-                <br>
-                Manya Wadhwa
-                <br>
-                manya12144@iiitd.ac.in
-                <br>
-                9818730397
-                <br>
-                <br>
-                Simranjit Bakshi
-                <br>
-                simranjit12105@iiitd.ac.in
-                <br>
-                9999488838
-                <br>
-                </p>
-			<!--	<table style="margin-left:10px">	
+				<table style="margin-left:10px">	
 				<tr>
 				<td class="td-left">
 				Name:
@@ -5316,7 +5292,7 @@ Coming Soon
 					   }
 					   return(false);
 				   });
-				</script>!-->
+				</script>
 			</div>
 		</div>
 		<button class="close"></button>
